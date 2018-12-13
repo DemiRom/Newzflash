@@ -1,15 +1,15 @@
-Stable: [![Build Status](https://travis-ci.org/nZEDb/nZEDb.svg?branch=0.x)](https://travis-ci.org/nZEDb/nZEDb)  Testing: [![Build Status](https://travis-ci.org/nZEDb/nZEDb.svg?branch=Latest-testing)](https://travis-ci.org/nZEDb/nZEDb)  Dev: [![Build Status](https://travis-ci.org/nZEDb/nZEDb.svg?branch=dev)](https://travis-ci.org/nZEDb/nZEDb)
+Stable: [![Build Status](https://travis-ci.org/Newzflash/Newzflash.svg?branch=0.x)](https://travis-ci.org/Newzflash/Newzflash)  Testing: [![Build Status](https://travis-ci.org/Newzflash/Newzflash.svg?branch=Latest-testing)](https://travis-ci.org/Newzflash/Newzflash)  Dev: [![Build Status](https://travis-ci.org/Newzflash/Newzflash.svg?branch=dev)](https://travis-ci.org/Newzflash/Newzflash)
 
-nZEDb automatically scans usenet, similar to the way web spiders scan the internet. It does this by collecting usenet headers and temporarily storing them in a database until they can be collated into posts/releases. It provides a web-based front-end providing search, browse, and programmable (API) functionality.
+Newzflash automatically scans usenet, similar to the way web spiders scan the internet. It does this by collecting usenet headers and temporarily storing them in a database until they can be collated into posts/releases. It provides a web-based front-end providing search, browse, and programmable (API) functionality.
 
 This project is a fork of the open source usenet indexer newznab plus: https://github.com/anth0/nnplus
 
-nZEDb improves upon the original design, implementing several new features including:
+Newzflash improves upon the original design, implementing several new features including:
 
 - Optional multi-threaded processing (header retrieval, release creation, post-processing etc)
 - Advanced search features (name, subject, category, post-date etc)
 - Intelligent local caching of metadata
-- Optional sharing of comments with other nZEDb sites
+- Optional sharing of comments with other Newzflash sites
 - Optional tmux (terminal session multiplexing) engine that provides thread, database and performance monitoring
 - Image and video samples
 - SABnzbd/NZBGet integration (web, API and pause/resume)
@@ -18,7 +18,7 @@ nZEDb improves upon the original design, implementing several new features inclu
 
 ## Prerequisites
 
-System Administration know-how. nZEDb is not plug-n-play software. Installation and operation requires a moderate amount of administration experience. nZEDb is designed and developed with GNU/Linux operating systems. Certain features are not available on other platforms. An experienced Windows administrator should be able to run nZEDb on a Windows OS.
+System Administration know-how. Newzflash is not plug-n-play software. Installation and operation requires a moderate amount of administration experience. Newzflash is designed and developed with GNU/Linux operating systems. Certain features are not available on other platforms. An experienced Windows administrator should be able to run Newzflash on a Windows OS.
 
 ### Hardware
 
@@ -26,7 +26,7 @@ System Administration know-how. nZEDb is not plug-n-play software. Installation 
 
 If you wish to use more than 5 threads a quad core CPU is beneficial.
 
-The overall speed of nZEDb is largely governed by performance of the database. As many of the database tables should be held within system RAM as possible. See Database Section below.
+The overall speed of Newzflash is largely governed by performance of the database. As many of the database tables should be held within system RAM as possible. See Database Section below.
 
 ### Software
 
@@ -42,9 +42,9 @@ As a general rule of thumb the database will need a minimum of 1-2G buffer RAM f
 - key_buffer_size			(MyISAM)
 - innodb_buffer_pool_size	(InnoDB)
 
-Use [mysqltuner.pl](http://mysqltuner.pl "MySQL tuner - Use it!") for recommendations for these and other important tuner parameters. Also refer to the project's wiki page: https://github.com/nZEDb/nZEDb/wiki/Database-tuning. This is particularly important before you start any large imports or backfills.
+Use [mysqltuner.pl](http://mysqltuner.pl "MySQL tuner - Use it!") for recommendations for these and other important tuner parameters. Also refer to the project's wiki page: https://github.com/Newzflash/Newzflash/wiki/Database-tuning. This is particularly important before you start any large imports or backfills.
 
-MariaDB is normally shipped using MyISAM tables by default. This is fine for running with one or a few threads and is a good way to start using nZEDb. You should migrate to the InnoDB table format if nZEDB is configured to use one of the following:
+MariaDB is normally shipped using MyISAM tables by default. This is fine for running with one or a few threads and is a good way to start using Newzflash. You should migrate to the InnoDB table format if Newzflash is configured to use one of the following:
 
 	thread counts > 5
 	tmux mode
@@ -61,11 +61,11 @@ Before converting to InnoDB be sure to set:
 
 ## Installation
 
-Specific installation guides for common Operating Systems can be found on the nZEDb github wiki: https://github.com/nZEDb/nZEDb/wiki/Install-Guides
+Specific installation guides for common Operating Systems can be found on the Newzflash github wiki: https://github.com/Newzflash/Newzflash/wiki/Install-Guides
 
 ## Getting Started
 
-After you have installed nZEDb and gone throught the initial web-based installation steps (step1, step2 etc.), then review the settings on the Admin-Site-Edit page.
+After you have installed Newzflash and gone throught the initial web-based installation steps (step1, step2 etc.), then review the settings on the Admin-Site-Edit page.
 
 Most of the default settings are fine, however some will need changing.
 
@@ -87,32 +87,32 @@ To clean up the release names, check out fixReleaseNames.php in misc/testing.
 
 For an overview of a complete process, look at the  misc/update/nix/screen/sequential/threaded.sh script.
 
-Advanced users may be interested to try the tmux version of nZEDb in either Complete Sequential, Sequential or non-Sequential (fully parallel) mode. Before starting, review the tmux settings in Site-Edit -> Tmux Settings.
+Advanced users may be interested to try the tmux version of Newzflash in either Complete Sequential, Sequential or non-Sequential (fully parallel) mode. Before starting, review the tmux settings in Site-Edit -> Tmux Settings.
 
 
 ### Support
 
 There is a web forum were you can search for issues previously encountered by others:
-https://forums.nzedb.com/
+https://forums.Newzflash.com/
 
-Also on IRC: irc.synirc.net #nZEDb
+Also on IRC: irc.synirc.net #Newzflash
 
 ### Note
 
-The nZEDb team have no control over and are not responsible for what is posted on the usenet. Best efforts are made to avoid hazardous content (e.g. virii, malware etc) by nZEDb's automated processess. If you find any objectionable content, please direct any complaints to your usenet provider.
+The Newzflash team have no control over and are not responsible for what is posted on the usenet. Best efforts are made to avoid hazardous content (e.g. virii, malware etc) by Newzflash's automated processess. If you find any objectionable content, please direct any complaints to your usenet provider.
 
 ### The Team
 
 Kevin123, jonnyboy, Miatrix, zombu2, Codeslave, sinfuljosh, ugo, Whitelighter, Bart39, archer(niel), ThePeePs, ruhllatio, DariusIII<br /><br />
-<a href="https://flattr.com/submit/auto?user_id=nzedb&url=https%3A%2F%2Fgithub.com%2FnZEDb%2FnZEDb" target="_blank"><img src="//api.flattr.com/button/flattr-badge-large.png" alt="Donations." title="Donations." border="0"></a>
+<a href="https://flattr.com/submit/auto?user_id=Newzflash&url=https%3A%2F%2Fgithub.com%2FNewzflash%2FNewzflash" target="_blank"><img src="//api.flattr.com/button/flattr-badge-large.png" alt="Donations." title="Donations." border="0"></a>
 
 <p>
 
 ### Licenses
 
-nZEDb is GPL v3. See /docs/LICENSE.txt for the full license.
+Newzflash is GPL v3. See /docs/LICENSE.txt for the full license.
 
-Other licenses by various software used by nZEDb:
+Other licenses by various software used by Newzflash:
 
 Git.php => MIT and GPL v3
 
