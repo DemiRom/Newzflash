@@ -1069,6 +1069,7 @@ CREATE TABLE upcoming_releases (
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   id             INT(16) UNSIGNED NOT NULL AUTO_INCREMENT,
+  subscription_id VARCHAR(100) DEFAULT '',
   username       VARCHAR(50)      NOT NULL,
   firstname      VARCHAR(255)              DEFAULT NULL,
   lastname       VARCHAR(255)              DEFAULT NULL,
