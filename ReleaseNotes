@@ -1,0 +1,1454 @@
+This file details which changes to the code are in which release version. It is a complement to the
+ChangeLog file which list *when* changes are made to the dev branches.
+
+
+0.8.13.0 2018-12-03
+Fixed:
+	* Improved accuracy of PreDb matching. Closes issue 2568.
+	* Add pagination links in Browse Groups for Alpha, Charisma, Gamma, Gentele, and Omicron Themes.
+	* Corrected categories table data for Book entries. This caused books (Comics, etc.) to be
+	 listed in the wrong subcategory.
+	* New groups not respecting number of days/posts to initialise with and then starting from
+	 the first header on the server.
+
+
+0.8.12.0 2018-11-05
+Added:
+	* New anime title regex in PPA to capture more titles correctly.
+	* Support for mediaInfo's new format in v17.12+
+
+Changed:
+	* Renamed 'Complete Sequential' to 'Custom Sequential' in tmux settings, to avoid confusion of
+	 people thinking it is more complete than Simple.
+
+Fixed:
+	* Make sure newly activated groups have TPG tables, if TPG mode is enabled and MGR mode is not.
+	* Fix anime last updated check to correctly return if an update was attempted 'recently'.
+	* Correct generic music regex to actually match the example.
+	* Corrected counter on predb import daily script, so it no longer reports -1 remaining.
+
+
+0.8.11.0 2018-10-02
+Fixed:
+	* Updated scripts in .../misc/testing/DB to use modern require_once syntax (instead of nesting
+	 multiple dirname() calls. Also added a new require_once to two scripts that need
+	 .../configuration/settings.php to run. Note they will cause an error if the file does not
+	 exist, but it should be obvious to the user what the problem is.
+	  If any other scripts are complaining about missing nZEDb_* or other constants let me know
+	 and I'll update them as well.
+
+
+0.8.10.0 2018-09-03
+Added:
+	* Support for PHP 7.2
+	 ***NOTE*** You *must* run `composer install` manually as the lithium framework version has
+	 changed and your current one will not have some of the new stuff that this update requires.
+	  Also, there is currently no version of the php-yenc extension for PHP 7.2. I'm in the process
+	 of rewriting it in C/C++, but I do not expect this to be quick, as my spare time is very short
+	 currently.
+
+
+0.8.9.0 2018-08-06
+Changed:
+	* Removed release counts, for the themes that used it, on group list templates.
+	* Strip '00-' from searchname (mostly music titles) when parsing Par2 for a better name.
+	* Search for all other/unknown categories (not just Misc>Other) when trying to fix names using
+	 Par2.
+	* Add categorization for a.b.sounds.
+
+Fixed:
+	* Typo in querying database timezone.
+	* When fetching RecordSet, check it is valid. If it is, return it;  otherwise return an empty
+	 array.
+	* app\models\Groups::getBackfilling() to return array of groups filtered by active and backfill
+	 state.
+	* Undefined index 'groupname' for Admin grouplist active/inactive pages.
+	* Admin grouplist inactive page returning active groups.
+	* \app\models\Groups::getRange() to correctly handle pagination and filtering by a groupname.
+	* Query string for group (in)active pages pagination.
+	* Quotation marks around $groupname need to be double, not single. Filtering should work again.
+
+
+0.8.8.1 2018-07-04
+Fixed:
+	* Alpha/Charisma/Gamma/Gentele/Omicron templates for browsing groups.
+
+
+0.8.8.0 2018-07-03
+***NOTE*** After updating you may have to do `composer install && ./zed update nzedb` to get things
+working again.
+Changed:
+	* Switched Group handling to use a model. Some functiionality is still handled by the old
+	 /nzedb/Groups class.
+	* Removed 'releases' column from groups listing and browse group.
+	* Updated Lithium framework to v1.2.
+	* Removed support for simple_php_yenc_decode extension as it does not support PHP 7+.
+
+
+0.8.7.0 2018-06-04
+Changed:
+	* Increase size of 'xref' column in collections' tables due to some larger sizes reported.
+
+Fixed:
+	* Replacing last use of each() in nZEDb code. Note that two libraries (forkdaemon and
+	 guzzlehttp/promises) still use it however.
+
+
+0.8.6.0 2018-05-07
+Added:
+	* tpg' option (to './zed verify tables' sub-command), which checks for missing tables of active
+	 groups and creates them. It does not delete tables of inactive groups.
+
+Fixed:
+	* Issue where the date after 'release have been disabled/terminated by Releases' was printed as
+	 the format string instead of the formatted numbers.
+
+
+0.8.5.2 2018-04-05
+Fixed:
+	* Actually merge in the PHPMailer fix.
+
+
+0.8.5.1 2018-04-05
+Fixed:
+	* PHPMailer 'Call to a member function isHTML() on null' error.
+
+
+0.8.5.0 2018-04-02
+Fixed:
+	* PHPMailer namespace issue causing it to not be found.
+	* Issue where sendEmail defaults to using the site's admin address for the 'from' on the
+	 contact-us page.
+
+
+0.8.4.0 2018-03-05
+Changed:
+	* Updated dependencies.
+	* Refactored the Verify command to make some new coming stuff easier. Note: Check command's help
+	 for any changes to syntax.
+	* Updated PHPMailer from v5.1 to v6.0
+
+Fixed:
+	* Issue where updating failed because of git detached head. Correctly detects branch now.
+	 Closes issue 2530.
+
+
+0.8.3.0 2018-01-08
+Added:
+	* Added an option in settings to allow ALL groups to be treated as MultiGroup releases. Enabling
+	 this will make the indexer check across all groups to look for matches. This will increase the
+	 possiblity of finding some releases, at the expense of additional processing overhead.
+	 ** NOTE ** You do not need to change the poster's list if this is enabled. It will perform the
+	 checking for all posters.
+
+Changed:
+	* Removed misc/testing/Tests/verify_time_settings script as differences in various settings is
+     irrelevant now that timezones have to be specified for PHP and the database.
+    * Removed some obsolete sources for IRCScraper settings.
+
+Fixed:
+	* Added a check in the connection detection code, to only display "No connection configured"
+     message when debug mode is enabled. This prevents it being shown during the install procedure
+     by default.
+
+
+0.8.2.3 2017-12-18
+Changed
+	* Additional info for debugging timezone problems.
+
+0.8.2.2 2017-12-15
+Fixed:
+	* Prevented display of "No connection configured", by default, during install process. Closes Issue 2559.
+
+
+0.8.2.1 2017-12-08
+Fixed:
+	* Bad logic that caused "No connection defined" message for valid configurations. Closes Issue 2558
+
+
+0.8.2.0 2017-12-04
+Added:
+	* settings.example.php has new constants for a maintenance mode. If the mode is set to true
+	 then the API/web site return a status of 503 with the message "Maintenance Mode". The page
+	 returned by the server should be defined with the MAINTENANCE_MODE_HTML_PATH constant.
+
+Changed:
+	* Removed the logged in user check, during API key checking. This prevents incorrect keys from
+	being used.
+
+Fixed:
+	* Corrected status code for "Missing parameter (apikey)" redirect.
+	* Made username check be case-sensitive, as they should *always* be.
+	* Not found exception some users were experiencing.
+
+
+0.8.1.0 2017-11-06
+Changed:
+	* Composer post install script now copies settings.example.php to settings.php automatically, IF
+	 it doesn't already exist.
+	* Defaults for logging, in settings.example.php, are now enabled.
+
+Fixed:
+	* TMDb not found error. Closes issue 2526.
+	* Properly categorize sports related releases. Fixes issue 2527.
+	* Quick fix for bad status being returned, when Request limit is exceeded. This will probably
+	 cause other issues as it sets the HTTP Response status to whatever code the API creates, most
+	 if not all of which are incorrect. This code needs a complete rewrite, which we'll do later.
+	* Added the missing constant names in the checks for creating them
+	 (app/config/bootstrap/connections.php).
+
+
+0.8.0.0 2017-10-02
+***NOTE*** This version removes support of PHP 5.6
+
+Changed:
+	* Post-Processing of Adult releases has been refactored. This should improve identifying posts.
+	* Disable caching in php-tmdb library.
+	* Remove nZEDbPre2 channel from ircscraper_settings_example.php.
+	* Restored sort order of PreDB model to be by creation date.
+
+Fixed:
+	* `./zed update` always updates dependencies, even when code base hasn't changed.
+	* Quick fix for some XSS vulnerabilities.
+	* Make sure page count is set, even when there are no entries. Avoids an unset variable	error.
+	* predb_import_daily_batch.php had a bug which prevented matching of timestamps in some
+	 circumstances.
+
+
+0.7.4.0 2017-08-07
+***NOTE*** As the latest version of Debian (Debian 9) now supports PHP 7.0, PHP 5.6 is now
+	deprecated. We will be removing support for it before the end of the year, probably within 2-3
+	months, so update as soon as you can.
+Added:
+	* New TMDb library code. Switching to use php-tmdb/api library from github.
+
+Changed:
+	* Updated steamfront version.
+	* Set 'updated' date to zero value when inserting new IRCScraper entries. Should help prevent
+      certain errors cause by bad SQL modes. ***NOTE*** Make sure your SQL_MODE does not include
+      NO_NON_ZERO DATES or similar options.
+    * Move location for predb-progress.txt to the standard configuration directory. If you use the
+     'progress' setting for importing predb files, you will have to move this manually.
+
+Fixed:
+	* Removed check for tpg in collection_regexes-test.php's template, which caused problems with
+	 displaying.
+	* Version checks in .../nzedb/NZB.php and .../nzedb/Tmux.php use the XML file instead of the
+	 repository, so that non-dev installs work without the repository.
+	* Replace spaces with tab, causing steam_app last_update setting to fail on insertion.
+	* Check for existing apikey before sending request to GiantBomb. Prevent authentication errors
+	 showing up in PPA.
+	* Check that '*filestoformreleases' index exists before checking its value for new group
+      creation. This was preventing nzb importing from handling new groups.
+
+
+0.7.3.3 2017-06-21
+Fixed:
+	* SQL patch 0482 to update release_renaming_regexes entries.
+
+
+0.7.3.2 2017-06-20
+Fixed:
+	* Predb entries not being updated because of error in method signature. This prevented
+	 IRCScraper from working correctly.
+	* Replace overlooked occurences of 'predate' with 'created' in queries. Closes Issue 2474.
+
+
+0.7.3.1 2017-06-09
+Fixed:
+	* Steam lookup repeating all the lookups because last pdate date/time wasn't saved properly.
+
+
+0.7.3.0 2017-06-05
+Changed:
+	* tmux configuration adjustments for <= v1.8.
+	* Update PC Games support, use Steam and GiantBomb only.
+	* The IRCScraper code has been changed to make it properly timezone aware. As before,
+	 predates are received as UTC/GMT time. However they are not converted using a call to the
+	 Database server (whose timezone is essentially unknown). Instead, the timezone of the
+	 connection to the server is used, which we are able to set as part of the bootstrap process.
+	 By default, this timezone will be the same as the PHP code running the indexer, but it may
+	 be set to any valid zone by the user.
+      Database changes: The 'predate' datetime field is replaced by a 'created' timestamp field
+     and a new 'updated' timestamp field is added.
+      ***NOTE*** If you have not already done so, you MUST populate the database's timezone tables
+     as described in their documentation. For Debian/Ubuntu users 'mysql_tzinfo_to_sql
+     /usr/share/zoneinfo | mysql -u root mysql' should load them easily, this will require
+     restarting the database server.
+      The smarty template now displays the timezone in the Date header so that it is obvious to
+     users. There is also an additional field for when the entry was updated.
+      Additionally the pager template is switched to the newer paginate.tpl that I have been
+     using in the dev-move-to-models branch.
+    * Reworked all Anime release naming regexes.
+
+Fixed:
+	* Problem with external yEnc decoders (hopefully). Closes issues 2383 and 2435.
+	* Path to bootstrap.min.js in Default theme.
+	* Path reference to settings.php for View Logs page. Fixes issue 2456.
+	* Fixed some fields in *.tsv files being processed incorrectly because it started with a
+	 double-quote, but didn't end with one.
+
+
+0.7.2.1 2017-05-04
+Changed:
+	* Updates to tmux configuration files for newer version (2.4) of tmux.
+
+Fixed:
+	* NULL value in predb.predate for IRCScraper. Closes issue 2449.
+
+
+0.7.2.0 2017-05-01
+Added:
+	* Per poster categorising of releases.
+	* Logging for IRCScraper's testing for duplicates, to try to determine why it sometimes fails
+	 to detect them. This also prevents the script from exiting because of the exception.
+
+Changed:
+	* Removed python module check in tmux/run.php, as python is no longer supported.
+	* Updates to scripts simple.sh, simple-expanded.sh, and threaded.sh to get rid of outdated
+	 elements.
+	* Composer uses '--prefer-dist' for stable branches, '--prefer-source' otherwise. Part of the
+	 move to not using the repo in production.
+	* SQL/Database optimisations.
+
+Fixed:
+	* Properly categorize ANiHLS and HAiKU releases as TV > Anime (please run
+	 'php misc/testing/Release/recategorize.php all' to recategorize releases).
+	* Properly categorise and rename SDCLiP releases.
+	* Properly populate anidb_episodes table.
+	* Fixes to IRCScraper class to make it more resilient for those suffing the intermittent missing
+	 catalogue error.
+
+
+0.7.1.2 2017-04-08
+Changed:
+	* Stable branches now prefer distributed version of code, instead of source. This may help
+	 with some local configuration problems, but is primarily intended to separate stable code
+	 from the repository meta data.
+
+0.7.1.1 2017-04-06:
+Fixed:
+	* Added missing field (collection_regexes_id) to multigroup_collections table definition.
+
+
+0.7.1.0 2017-04-03
+	***NOTE*** This requires an update of Composer itself, to v1.4.0 or later.
+	`composer self-update`
+Added:
+
+Changed:
+	* Removes conditional checking for TPG as it is no longer optional.
+	* Remove use cases for python backfill script.
+	* Remove nntpproxy support.
+	* Update fxp/composer-asset-plugin to v1.3.0
+		***NOTE*** This requires an update of Composer itself, to v1.4.0 or later.
+	* Increase release size floor values to -10/10 in NameFixer class uidCheck function for better
+	  mediainfo matching.
+	* Improve mediainfo uniqueid matching.
+	* Remove git repository checks from Tmux scripts. This is an effort to remove the use of the
+      repository from user code. Dev code will still use it for some tasks (e.g. apply tags for
+      releases).
+
+Fixed:
+	* Fix `zed update nzedb` (PR 2406).
+	* Redirect from index page to Install when 'install.lock' does not exist.
+	* Update control tool for sabnzbd v1.x API (PR 2398).
+	* Make NZBImport check for searchname dupes (Closes issue 2411).
+	* Update import predb daily batch script to handle changed layout on github. Also adds the
+      date of the file to successful download message.
+    * Gamma PC Games view doesn't display grouped by gamesinfo_id.
+
+
+0.7.0.0 2017-03-06
+***IMPORTANT*** If you are updating from an older version, you must update to this version and
+following the steps to migrate configuration files BEFORE you continue to update to the latest
+version.
+Added:
+	* New setting (site.main.incognito) that determines if the main page is shown to vistors, or if
+	 they are redirected to the login page instead.
+      Currently there is no way to edit this in Site => edit.
+    * dev-mgr (MultiGroup Releases) branch. This adds new feature for matching releases spread
+     across several groups.
+    * New setting (site.main.incognito) that determines if the main page is shown to vistors, or if
+     they're redirected to the login page instead.
+      Currently there is no way to edit this in Site => edit.
+    * This adds logging of failed (as in errors, not zero results) regexes to the nZEDb log.
+      **NOTE** This supresses warning messages in the PHP log.
+    * Update nZEDbBase.php file to be able to return any of the 'constant' values.
+
+Changed:
+	* Update sequential scripts for mandatory TPG use, (PR 2379).
+	* Improve performance by doing poster check in PHP instead of single row MySQL queries.
+	* Updates to simple.sh and simple-extended.sh scripts (PR 2391 and 2392).
+	* Move search and user menu to headermenu.tpl in Charisma theme.
+	* Update Charisma theme to use new bootswatch library, remove unneeded css and make it use the
+	 bootswatch slate theme (make it darker).
+	* Move location of configuration files (config.php, settings.php, etc.) to .../configuration
+      ***NOTE*** See v0.7.0.0 entry at https://github.com/nZEDb/nZEDb/wiki/Update-Guide for
+     additional instructions.
+
+Fixed:
+	* Search by reqid link in predb.tpl (closes issue 2381).
+	* Settings issues with AniDB population preventing run.
+	* Default movie process quantity to 100 if not specified, else use setting (PR 2388).
+	* Change checks in NZB to look for false from Db lookup, instead of Traversable which does not
+	 guarantee useful data.
+	* Fix for uspsetting.sh - powerline segment (PR 2397).
+
+
+0.6.9.0 2017-02-06
+	***IMPORTANT***
+	  With the next release (in March), some required changes will be made.
+	1) The minimum version of database we support will be raised (MariaDb 10.0/MySQL 5.6).
+	 Additionally, we now strongly reccommend MariaDb for all users. It has all the features of
+	 MySQL, plus additional stability and functionality (generally faster). MySQL has changed its
+	 default settings for a number of features/modes which cause issues with nZEDb, so we will no
+	 longer be supporting it directly. If you must use MySQL, you are expected to know what you
+	 are doing and maintain it yourself. Check the comparison docs here:
+	   https://mariadb.com/kb/en/mariadb/mariadb-vs-mysql-compatibility/
+	   https://mariadb.com/kb/en/mariadb/system-variable-differences-between-mariadb-100-and-mysql-56/
+	2) Tables Per Group will become compulsory. Please convert now to avoid problems. The
+	 .../misc/testing/DB/convert_to_tpg_alt.php script (with the truncate option) is reccommended.
+Added:
+
+Changed:
+	* Updates to readme.md (PR 2366).
+
+Fixed:
+	* Check for incompatible tmux versions and abort if installed (PR 2353).
+	* Predb page link for predb search (closes issue 2356).
+	* Work around to prevent some db versions using auto-increment value on an explicit 0 for
+	 Categories Other's.
+	* Change leftover references to group_id in python scripts and ProcessReleases class.
+	* Bad settings data for yydecodepath.
+	* Adds releases_groups table to resetdb.php (PR 2365).
+	* Fixes typo in ProcessAdditional.php which prevented timeout setting being used correctly (PR 2364).
+	* Wrong number of parameters in removeInstallBin function sql query.
+	* Bring in b3s3rk's fix, from MGR branch, for the duplicate ReleasesGroups entries.
+	* Update threaded.sh for newer fixRelNames params (PR 2376).
+
+
+0.6.8.1 2017-01-09
+Fixed:
+	* Paths for install.sh script
+
+
+0.6.8.0 2017-01-02
+Added:
+	* dev-releases_groups branch. This provides the ability to have more than one group
+     assocciated with a release.
+	* Created new bash script to clone and use composer install. The script can be run from the
+	 directory you want nZEDb installed to (usually /var/www) using:
+		bash <(curl -s https://raw.githubusercontent.com/nZEDb/nZEDb/0.x/_install/install.sh)
+
+Changed:
+	* Sort contents of 10-settings.tsv to make findind incorrect/missing entries easier ;-)
+	* Move tmux Monitor pane logging to resources/logs folder, fixes notice in monitor pane when
+	 starting tmux.
+	* Disable Desura lookups for now, site has changed ownership and is not functional currently.
+	* Improve release renaming.
+	* Make match_prefiles more precise with match attempts and reduce initial memory usage.
+	* Updates tmux configuration for using newer versions (PR 2343).
+	* Move predb from frontpage to admin area.
+
+Fixed:
+	* Verify settings_table failing for PHP 5.6 users, because of reversed list() parameter, due to
+	 misreading the documentation (Fixes issue 2319).
+	* Gamma Console cover view not displaying releases grouped by Console ID.
+	* Fix post processing for tv shows (PR 2326).
+	* Books processing variable incorrect, causing only one category to run.
+	* postprocessing_non_amazon and postprocessing_additional PHP Notice/PHP Warning (Issue 2330).
+	* Update delete_release stored procedure to use separate queries and no CONCATs for the WHERE
+	 clause.
+	* Correct powerline tmux config (PR 2346).
+
+
+0.6.7.0 2016-12-05
+Added:
+	* Unit test and console command to check that the settings table has all entries from
+	 settings.tsv.
+      To run the tests do: ./zed test app/tests/ This runs ALL tests, although there is only
+     one currentyly ;-)
+      To use the command do: ./zed verify settings_table
+      This will list out any entries from 10-settings.tsv that cannot be found in your Db table.
+      Syntax for the latter command is tentative and may be changed in the future.
+
+Changed:
+	* Revamp categorySearch for cleanliness and make category determination more reliable and
+	 extensible.
+	* Replace reqid.nzedb.com with reqid.newznab-tmux.pw as the default server.
+	* Update Composer configuration to use our fork of Git.php.
+	* Update simple-expanded.sh. Removes update_theaters as Rotten Tomato's API is no longer
+	 freely available (PR 2313).
+
+Fixed:
+	* Broken logic in XML_Response class that lead to high response times.
+	* Issue with SphinxSE 2.2.11 and maximum return size in ReleaseRemover with larger DB.
+	* Improve site/admin site performance in a few queries in Releases and Groups.
+	* Change NZB Writing to use XMLWriter instead of string buffering for standardization.
+	* Fix advanced search and update related queries (PR 2308).
+	* Added some patches to fix some known setting mistakes (caused by missed or missing patches).
+	* Verify settings_table failing for PHP 5.6 users, because of reversed list() parameter, due
+	 to misreading the documentation (Fixes issue #2319).
+	* Verify settings_table failing for PHP 5.6 users, because of reversed list() parameter, due to
+	 misreading the documentation (Fixes issue #2319).
+	* Gamma Console cover view not displaying releases grouped by Console ID.
+	* Post processing for tv shows (PR 2326).
+	* Books processing variable incorrect, causing only one category to run.
+
+
+0.6.6.2 2016-11-08
+Fixed:
+	* Incorrect SABnzb URL setting fetch.
+
+0.6.6.1 2016-11-08
+Fixed:
+	* Fix update_releases script not using app\models\Settings class.
+
+0.6.6.0 2016-11-07
+Added:
+	* Option for admins to delete topics in forum.
+	* Search for releases by poster, by clicking on poster name in releases details page.
+
+Changed:
+	* Brought in dev-move-to-settings-model branch. This is expected to cause problems as we
+	 iron out the final wrinkles. Indexing side should mostly be fine as it was previously
+	 merged some time ago. The web side is where we expect most problems to occur. Please keep
+	 an eye on your logs and let us know of *any* problems showing up.
+	* Add the Imagick PHP extension as a required dependency.
+	 ***NOTE*** If you do not already have this extension you *must* install it or PPA will
+	 cause errors. Do:
+		sudo apt-get install php5.6-imagick (or php7.0-imagick, depending on your PHP version).
+	* Switched to using ImageMagick (from GD) for handling image thumbnails, etc. during PPA.
+	* Replace duplicate categorySearch function in releases and exclude leading -99 improving query
+	 speed
+
+Fixed:
+	* Segfaults during PPA caused by broken sample images (fixes issue 2278).
+	* User and role category exclusions (fixes issue 2290).
+	* SQL patch to ensure the indexer, ppa, innerfileblacklist setting exists.
+	* Correct typo causing maxmusicprocessed setting lookup to fail.
+	* Fix speed and count accuracy issues with API/Browse functions (PR 2303).
+
+
+0.6.5.3 2016-10-17
+Changed:
+	* Remove images/covers support from Trakt (they will no longer serve images after 31st. October).
+	* Switch Smarty to bootstrap through lithium instead of just the libraries. Hopefully this will
+	 not cause more problems than it fixes.
+
+Fixed:
+	* Advanced search link in Gamma theme.
+	* Group info included in Extended API output.
+
+
+0.6.5.2 2016-10-13
+Changed:
+	* Switch Smarty to bootstrap through lithium instead of just the libraries. Hopefully this will
+	 not cause more problems than it fixes.
+
+
+0.6.5.1 2016-10-12
+Added:
+	* Add caching to getPagerCount function to reduce load on indexers with many API calls.
+
+Changed:
+	* Issue 2263 - Out of memory issue checking RAR files. Add limit checkings to the extra options.
+
+Fixed:
+	* Add missing setting for settings table.
+
+
+0.6.5.0 2016-10-03
+Added:
+	* TinyMCE editor support to forum and admin->content.
+	* Support for per role category exclusions to admin->role edit page(Closes issue #1639).
+
+Changed:
+	* Refactored scripts using nzedb\db\Settings class without actually using any of the class'
+	 additional features, to use the parent nzedb\db\DB class. This is to let me work on
+	 moving the scripts that DO need the additional features over to using app\models\Settings
+	 instead and properly separating business logic from the way models get used.
+	* Updated NzedbYenc adapter to support decodeIgnore in the extension, instead of falling
+	 back to the Php adapter.
+	 ***NOTE*** This changes the API for the function so all users of the extension will have to
+	 upgrade to at least v1.1.0, or the code will generate errors.
+		https://github.com/niel/php-yenc/releases
+	* Force php-yenc to use v1.2.2 or later, which fixes some issues with multi-part.
+	 ***NOTE*** If you are using the php-yenc extensions you will have to update
+	* Restore reporting of total rows to API response.
+	* Group audio releases by album (fixes issue #2239).
+	* Alter NzedbYenc adapter test to also check for version > 1.0.0 as that version is no longer
+	 compatible with the adapter's implementation.
+	* Refactor yydecode to use std I/O instead of files, improves performance (PR 2266).
+
+Fixed:
+	* Wrongly named autosize script in Alpha and Charisma themes (fixes issue #2268).
+	* Prevent TmdbAPI constructor from exiting hard. Instead it now returns null on failure (Fixes
+	 issue 2271).
+
+
+0.6.4.1 2016-09-08
+Added:
+	* Travis build icons on README for main three branches. Currently only the Installer are
+	 tested but we will expand the test suite to include more.
+
+Fixed:
+	* Content display for not logged in users in Charisma/Gamma/Gentele/Omicron themes.
+	* Prevent yEnc from configuring all adapters during install process, as that would require Db
+	 access which isn't available yet. Closes issue #2257.
+	* Have the yEnc adapters use the PHP adapter for decodeIgnore(). Slow but it what happened before.
+	* Wrap $this->release['group_name'] in an isset check before assignment to avoid missing index
+	 error reported in issue #2259.
+
+
+0.6.4.0 2016-09-05
+Changes:
+	* Refactored our yEnc code to use a single class. Lithium adapters are used for the available
+	 methods, the best available adapter is automatically configured as the default.
+	  No user configuration should be needed, except for the path to ydecode in the settings as
+	 before. simple_php_yen_decode can be removed from that setting for those using it, as the
+	 extension is automatically detected if available.
+	  For PHP 7.0 users, a new extension is available to replace simple_php_yenc_decode (which
+	 cannot be compiled for PHP 7+). This extension is also available for PHP 5.6.
+	  Those familiar with Zephir and able to compile the extension themselves, can do so from this
+	 repository: https://github.com/niel/php-yenc
+	  If you can not compile, and are a trusting soul, precompiled versions, in a .deb file, can be
+	 downloaded from:
+	    https://github.com/niel/php-yenc/releases/download/v1.0.0/php5.6-yenc_1.0.0-5_amd64.deb
+	    https://github.com/niel/php-yenc/releases/download/v1.0.0/php7.0-yenc_1.0.0-4_amd64.deb
+	  The deb package assumes that PHP 5/7 is installed with the php5.6-*/php7.0-* style of
+	 packaging it will not work correctly with the php5-*/php7-* style (extension should install,
+	 but the ini files to load it will be in the wrong locations, so you'll have to correct them).
+	* Update hint for yydecode setting in site-edit.
+
+Fixed:
+	* Sorting arrows on admin->user-list page.
+	* Update isTV regex to match full season releases (PR 2244).
+
+
+0.6.3.3 2016-08-24
+Fixed:
+	* Change rt_attr_string to rt_attr_uint as a dummy field. As attributes are pre-cached, strings
+	 could cause out of memory issues.
+     ***Note*** If using sphinx search the following is required to update the index:
+		sudo service sphinxsearch stop
+	  Edit /etc/sphinxsearch/sphinx.conf if you made any changes from the default
+		sudo mv /etc/sphinxsearch/sphinx.conf /etc/sphinxsearch/sphinx.conf.1
+		sudo cp /var/www/nZEDb/misc/sphinxsearch/sphinx.conf /etc/sphinxsearch/sphinx.conf
+		sudo service sphinxsearch start
+		php misc/sphinxsearch/populate_rt_indexes.php releases_rt
+
+
+0.6.3.2 2016-08-15
+Fixed:
+	* Fix incorrect column name in patch 447.
+
+
+0.6.3.1 2016-08-08
+Changes:
+	* Make themes more lower resolution/mobile devices friendly.
+	* Improve JSON Response from API/RSS by basing it off of XML Response (PR 2194).
+
+Fixed:
+	* Add required rt_att directive for sphinx v2.2.11
+		Note: if using sphinx search the following is required to update the index
+		sudo service sphinxsearch stop
+		sudo mv /etc/sphinxsearch/sphinx.conf /etc/sphinxsearch/sphinx.conf.1
+		sudo cp /var/www/nZEDb/misc/sphinxsearch/sphinx.conf /etc/sphinxsearch/sphinx.conf
+		sudo service sphinxsearch start
+		php misc/sphinxsearch/populate_rt_indexes.php releases_rt
+	* Undefined index genreid in Charisma/Gamma/Gentele/Omicron themes (Fixes issue 2209).
+	* Add missing glyphicons-halflings images to shared/img folder and adjust CSS of Gamma theme.
+	* Replace somehow reverted icon- with font-awesome versions in viewmoviefull and xxx tpl files in Alpha theme.
+	* Install's bootstrap process that prevent use of Settings table before it is created.
+	* User cart operations in themes.
+	* Adjustments to DbUpdate class to be sure Settings instance is there when needed.
+	* Add checks for tv attributes in XML_Response.php (Fixes issue 2225).
+
+
+0.6.3.0 2016-08-01
+Added:
+	* UHD subcategories to Movies, TV and XXX categories.
+	 ***Note*** run recategorize script to populate the new categories
+		php misc/testing/Release/recategorize.php all
+
+Changes:
+	* Update Omicron CSS/JS to AdminLTE 2.3.5
+	* Update profile edit pages in Charisma/Gentele/Omicron themes.
+	* Add group parameter support to api search function (Closes issue 2195).
+	* Use max headers iteration site setting if set (or max of 1,000,000 if not set) during
+	  multiprocessing safe binaries This will ensure we don't queue too many jobs in one loop if
+	  you are behind on updating and is consistant with other update binaries methods.
+
+Fixed:
+	* Reset user grabs and api requests in Charisma/Gamma/Gentele/Omicron themes (Fixes issue 2206).
+	* Remove searchname after the guid when calling release details page in
+	 Charisma/Gamma/Gentele/Omicron themes.
+	* Adding movies to my movies list from in theatre page in Charisma/Gentele/Omicron.
+	* Marking of new releases in Gamma theme browse page.
+	* Add work around for duplicate constants warning.
+	* Restore missing nzb download to api.php (Fixes issue 2212).
+	* Leftover r.group_id in requestid_threaded.py (Fixes issue 2213).
+	* Blank screen on fresh deployment (Issue 2214).
+	* RSS/API usenetdate format to conform with newznab api specification.
+	* Blank browse pages when browsing per category.
+	* Display of browsing categories on browse pages of every theme.
+	* Add lithium libraries bootstrap for Admin pages (Fixes issue 2215).
+	* Wrong order of inserted values in Groups update function (Closes issue 2217).
+
+
+0.6.2.4 2016-07-08
+Changes:
+	* Refactored all scripts to use the app/extensions/util/Versions class instead of the older
+	 nzedb\utility\Versions.
+
+
+0.6.2.3 2016-07-07
+Changes:
+	* Updated fxp/composer-asset-plugin dependency to v1.2.0
+
+Fixes:
+	* Create new bootstrap file (.../bootstrap.php) to enable nzedb and lithium's app libraries
+	 to load together. This fixes #2205.
+	  New files should use it as the base require_once instead of indexer.php. Old files will be
+	 converted over when it is convenient.
+
+
+0.6.2.2 2016-07-06
+Fixes:
+	* Other category not available on new installs, due to insert query still using 'category' table.
+	* Malformed RSS for my movies and my shows RSS.
+
+
+0.6.2.1 2016-07-04
+Fixes: Updated nzedb.xml file.
+
+0.6.2 2016-07-04
+**NOTE** we now only support PHP 5.6 and later versions.
+Added:
+	* Feature apixmlwrite (PR 2155).
+	* Support for Season only searches with fast TV query.
+	* Multiple channel support for IRCScraper.
+	* Gentele theme (PR 2156).
+	* Unique mediainfo ID matching (PR 2153).
+
+Changed:
+	* Update minimum PHP requirements to 5.6.10+
+	* Improved RSS query times.
+	* Made nzb-export comments reflect a more specific date format.
+	* Enabled third pre channel, remove bad sources from ircscraper_settings_example and IRCScraper class.
+	* AniDB site query optimization and code cleanup.
+	* Updated version of unionofrad/lithium library.
+	* Switch Charisma/Omicron to iCheck checkbox style and new Pnotify style.
+	* Updated version of barracudanetworks/forkdaemon-php library (adds unlimited child run support).
+	* Make fixReleaseNames predbft deterministic to prevent useless threads.
+	* Remove release searchname from Gamma profile page (comments part).
+	* Improve RSS query times.
+	* Change some dates in the output to not use RSS style as they are not RSS attributes.
+	* Make screen simple-expanded script executable.
+
+Fixed:
+	* Bug with TV API changes that causes unmatched Show/Sxx/Exx queries to return data.
+	* TV API query will wrongly return an tv_episodes_id value when no sxx/exx/airdate is passed.
+	* Several fixes to Capabilities handling.
+	* nzb-import using filenames as searchname now strips .gz as well as .nzb.
+	* Local lookup not working for airdates because Sxx/Exx is still being set as junk data.
+	* TV Processing returns alias for wrong show first instead of direct show title match.
+	* Fallback TV search now returns only specific episodes / also fix Season pack lookups.
+	* Revert Gamma to use customized utils.js and not the shared one (Closes issue 2166).
+	* No background images in Charisma/Omicron themes.
+	* Dev fixrelsinglerun (PR 2169).
+	* category_id not changed to categories_id for category regexes (Closes issue 2171).
+	* SQL injection in Movie.php (PR 2180).
+	* Initial default theme not set to Alpha, because of lower case first letter.
+	* TV menu link on Default and themes that use it as their base.
+	* Triggers in schema (Closes issue 2184).
+	* Forums on Charisma, Gamma, Gentele, and Omicron themes (Closes issue 2174).
+	* Fix Lithium Connections to send host:name in host field as Lithium expects (PR 2189).
+	* Links to colorbox images in Gamma theme.
+	* PreDB page layout in Gamma theme.
+	* Clean up duplicated and bad functions in Gamma theme's utils.js
+	* Problem introduced with TV API changes, that causes unmatched Show/Sxx/Exx queries to
+	 return data.
+	* Several issues with Capabilities.
+	* Importing NZB, using filename as searchname, now strips .gz as well as .nzb.
+	* Missed occurences of categoryid in UserMovies.php (Closes issue 2191).
+	* Wrong path to file extension icons in Gamma theme viewfilelist.tpl.
+
+
+0.6.1.3 2016-06-23
+Fixed:
+	* Category_id not changed to categories_id for category regexes. (Closees issue 2171).
+	* Local lookup not working for airdates because Sxx/Exx is still being set as junk data.
+	* Initial default theme not set to Alpha, because of lower case first letter.
+
+0.6.1.1 2016-06-08
+Fixed:
+	* Renamed 10-category.tsv to 10-categories.sql
+	* Corrected *_Other categories to x999 in 10-categories.sql
+
+
+0.6.1 2016-06-06
+**NOTE** PHP v5.5 reaches its end of life 2016-07-10. This (0.6.1) will be the last release to
+target it.
+ The next release will require PHP 5.6+
+Added:
+	* New release name format not matched by reqid - includes updated schema/new triggers (PR 2127).
+	* Couch Potato icon to Gamma theme (Closes Issue 2115).
+	* Option to specify the minimum file size using the API? (Closes Issue 234).
+	* Include PREDBURL (if PREDB info exists) in extended=1 API information (Closes Issue 2035).
+	* More verbose output for update git, db commands.
+	* Search Movies (PR 2125, Closes Issue 1581).
+	* Asset (CSS, JS, etc.) management library to reduce duplication of these resources and allow
+	for multiple versions to be used.
+
+Changed:
+	* Numerous SQL query improvements for speed.
+	* Comment out max_matches (deprecated since sphinx 2.2.3) and change sphinx.pid location to
+	proper /var/run/sphinxsearch/searchd.pid.
+	* Changing table 'category' to 'categories' along with references to categoryid => categories_id.
+	**NOTE** This involves changes to your releases table. It will take some time, potentially a
+	very long time, depending on the number of releases you have.
+	* Other changes to tables to bring them inline with lithium conventions. Shouldn't take as long.
+	* Broken NZB files are now detected in clean NZB script.
+	* NZBImport now sets the nzb_guid during the import.
+	* Removed autopatcher script functionality.
+	* Some of Alpha's icons to use font-awesome equivalents.
+
+Fixed:
+	* MySQL connect ignored unix socket if host/port were supplied. Now the socket takes precedent.
+	* Reinstated the LINES TERMINATED BY clause to loading data files to override default. This
+	prevented some data files being correctly loaded into the database.
+	* Update collection regex in a.b.mom.
+	* Yahoo search fix (PR 2121).
+	* TV categorization mismatches.
+	  ** NOTE *** - you will need to do the following to fix the categorization:
+		`php /var/www/nZEDb/misc/testing/Release/recategorize.php all`
+	this will take a while to complete.
+	* Reference to configuration file/location for IRC Scraper in tmux-edit.tpl.
+	* Fix Recaptcha settings (PR 2135).
+	* Prevent deadlocks on binaries and releases updates.
+	* WEB-DL shows as option in My TV shows when not used as a category (Closes Issue 2110).
+	* Remove derefferer use from CouchPotato url links in Gamma theme.
+	* PostProcess Additional tmux query not accurate with PP add queue.
+	* Profile edit included non theme names in its dropdown list.
+	* Buffer nzb creation fixes (Closes Issue 2139).
+	* Add 'artist - title' display to Gamma music page (Closes Issue 2149).
+	* Restore 'None' to themes drop-down list, in profile edit, so site default theme can be used.
+	* Couch Potato should send IMDB ID from page request not release guid.
+
+
+0.6.0.1 2016-05-07
+Fixed:
+	* Db entries in settings for ReCaptcha.
+
+0.6.0 2016-05-02 updated 2016-05-03
+Added:
+	* Support for Composer to handle the project and its dependencies (third party libraries).
+	 In particular this means after this update you will no longer use git pull to updates then
+	have to manually run update_db (that script has been removed). Instead you will have to install
+	Composer (one time only) https://getcomposer.org/doc/00-intro.md#downloading-the-composer-executable
+	 We recommend the global method, as we do not provide the composer.phar file in our repo.
+	 Then in nZEDb root dir run:
+	    composer install
+	 Once that is done (and in the future) run:
+		./zed update nzedb
+	 This will check and install all dependencies and then run the Db updater automatically.
+	 You may have to set permissions on .../app/libraries and .../resources/smarty/templates_c
+	* We are now using the lithium (li3) framework to handle a number of tasks. The ./zed
+	command is an alias to the frameworks li3 console command added in the nZEDb directory for
+	convenience (always use this directory to run such commands in your shell).
+	 I hope to replace many of our cli scripts with more console commands, to make them more
+	useful and easier to remember ;-)
+	* Console commands to replace some scripts. Usage: ./zed <command> <options> (without options
+	 to get help text).
+		update
+		version
+	* simple-expanded.sh Screen script. This is an updated version of the standard screen script
+	with common options already enabled (PR 2113, Thanks to Wally73).
+	* 'gn' case to nfo retrieval in api, to be in line with newznab api spec.
+
+Changed:
+	* Move location of Smarty's additional directories (cache, compile, and config) to the resources
+	directory. These may need you to set the permissions to 777.
+	* Moved nZEDb from .../nzedb/build to .../build/nzedb.xml Notice the filename case has changed.
+	* Removed some scripts:
+		.../misc/testing/DB/autopatcher.php     ... use './zed update nzedb' instead.
+		.../cli/update_db.php                   ... use './zed update nzedb' instead.
+		.../cli/versions.php                    ... use './zed version <option> instead.
+
+Fixed:
+	* Broken links for NFO display on Charisma/Omicron cover pages (Issue 2099).
+	* Prevent undefined index 'isadmin' on forumpost page in Gamma template.
+	* NFO display on coverpages in Light/Default themes (ssue #2099).
+	* Division by zero error when viewing filelist in Alpha and Default themes.
+	* Filelist display in all of the themes, reduce overhead in NZB class related to segments array.
+	* Links to detail pages in Gamma theme (remove release name).
+	* Update sphinx releases_rt index when release files are added.
+		*** NOTE *** - you will need to do the following to update the sphinx index:
+		1) stop sphinxsearch - `sudo service sphinxsearch stop`
+		2) clear old index - `sudo rm /var/lib/sphinxsearch/data/*`
+		3) start sphinxsearch - `sudo service sphinxsearch start`
+		4) populate the index - `php /var/www/nZEDb/misc/sphinxsearch/populate_rt_indexes.php releases_rt`
+	* Check for SD movies before HD ones, to prevent some being falsey matched (PR 2120).
+	* Update Scrutinizer file to hopefully fix 'failed install' errors.
+	* Reinstate the LINES TERMINATED BY clause to loading data files to override default behaviour
+	of only using '\n' instead of '\r\n' that we need (Issue 2104).
+
+
+0.5.5 2016-04-04
+Added:
+
+**IMPORTANT** Be aware that for the this update (April) the stable branch will no longer be the
+master branch. It has been renamed to 0.x. You HAVE to run the following commands to stay on
+stable code:
+	git checkout master
+	git branch -m 0.x
+	git fetch -p
+	git branch --set-upstream-to=origin/0.x
+
+Changed:
+	* Themes have been updated to use Category constants instead of number constants. Theme
+	 designers should never use the numbers directly, they are subject to change at any time.
+	* Charisma/Omicron themes - Move group browsing from user to left side menu.
+	* Move rss, rssdesc and search-filter.tpl files to themes/shared folder. Themes designers
+	 need not implement these templates. In fact for most, they SHOULD not implement them.
+	* Charisma/Gamma/Omicron themes - Replace custom filtering code with search-filter.
+	* Removing extraneous container tags from Alpha theme for Bootstrap v3 (PR 2074).
+	* Update jQuery to version 2.2.1, use jQuery migrate 1.4.0
+	* Gamma theme - Made menus dropdown on hover.
+	* Gamma theme - Bootstrap 3 compatible now.
+	* We now force each users' saburl entry to have a trailing slash.
+	* Rename the ID for posterwall's select dropdown to be more unique and move its style
+	 definition to the posterwall.css file.
+	* Change semantics for failed downloads.
+
+Fixed:
+	* Prevent unkown index '0' for null pagertotalitems result and force a zero value if missing.
+	* Gamma theme headermenu when not using coverviews.
+	* Some issues in the Default template (Issue 2011).
+	* Alpha theme. The Audio menu item does not work as intended (Issue 2026).
+	* "too few arguments" error in Tmux class.
+	* Charisma/Gamma/Omicron themes - Prevent undefined index userdata notice in headermenu.
+	* Gamma theme - RSS issues.
+	* Alpha theme - Console page, rows going outside the grey box element.
+	* Alpha theme - Positioning of View/Admin buttons on category browse pages (Closes PR 2063).
+	* Alpha theme - Replace form-search with proper form-inline.
+	* Charisma/Omicron themes - Replace form-search with proper form-inline.
+	* Admin - Incorrect constant name PC_GAME in predb.tpl, to correct PC_GAMES.
+	* Replaced Genres::CONSOLE_TYPE causing Console.php to fail.
+	* Alpha theme - View NZB comments block from spilling beyond its wrapping grey box.
+	* Book categories in Site Edit "type of books to lookup".
+	 ***NOTE*** You may need to reselect these to pp them correctly.
+	* Alpha theme - Posterwall had white on white characters in the dropdown list for category.
+	* NZBGet url error warning on empty NZBGet url on profile edit page.
+	* Wrong name for failed releases in template.
+	* Add back TV processing to NFO files processing (Issue 2080).
+	* Undefined index $covgroup in Alpha theme preventing cover|list view (Issue 2082).
+	* Default theme menus for cover/list views
+	* Alpha theme menus when coverview is not enabled
+	* Releases' table videos_id and tv_episodes_id need to default to 0 (Closes issue 2084).
+	* Mismatched braces in api which caused search problems (PR 2087, Closes issue 2069).
+
+
+0.5.4 2016-02-29
+Added:
+	* Created second directory for Smarty plugins (.../www/plugins) where we will keep our added
+	 plugins, to avoid issues when updating Smarty.
+
+Changed:
+	* Updated Smarty to version 3.1.29
+	* Change references of releasetitle to title in myshows-add page of Charisma/Omicron theme (PR 2054).
+	* Disable API access for disabled users (PR 2062).
+	* Remove unneccessary MYSQL_ATTR_INIT_COMMAND from PDO dsn options array. This was only
+	 needed before PHP 5.3.6 as 'charset' was ignored.
+
+Fixed:
+	* Prevent undefined index notices in full series and movies view, remove references to
+	 nzbvortex and nzbgetintegration (PR 2039).
+	* myshows-add.tpl (PR 2051, PR 2054).
+	* Missing jquery.qtip2.js in themes/shared/script.
+	* profileedit pages in Charisma/Gamma/Omicron templates
+	* Wrong paths to scripts in Omicron theme
+	* Regression that remove WWW_THEMES definition from Page class.
+	* Fix paths in Charisma theme (PR 2055).
+	* Replace deprecated HTML tag <center> with proper CSS (PR 2056).
+	* Correct path for images on opening page of Install.
+	* Long running queries for RemoveCrap WMV
+	* Update isISO categorization (PR 2040).
+	* Juggle Book category values so they match the existing ones of newznab's published API.
+
+
+0.5.3 2016-02-01
+Added:
+	* A function to return the CAT_OTHERS_GROUP, as array constants are not supported for PHP 5.5.
+		When 5.5 reaches EOL in July we can revisit this.
+
+Changed:
+	* Bring in dev-git-hooks changes. Adds whitespace checking/fixing to pre-commit hook (for
+	  devs only).
+	* Update getID3 library to version 1.9.11.
+	* Moved Other cats to 0000 range, books cat to 7000 range. This will allow 3rd. party apps to
+	  use the newznab category values with the API.
+
+Fixed:
+	* Fixed paths in  Charisma/Omicron themes (PR 2012).
+	* Added missing template file, to Default theme, which caused 500 error when clicking on movie
+	  title in covers view.
+	* Remove duplicate menu items for Login and Register in menu_items.tsv.
+	* In some cases, when not logged in, no theme is defined and certain links are broken with
+	  themes//style... appearing instead of a proper link.
+	* Several bad URLs in Charisma/Gamma/Omicron themes (missing '/' after the smarty constants).
+	* Fix wrong path to shared folder in Gamma theme.
+
+
+0.5.2 2016-01-04
+Added:
+	* Add Gamma template made by RickDB (adapted by Darius) (PR 1987).
+	* Adding noscript support to recaptcha (Default theme only, update custom themes that do not
+	  use it) (PR 2005).
+
+Changed:
+	* Add Trakt Support (PR 1985)
+	* TVDB and TVMaze scripts now support Airdate lookup.
+	* Change COUNT(*) queries to count the primary key columns to improve query performance.
+	* Re-work the count querying in PreDB class.
+	* Greatly improve CodecPoster accuracy and query speed.
+	* DNZB failures shouldn't send an easily corrupted searchname.  Now retrieves it from the DB by sent guid instead.
+	* Refactored our themes. This moves the themes_shared directory to themes/shared.
+		More importantly it now assumes a convention that themes should use Title cased names or
+	  they are not presented as available selections.
+		 Admins may rename the directory of any theme they want to omit from user choice to be
+	  fully lower-case (the change must be commited to prevent overwriting by next update).
+		 This change will be the basis for further improvements in time.
+	* Change grabs and group browse ordering in Gamma theme (PR 2007).
+
+Fixed:
+	* Column genre_id in gamesinfo table, not patched when schema was updated around patch 278.
+	* Omicron/Charisma movie cover links.
+	* Wrong paths in Omicron/Charisma templates (PR 1995).
+	* Paths to scripts in Charisma/Omicron themes (PR 1996).
+	* Provide a DNZB response code when no alternate match is found in DNZB query instead of just showing 404
+	* Attempt to fix issue with releases that have parts counters in the searchname not being sent to Sab properly
+	* Declare $client property in nzedb/processing/tv/TMDB.php (PR 1998).
+	* Fix wrong video sample extension in Gamma template (PR 2006).
+	* update_releases.php -> Call to undefined method finfo::close() (PR 2001).
+	* Fix missing table reference from queries in NameFixer (PR 2010).
+
+
+0.5.1 2015-12-07
+Added:
+	* Regexes for korean newsgroups (PR 1868).
+	* Regexes from request thread (PR 1948).
+	* French flag to "multi" releases (PR 1949).
+	* Add TVMaze and TMDB Scrapers (PR 1953).
+	* IMDB Icon to TV new poster wall.
+	* Make NFO file retrievable for a release via the API and update documentation.
+	* include NFOURL (if NFO exists) in extended=1 API information (Issue 1962).
+	* Add changes for API and pager to charisma and omicron templates (PR 1965).
+
+Changed:
+	* Improve games cover view query time.
+	* Improve movies cover view query time
+	* Releases that fail to parse for TV proc go into their own queue for review.
+	* SmartyTV class abstract errors / fix a few template issues.
+	* Cache counts for Movies, Music, Games.
+	* Speedup Music Cover Views and cleanup a lot of the queries.
+	* Speed up Books, Console, and XXX cover views.
+	* If TVDB cannot reach the API, catch the error and force local lookup.
+	* Improvement to Releases' queries.
+	* Re-work books cover view queries to improve performance.
+	* Re-work movies cover view queries to improve performance.
+	* Improve error reporting for API NFO.
+	* Update the alpha API description for NFO. Fixing bad copy paste.
+	* Improve NFO joining operations and reduce overhead.
+	* Remove option to postprocess [only] properly renamed releases from tmux (PR 1964).
+	* Update templates to font-awesome 4.5.0 (PR 1971).
+	* More speed ups to Music, Games, and XXX cover views.
+	* Alter Screen scripts to default to PHP rather than Python scripts (PR 1980).
+	* Remove update TV schedule from screen script (PR 1979).
+
+Fixed:
+	* Remerged Darius' original charisma/omicron themes into next-master. Hopefully this will fix the issues for master, but may need more work yet.
+	* Attempt to fix AEBN / ADM lookups (Issue 1914).
+	* Schema data for countries table using invalid column for private key.
+	* Collection regex errors (Issue 1954).
+	* Fix book related problems due to wrong var used (PR 1952).
+	* Bad logic for airdate shows after cleanup of TV parsing.
+	* First TV name processing Regex not enforcing the start of the string.
+	* Undefined offset and foreach errors in TMDB.
+	* TraktTv abstract errors from missing functions.
+	* Duplicate Alias Errors and cache alias lookups.
+	* Season Packs not showing up correctly in View Series.
+	* Handle XmlException for try/catch on TVDB lookup.
+	* Bad merge broke regex again.
+	* TV name parsing regex.
+	* If episode airdate not set insert null.
+	* Pager template should not round down. Using ceil round up for the last page is a better choice.
+	* Don't cache failed TV lookups when the Episode didn't find a match but the show did.
+	* Fix the dnzb failures part of search query in Releases.php (PR 1968).
+	* Security issues with DnzbFailures.
+	* Queries in DnzbFailures not working properly.
+	* XmlException errors in TVDB not being caught.
+	* Broken DF queries in Releases.
+	* Fix count of failed releases.
+	* Failed counts for cover views being lumped together instead of group_concat.
+	* Fix the full movie view in omicron/charisma templates (PR 1977).
+
+
+0.5.0-1 2015-11-03
+Added:
+
+Changed:
+	* Move My Shows to account menu, remove links to calendar and add Anime Series link to charisma template. (PR 1928).
+	* Remove totalrows count from functions, api and templates. (PR 1930).
+	* Speed up series list view query by removing releases join.
+	* Change patch 391 to drop and recreate user_series table due to unknown issue on InnoDB.
+
+Fixed:
+	* Anime pages in omicron/charisma. (PR 1925).
+	* Release Browse Queries not respecting table position on larger Databases with MariaDB.
+	* Tmux counters not accurately reflecting TV work (still off until new scrapers are finished).
+	* SCR in ReleaseRemover and improve query times for all release_files operations on larger databases.
+	* Attempt to fix Issue 1844, Pager counts not reflecting release availability.
+	* Index name on user series.
+	* Release-edit redirecting to wrong page (Issue 1940).
+	* Collection regex errors.
+
+
+0.5.0 2015-11-02
+Added:
+	* Statistical info for grabbed/failed releases to cover, browse and search pages. (PR 1885).
+	* Automatically generate comment on failed download. (PR 1889).
+	* text_hash column, triggers, and index to release_comments to prevent insertion of duplicated comments originating from automated messages, sharing etc. (PR 1891).
+	* List of releases failed to download reported by X-DNZB-Failure headers to admin area. (PR 1892).
+	* Script to extract TV covers from the database and save them to the tvrage directory in covers. .../misc/testing/PostProcess/extractTVCovers.php
+	* Anime new poster wall view. (PR 1897).
+	* updateTvRage.php in misc/testing/PostProc will now run in check mode to reconcile image files against the DB if you imported.
+	* Add view release option to failed releases list. Do not post comment for user, if that user already posted the failure automated comment.
+
+Changed:
+	* Completely refactored TV processing to use multiple sites instead of just TVRage.
+	* Replace TVRage Processing with TVDB
+		***	Note: We found a bug dating back to the beginning that caused bad titles to be inserted into the TvRage table
+          As such, we decided not to incorporate the title data by migrating it to the new videos schema.  We are not dropping the tables yet,
+          as there is still promise in joining the tables at a later date to populate some fields.
+	* Set TV cover images to pull from /covers/tvrage/ ***NOTE*** Run the extractTVCovers script in misc/testing/PostProcess/ ***
+	* Removed getimage.php as it was only used for displaying TV images... TV now adopts the standard cover method.
+	* updateTvRage script now looks for hascover = 0 instead... which still won't work because TVR is down.
+	* Change TVDB client class call. (PR 1894).
+	* Adjust templates for tvrage images change.
+	* Add deletion of dnzb_failures to deleteSingle. (1901).
+	* Improve Codec Poster removal query times by incorporating Sphinx FT if enabled.
+	* Lots more love for Sphinx FT in ReleaseRemover.  Greatly improves query times on big databases.
+	* Update parseTraktTv function, as it was occasionally inserting covers with tt prefix. (PR 1904).
+	* Update the search page in omicron/charisma templates. (PR 1907).
+	* Move all the TV related classes so nzedb/processing/tv folder. Move the processTvReleases function into main TV class. (PR 1910).
+	* Remove text_hash column, trigger and index from release_comments. (PR 1911).
+	* Change the order of removal in Patch 385. (PR 1912).
+
+Fixed:
+	* Invalid icon links in omicron / charisma themes.
+	* Host column misplacement in admin comments list when user ip tracking is enabled. (PR 1890).
+	* Error in extract script and a query error for new poster wall for TV.
+	* Forgot to add untracked anidb icon for poster wall.
+	* AniDB poster wall query not grouping by release.
+	* Attempt to fix AniDB icon not showing in multiple themes.
+	* Omicron poster wall typo, wrong script name in patch file 384.
+	* Alpha TV New Poster Wall missing div tag.
+	* ReleaseRemover not honoring LIKE search types causing blacklist removal issues and not producing enough matches in SPHINX mode.
+	* Undefined index error in updateTvRage.php (Issue 1900).
+	* Layout of tv->anime page. (PR 1905).
+	* Extend episodeSummary function with extended type switch for future use. (PR 1906).
+	* No covers shown on XXX /details pages. (PR 1918).
+	* Incorrect usage of date function (missing strtotime for int value).
+	* View TV Series query speedup caused incorrect join placement (2nd Attempt).
+	* Some local lookups were passing with invalid information causing them to show up as season 0.
+
+
+0.4.26-1 2015-10-07
+Fixed:
+	* Bug in ReleaseRemover which forced a Full Text search. This caused blacklist removal issues and not producing enough matches in SPHINX mode.
+
+0.4.26 2015-10-05
+Added:
+	* Xdebug and PHP settings to nzedb\config\settings.example.php
+		Changed default value of PHPMAILER_ENABLED constant to 'false' instead of undefined (it was commented out).
+		Changed error reporting level to not exclude any messages, as our code should run clean and therefore *any* messages should be investigated.
+		Update your settings.php if you want these.
+        **NOTE** Generating messages slows down the running code and hiding them does not stop them being generated, just displayed.
+	* Sphinx Full-Text Search for Filenames.
+		*** NOTE *** - you will need to do the following to update the sphinx index:
+			0) Minimum Sphinx v2.2.9
+			1) stop sphinxsearch - `sudo service sphinxsearch stop`
+			2) clear old index - `sudo rm /var/lib/sphinxsearch/data/*`
+			3) copy updated conf file - `sudo cp /var/www/nZEDb/misc/sphinxsearch/sphinx.conf /etc/sphinxsearch/sphinx.conf`
+			4) If you had previously edited the conf file - you will need to re-edit again.
+			5) start sphinxsearch - `sudo service sphinxsearch start`
+			6) recreate the tables - `php /var/www/nZEDb/misc/sphinxsearch/create_se_tables.php 0 9312`
+			7) populate the index - `php /var/www/nZEDb/misc/sphinxsearch/populate_rt_indexes.php releases_rt`
+	* Predb export script now has a default filename (predb_export_YYYYMMDDhhmmss.tsv) if only a path is specified.
+	* Display the date which a binary black list was last used (PR 1871).
+	* Base TV Class to make the addition of a new TV scraper easier (Still a WIP).
+	* Add filters to cover pages (PR 1883).
+
+Changed:
+	* More SQL fixes and optimisations (including PR 1871).
+    * Change sidebar menu XXX into Adult to match headermenu, change the icon (PR 1870).
+    * Three Arrows when viewing movie upper right corner (Issue 1850; PR 1854).
+    * Change font used in omicron and charisma templates, adjust layout of coverview pages (PR 1870).
+    * Re-organize and trim some fat out of TvRage.php in preparation for its *glorious* return.
+
+Fixed:
+	* Stopped PreDb import script from creating new groups with quotes around them.
+	* Reverted word-wrap change that caused a space to appear in release titles (alpha theme) Issue 1846 - clear your smarty cache.
+	* API search broken because of missing parameter.
+	* Sphinx Search broken for MariaDB installs (re-run create_se_tables script).
+	* Fix RSS Content Length Response (PR 1849).
+	* Collection regex edit page not showing the result.
+	* Display of api/download hits, in omicron and charisma templates, in last 24 hours (PR 1856).
+    * Background colors on profile and profile edit pages (PR 1857).
+    * Adjustments and fixes in charisma and omicron templates (PR 1858).
+    * Add back missing invites in profile page of charisma/omicron templates (PR 1869).
+    * Fix api json output (PR 1878).
+    * Updated predb insert trigger that got missed for new installs, (Issue 1875).
+
+
+0.4.25 2015-09-07
+Added:
+	* Two new templates from Darius: Charisma and Omicron.
+	* New Ubuntu 14.04.02 install instructions (PR 1784).
+	* Movie trailer configurable settings to Admin section of site.
+
+Changed:
+	* Wide spread changes to Database indexes and queries, to improve overall performance.
+		*** MUST RUN *** TPG Script to DROP old collections TRIGGERS after Patch 374 /nzedb/build/_runonce/tpg_delete_triggers_2015-08-14.php
+		***NOTE*** if using sphinxsearch then run 'php misc/sphinxsearch/toggle_search_type.php sphinx' to remove unnecessary release_search_data triggers.
+	* Parse most of the TraktTV details for movies.
+	* Add default values for movieinfo table.
+	* Tmux no longer analyses InnoDb tables on start up, as InnoDb uses online analasis (No change for MyISAM tables).
+	* Updates to Categorizing.
+	* Updates to Alpha theme.
+	* Console Processing Local now requires an exact platform match just like the Amazon lookups to prevent incorrect platform matches
+
+Fixed:
+	* Problem during install not loading settings.php from configuration.
+	* Delete collections that are broken after a timeout period (Issue 1791 + PR 1793).
+	* Error causing details and getnzb pages to intermiiently not load (Issue 1782).
+	* Issue where YouTube trailer URL's would get overwritten with the wrong URL.
+	* Issue where API NZB downloads would fail.
+	* Predb export scripts had a typo which prevented it working correctly.
+	* Display of movie trailers (Issue 1811).
+	* a.b.moovee collection regex, that was splitting subs out separately.
+	* PHP error if rowCount() is null (Issue 1834).
+	* predb_import_daily_batch script to properly calculate last timestamp for progress mode.
+	* Console Processing failing to validate Amazon API Return (Issue 1819).
+	* Invalid date-time format when updating consoleinfo if releasedate is blank.
+	* Issue with NZBDrone/Sonarr not having content-length header set on API calls.
+
+
+0.4.24 2015-08-03
+Added:
+	* Pick up additional RAR names (PR 1716).
+	* Support for downloading last rar/zip file when post processing (PR 1726).
+	* Matching for hyphenated music scene release names (PR 1719).
+	* Ordering comments by created date. Showing newest on top (PR 1712).
+	* Support for APCu or APC for caching (PR 1722).
+	* Adding a limit to the maximum number of headers a single group can grab per iteration of the main loop (default 1,000,000).
+
+Changed:
+	* All configuration files should now reside in .../nzedb/config.
+		*** IMPORTANT *** This will require manually moving some files, such as .../www/config.php and .../www/settings.php Keving has written a script to handle this for those that are too lazy ;-)
+		https://gist.github.com/kevinlekiller/233052179689512a5f58
+		You will also have to remove the require_once line from the bottom of config.php (handled by the script also).
+	* Query caching changes.
+	* Updated Smarty to v3.1.27
+	* Improvement in NNTP compression handling (Issue 1735).
+	* Returned user signups by month view, back to site-stats (PR 1740).
+	* Update ReleaseRemover with new variant of codec installer file (PR 1759).
+
+Fixed:
+	* Select All and Delete, in Advanced Search, not working (Issues 1713 1715).
+	* IRCScraper script (scrape.php) now looks in the correct location for its configuration file.
+	* Various Error Notices/Warnings (Issue 1714, 1737; PR 1742).
+	* Support for trakt.tv API v2 (PR 1728 and PR 1730).
+	* Issue if nZEDb_SSL_CAFILE is empty (PR 1729).
+	* API regarding JSON-Output (PR 1747).
+	* Updated regex for predb_import_daily_batch script to account for Dropbox's changes to link HTML.
+
+
+0.4.23 2015-07-06
+Added:
+	* Created a config directory under .../nzedb to contain configuration/settings files, so they are all together and don't need paths changing when code moves. I'll gradually move older config/settings files here, with some exceptions TBD.
+	* Matching for hyphenated music scene release names. (PR 1719)
+	* Support for APCu or APC for caching. (PR 1722)
+	* Option to show non-passworded releases AND unprocessed releases.
+	* Adding a limit to the maximum number of headers a single group can grab per iteration of the main loop. This allows for a reasonably safe catchup ability on out of date groups, without completely choking the database with one group's headers ;-)
+		***NOTE*** this may slow things down for some users of *very* active groups.
+		There is an entry in the Settings table (max=>headers=>iteration) to set the value (default 1,000,000), an entry in admin => Edit Site to make this easier will come when someone can be coerced into doing smarty work ;-)
+	* Support for post-prossessing to download the last RAR/Zip file, in order to find filenames.
+	* Add support for trakt.tv API v2. (PR 1728)
+
+Changed:
+	* Updated Smarty to v3.1.27
+	* Moved IRCScraper example settings file to the .../nzedb/config directory
+	* Ordering comments by created date. Showing newest on top. (PR 1712)
+	* Improvements to query caching.
+	* NZBImport now adds groups if they don't exist in the database instead of skipping the release.
+	* Avoid MySQL caching on transient content. This prevents useless data from filling the cache in place of useful data. (PR 1738)
+	* Allow NNTP to retry if compression fails to initialise.
+	* Autoloading for Smarty framework uses its Autoloader. Web pages now use a streamlined version of the previous autoloader, which is now removed from the Smarty tree. (Install process hasn't been tested yet. Let us know of any problems).
+
+Fixed:
+	* Issues 1713 and 1715. Select all + delete in advanced search.
+	* Problems with users being unable to log in due to double quoting in the db lookup query.
+	* Undefined offset: 1 in MiscSorter.php - Issue 1714.
+	* Fix the nzbFileList function. (PR 1727)
+	* Fix for changes in Trakt API v2. (PR 1730)
+	* Fix issues if nZEDb_SSL_CAFILE is empty. (PR 1729)
+	* Various Error Notices/Warning from PHP. (Issue #1737) and others.
+	* Users by month restored to site stats.
+	* API capabilites in JSON format.
+	* Installation file requiring corrected.
+
+
+0.4.22 2015-06-01
+Added:
+	* Captcha feature.
+	* Collection regexes from issue 1668 (part 1).
+	* Temporary caching for Amazon lookup failures. This prevents a title being repeatedly checked during the same loop.
+	* New cleanup script .../misc/testing/PostProcess/check_previews.php Run without parameters to see usage info.
+	* Matching for "release" and "author" when finding audio name. PR 1686.
+	* Additional audiobook regexes. PR 1689.
+	* DEViANCE and PLAZA to PC Game categorisation.
+	* Thumbnail creation setting.
+
+Changed:
+	* Update documentation.
+	* Removed obsolete files.
+	* Deprecated predb_dump script from the misc tree. Use the predb import and export scripts in .../cli/data instead.
+	* Altered ProcessReleases to better process the set limit. Addresses Issue 1630.
+	* settings.php.example
+		***NOTE*** Update your settings.php file to add the new settings.
+	* Changes to DB.
+	* Removed Rotten Tomatoes quality settings as they are no longer required.
+	* Corrected the RottenTomatoes image url - fixes Issue 1649.
+	* Move files around in misc/testing folder.
+		***NOTE*** this may break any custom scripts you have written.
+	* Refactored all files previously in the .../nzedb/controllers directory (which were NOT namespaced) to be in the /nzedb/ name-space.
+		This allows the namespace autoloader to be simplified and moves us closer to compliance with PSR standards.
+	* Improvements to the way Collections/Binaries/Parts are deleted, which should speed thingsup for some users.
+	* Updated .../cli/data/populate_tvrage.php. PR 1682.
+	* Updated the audioNFO regex to be slightly less rubbish. PR 1685.
+	* Improved release creation loop.
+	* Updated a.b.cd.image collection regex.
+	* Improvements to daytopost accuracy and speed. PR 1698
+
+Fixed:
+	* Renamed $pdo to $predb that was missed in refactoring.
+	* 2 issues with regexes relating to Issues 1635 and 1647.
+	* Fix issues with collection regexes relating to issue 1647.
+		***NOTE*** see http://tinyurl.com/k7vwc35 for details.
+	* Genre display in music pages
+		***NOTE*** Clear your smarty cache to correct.
+	* Popporn error causing XXX to not post process - also fixes Issue 1655.
+	* Notices in various web pages.
+	* Do urldecode before working on category to avoid possible errors. - PR 1669
+	* SABnzbd integration for 'verifycert' behaviour.
+	* An issue where the wrong cookie could be destroyed. PR 1671.
+	* Broken pager on search page. PR 1673.
+	* Some issues with the install process.
+	* Issues with IRCScraper. PR 1681.
+	* Error with GiantBomb API if empty result was returned.
+	* Fix typo in "Admin Home". PR 1688.
+	* Alternate USP not being set in config.php on install. Issue 1695. PR 1696.
+	* Incorrect php opening tag in anime page. PR 1703.
+	* Logged in users can view others profiles. PR 1705 and PR 1709.
+
+
+0.4.21 2015-05-04
+Added:
+	* X-DNZB-Failure header support.
+
+Changed:
+	* PR 1636 - Added admin menu state changes.
+	* Improved TV Posterwall query.
+	* Increase column sizes for bookinfo.overview, consoleinfo.review and musicinfo.review due to truncation.
+
+Fixed:
+	* PR 1620 - Switch to fanart.tv v3 api
+	* PR 1623 - Fix oversized fanart images when viewing movie info popup.
+	* Class not found error in Movie.php.
+	* PR 1634 - Fix typo that caused : PHP Notice: Undefined variable: in Binaries.php line 543.
+	* PR 1637 - Call to releases::search missing one parameter for basic searches in search.php
+	* Corrected 'see more' link on TV posterwall to point to /series.
+	* API query issue raised in comments for Issue 1637.
+	* PR 1638 - Fix the wrong table name in Regexes.php.  Was using release naming regexes to create collections.
+	* Fix issues with web RequestID lookups failing.
+	* Undefined offset in ProcessAdditional.
+	* Adding a check to see if the sqlpatch file was previously committed, before trying to update the commit.
+	* Problem behaviour when min/max sizes are both zero.
+
+
+0.4.20 2015-04-06
+Added:
+	* List of licenses used by nZEDb.
+	* Support for in DB collections (grouping) regex.
+	* "regex" sub-menu to admin menu.
+	* A "collections" menu item to the new regex menu.
+	* Support for category regexes in the DB.
+	* Support for alt.binaries.b4e.erotica.
+	* FULLTEXT indexes on bookinfo, consoleinfo, and musicinfo for better existing title matching.
+
+Changed:
+	* Move the blacklist menu into new "Regex" menu item.
+	* Convert collections regex to db.
+	* Better handling of .vol in regex extensions.
+	* Improvements to parsing nfo files for source.
+	* Switch to fanart.tv v3 api
+
+Fixed:
+	* Correcting tmp_pre table references to predb_imports in dump_predb script.
+	* Fixes for compressed NZB reading and return.
+	* Don't ignore renamed releases for local requestID lookup.
+	* Fix oversized fanart images when viewing movie info popup.
+	* Fix Class not found error in Movie.php.
+
+
+0.4.19	2015-03-02
+Added:
+	* XXX WEB-DL category to XXX releases.
+	* XXX-SD category.
+		***NOTE*** run "php /misc/testing/Dev/recategorize.php all" to re-categorize existing releases.
+	* New XXX categories to posterwall.
+
+Changed:
+	* Make ReleaseRemover more informative of the type it is processing.
+	* Ignore PC > Mac category for removeExecutable (Core Releases include their exe file for some reason).
+	* Changing defaults for 'show passworded releases' (now shows potentially passworded) and 'NZB split level' (now 4) for new installs.
+	* Regex updates / categorize fixes for SD XXX
+	* Update sphinxsearch RT index when manually editing release searchname.
+	* Optimize queries for new release posterwall.
+	* Changes to install templates.
+	* Updated regex for codec poster.
+
+Fixed:
+	* RottenTomatoes high-res images - clear your smarty cache.
+	* Group XXX pack releases in a.b.erotica correctly.
+	* Missing binaries from releases due to collection_id not being set.
+		Suggest that you run reset_truncate after this update.
+		NB: IMPORTANT - TPG users (that means you McFuzz) must run "php /nzedb/build/_runonce/tpg_add_collections_column_205-02-20.php"
+		FAILURE TO DO SO WILL CAUSE INSERT ERRORS
+	* Issue 1594 - Fix word wrap on alpha theme.
+	* Reading a corrupt nzb would hang on 100% cpu.
+	* Dupecheck when inserting tvrage titles.
+	* Issues with mysqldump_tables.php when using socket.
+
+
+0.4.0	2014-09-08 niel
+	NOTE: This version forward targets PHP 5.5 and later.
+
+
+0.3.13	2014-09-01
+	NOTE: This is the last version of nZEDb to target PHP 5.4 which has reached its EOL.

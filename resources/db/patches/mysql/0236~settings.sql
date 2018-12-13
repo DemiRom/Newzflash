@@ -1,0 +1,1 @@
+UPDATE settings SET value = 'http://reqid.newzflash.com/index.php' WHERE setting = 'request_url';

@@ -1,0 +1,162 @@
+{
+  "authors": [
+    {
+      "name": "Newzflash Team"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "newzflash\\": "newzflash/"
+    },
+    "classmap": [
+      "www/pages/",
+      "libs/PEAR/Net_NNTP/NNTP/",
+      "libs/"
+    ]
+  },
+  "config": {
+    "sort-packages": false,
+    "optimize-autoloader": true,
+    "fxp-asset": {
+      "installer-paths": {
+        "npm-asset-library": "www/themes/shared/libs",
+        "bower-asset-library": "www/themes/shared/libs"
+      }
+    },
+    "process-timeout": 3600,
+    "preferred-install": {
+      "*": "source"
+    },
+    "vendor-dir": "libraries"
+  },
+  "description": "A Usenet Indexer",
+  "extra": {
+    "branch-alias": {
+      "dev-dev": "0.x-dev"
+    }
+  },
+  "homepage": "http://newzflash.tk",
+  "keywords": [
+    "Newzflash",
+    "usenet",
+    "indexer",
+    "lithium",
+    "li3"
+  ],
+  "license": "GPL-3.0",
+  "minimum-stability": "dev",
+  "name": "newzflash/newzflash",
+  "non-feature-branches": [
+    "Latest-*"
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/niel/li3_docs"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/niel/li3_fixtures"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/niel/li3_quality"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/niel/lithium"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/DemetryRomanowski/Git.php"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/unionofrad/manual"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/zeebinz/rarinfo"
+    }
+  ],
+  "require": {
+    "ext-ctype": "*",
+    "ext-curl": "*",
+    "ext-exif": "*",
+    "ext-filter": "*",
+    "ext-gd": "*",
+    "ext-hash": "*",
+    "ext-iconv": "*",
+    "ext-imagick": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "ext-mysqlnd": "*",
+    "ext-openssl": "*",
+    "ext-pcre": "*",
+    "ext-pdo": "*",
+    "ext-pdo_mysql": "*",
+    "ext-session": "*",
+    "ext-simplexml": "*",
+    "ext-sockets": "*",
+    "ext-spl": "*",
+    "ext-xmlwriter": "*",
+    "ext-zlib": "*",
+    "b3rs3rk/steamfront": "dev-master",
+    "barracudanetworks/forkdaemon-php": "^1.0.7",
+    "dborsatto/php-giantbomb": "dev-master",
+    "fxp/composer-asset-plugin": "1.4.4",
+    "google/recaptcha": "^1.1.2",
+    "guzzlehttp/guzzle": "^6.3",
+    "james-heinrich/getid3": "^1.9.12",
+    "joshpinkney/tv-maze-php-api": "dev-master",
+    "mhor/php-mediainfo": "^5.0@dev",
+    "moinax/tvdb": "^1.0.4",
+    "niel/li3_fixtures": "1.2.x-dev",
+    "niel/lithium": "dev-php7.2-updates",
+    "nZEDb/Git.php": "dev-master",
+    "php": "~7.0",
+    "php-tmdb/api": "^2.1",
+    "phpmailer/phpmailer": "^6.0.2",
+    "smarty/smarty": "~3.1.29",
+    "zeebinz/rarinfo": "~2.5.0",
+    "bower-asset/animate.css": "~3.5.1",
+    "bower-asset/autosize-3.0.x": "~3.0.15",
+    "bower-asset/bootstrap-2.3.x": "~2.3.2",
+    "bower-asset/bootstrap-3.3.x": "~3.3.6",
+    "bower-asset/bootstrap-hover-dropdown-2.2.x": "~2.2.1",
+    "bower-asset/bootstrap-progressbar-0.9.x": "~0.9.0",
+    "bower-asset/bootswatch": "^3.3",
+    "bower-asset/chosen-1.5.x": "~1.5.1",
+    "bower-asset/colorbox-1.6.x": "~1.6.3",
+    "bower-asset/fastclick-1.0.x": "~1.0.6",
+    "bower-asset/font-awesome-4.5.x": "~4.5.0",
+    "bower-asset/html5shiv-3.7.x": "~3.7.3",
+    "bower-asset/icheck-1.0.x": "~1.0.2",
+    "bower-asset/jquery-1.9.x": "~1.9.1",
+    "bower-asset/jquery-2.2.x": "~2.2.1",
+    "bower-asset/jquery-migrate-1.4.x": "~1.4.0",
+    "bower-asset/jquery.nicescroll-3.6.x": "~3.6.8",
+    "bower-asset/noty-2.3.x": "~2.3.8",
+    "bower-asset/pace-1.0.x": "~1.0.2",
+    "bower-asset/pnotify-3.0.x": "~3.0.0",
+    "bower-asset/respond-1.4.x": "~1.4.2",
+    "bower-asset/responsive-tables-js-1.0.x": "~1.0.6",
+    "bower-asset/select2-4.0.x": "~4.0.2",
+    "bower-asset/slimScroll-1.3.x": "~1.3.7",
+    "bower-asset/tinymce-builded": "^4.4",
+    "stripe/stripe-php": "^2.0@dev"
+  },
+  "require-dev": {
+    "unionofrad/manual": "1.1.x-dev"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "newzflash\\build\\Composer::postInstallCmd"
+    ]
+  },
+  "suggest": {
+    "ext-php-yenc": "Improves yEnc decoding speed for PHP 7.0+ (and 5.6)",
+    "ext-xdebug": "For developement work"
+  },
+  "type": "project"
+}
