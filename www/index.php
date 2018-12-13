@@ -34,6 +34,7 @@ switch ($page->page) {
 	case 'contact-us':
 	case 'content':
 	case 'details':
+	case 'delete_account':
 	case 'filelist':
 	case 'forgottenpassword':
 	case 'forum':

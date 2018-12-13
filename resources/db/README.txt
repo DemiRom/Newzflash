@@ -12,7 +12,7 @@ When making patches:
    change the appropriate row(s) in the tsv data file for the INSERT
    and change the CREATE TABLE in the mysql-ddl.sql file, do not add ALTER and INSERT into the mysql-ddl.sql file.
 
-For members of the nZEDb dev team:
+For members of the Newzflash dev team:
   When you are finished, or are merging a PR, running ./commit in the dev (and next-master, master)
     branch will trigger the pre-commit hook which now processes these files. It first updates your database
     to make sure all patches are current, then it will process each new patch file one at a time

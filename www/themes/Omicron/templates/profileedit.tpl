@@ -138,18 +138,7 @@
 														</tr>
 														</tbody>
 													</table>
-													<table class="data table table-condensed table-striped table-responsive">
-														<tbody>
-														<tr class="bg-aqua-active">
-															<td colspan="2" style="padding-left: 8px;"><strong>Site theme</strong></td>
-														</tr>
-														<tr>
-															<td>
-																{html_options id="style" name='style' values=$themelist output=$themelist selected=$user.style}
-															</td>
-														</tr>
-														</tbody>
-													</table>
+
 												</td>
 											</tr>
 											</tbody>
@@ -292,6 +281,25 @@
 								</div>
 								<input type="submit" value="Save" class="btn btn-primary"/>
 							</form>
+							<br>
+							<br>
+							<table class="data table table-condensed table-striped table-responsive">
+								<tbody>
+								<tr class="bg-aqua-active">
+									<td colspan="2" style="padding-left: 8px;"><strong>Delete account!</strong></td>
+								</tr>
+								<tr>
+									<td>
+										{*{html_options id="style" name='style' values=$themelist output=$themelist selected=$user.style}*}
+										<form action="delete_account?action=submit" method="post">
+											<p1>Delete your account. This will stop billing and delete your account off this site!</p1>
+											<br>
+											<button type="submit" class="btn btn-primary">Delete</button>
+										</form>
+									</td>
+								</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>

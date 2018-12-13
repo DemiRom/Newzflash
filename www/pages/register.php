@@ -5,11 +5,13 @@ use nzedb\Users;
 use nzedb\db\DB;
 use nzedb\Captcha;
 
+require_once('config.php');
+
 if ($page->users->isLoggedIn()) {
 	header('Location: ' . WWW_TOP . '/');
 }
 
-$error = $firstName = $lastName = $userName = $password = $confirmPassword = $email = $inviteCode = $inviteCodeQuery = '';
+$error = $firstName = $lastName = $userName = $password = $confirmPassword = $email = $inviteCode = $inviteCodeQuery = $customer_id = '';
 $showRegister = 1;
 
 $value = Settings::value('..registerstatus');
@@ -46,42 +48,74 @@ if ($showRegister == 1) {
 				if ($password != $confirmPassword) {
 					$error = "Password Mismatch";
 				} else {
-					// Get the default user role.
-					$userDefault = $page->users->getDefaultRole();
+                    // Get the default user role.
+                    $userDefault = $page->users->getDefaultRole();
 
-					$ret = $page->users->signUp($userName, $firstName, $lastName, $password, $email,
-						$_SERVER['REMOTE_ADDR'], $userDefault['id'], $userDefault['defaultinvites'], $inviteCode
-					);
-					if ($ret > 0) {
-						$page->users->login($ret, $_SERVER['REMOTE_ADDR']);
-						header("Location: " . WWW_TOP . "/");
-					} else {
-						switch ($ret) {
-							case Users::ERR_SIGNUP_BADUNAME:
-								$error = "Your username must be at least five characters.";
-								break;
-							case Users::ERR_SIGNUP_BADPASS:
-								$error = "Your password must be longer than eight characters.";
-								break;
-							case Users::ERR_SIGNUP_BADEMAIL:
-								$error = "Your email is not a valid format.";
-								break;
-							case Users::ERR_SIGNUP_UNAMEINUSE:
-								$error = "Sorry, the username is already taken.";
-								break;
-							case Users::ERR_SIGNUP_EMAILINUSE:
-								$error = "Sorry, the email is already in use.";
-								break;
-							case Users::ERR_SIGNUP_BADINVITECODE:
-								$error = "Sorry, the invite code is old or has been used.";
-								break;
-							default:
-								$error = "Failed to register.";
-								break;
-						}
-					}
-				}
+                    $ret = $page->users->signUp($userName, $firstName, $lastName, $password, $email,
+                        $_SERVER['REMOTE_ADDR'], $userDefault['id'], $userDefault['defaultinvites'], $inviteCode
+                    );
+                    if ($ret > 0) {
+                    	//Move this to the signUp function class or whatever...
+                    	try {
+		                    $token = $_POST['stripeToken'];
+
+		                    $customer = \Stripe\Customer::create(
+			                    array(
+				                    'email' => $email,
+				                    'source' => $token
+			                    )
+		                    );
+
+		                    // This is a $.50 charge in US Dollar.
+		                    $sub = \Stripe\Subscription::create(
+			                    array(
+				                    'items' => [['plan' => 'monthly_sub']],
+				                    'customer' => $customer->id
+			                    )
+		                    );
+
+		                    $userID = '';
+
+		                    $userID = $page->users->getByUsername($userName)['id'];
+
+		                    $page->users->addSubscription($userID, $sub->id);
+
+		                    $page->users->login($ret, $_SERVER['REMOTE_ADDR']);
+	                        header("Location: " . WWW_TOP . "/");
+
+	                    } catch(Exception $e) {
+                    		header("Location: " . WWW_TOP . "/error");
+		                    error_log("Unable to sign up customer:" . $_POST['stripeEmail'].
+			                    ", error:" . $e->getMessage());
+	                    }
+                    } else {
+                        switch ($ret) {
+                            case Users::ERR_SIGNUP_BADUNAME:
+                                $error = "Your username must be at least five characters.";
+                                break;
+                            case Users::ERR_SIGNUP_BADPASS:
+                                $error = "Your password must be longer than eight characters.";
+                                break;
+                            case Users::ERR_SIGNUP_BADEMAIL:
+                                $error = "Your email is not a valid format.";
+                                break;
+                            case Users::ERR_SIGNUP_UNAMEINUSE:
+                                $error = "Sorry, the username is already taken.";
+                                break;
+                            case Users::ERR_SIGNUP_EMAILINUSE:
+                                $error = "Sorry, the email is already in use.";
+                                break;
+                            case Users::ERR_SIGNUP_BADINVITECODE:
+                                $error = "Sorry, the invite code is old or has been used.";
+                                break;
+                            default:
+                                $error = "Failed to register.";
+                                break;
+                        }
+                    }
+                }
 			}
+
 			break;
 		case "view": {
 				$inviteCode = isset($_GET["invitecode"]) ? htmlspecialchars($_GET["invitecode"]) : null;
