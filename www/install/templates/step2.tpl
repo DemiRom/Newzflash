@@ -32,6 +32,7 @@
 						<span class="error">&bull; Unable to select database:<br />{$cfg->emessage}</span><br />
 					{elseif $cfg->dbCreateCheck === false}
 						<span class="error">&bull; Unable to create database and data. Check permissions of your mysql user.</span><br />
+						<span class="error">{$cfg->emessage}</span><br />
 					{else}
 						<span class="error">{$cfg->emessage}</span><br />
 					{/if}
