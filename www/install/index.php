@@ -1,12 +1,12 @@
 <?php
 @session_start();
 
-if (!defined('nZEDb_INSTALLER')) {
-	define('nZEDb_INSTALLER', true);
+if (!defined('NEWZFLASH_INSTALLER')) {
+	define('NEWZFLASH_INSTALLER', true);
 }
 require_once realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'smarty.php');
 
-use nzedb\Install;
+use newzflash\Install;
 
 $page_title = "Welcome";
 
