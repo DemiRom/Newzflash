@@ -13,7 +13,8 @@
 
 
 //require_once realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php');
-require_once realpath('../newzflash/constants.php');
+require_once dirname(__DIR__, 2) . 'newzflash/constants.php';
+
 require_once NEWZFLASH_ROOT . 'app' . DS . 'config' . DS . 'bootstrap.php';
 
 use newzflash\config\Configure;
