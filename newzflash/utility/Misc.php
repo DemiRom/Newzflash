@@ -998,4 +998,16 @@ class Misc
 
 		exit($response);
 	}
+
+	/**
+	 * Print data to the browser console.
+	 *
+	 * @param $data The data to log to the webbrowser
+	 *
+	 */
+	public static function console_log( $data ){
+		echo '<script>';
+		echo 'console.log('. json_encode( $data ) .')';
+		echo '</script>';
+	}
 }

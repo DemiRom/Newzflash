@@ -5,6 +5,7 @@ require_once '/var/www/Newzflash/www/install/install.php';
 use app\extensions\util\Versions;
 use newzflash\db\DB;
 use newzflash\Install;
+use newzflash\utility\Misc;
 
 $page = new InstallPage();
 $page->title = "Database Setup";
@@ -38,6 +39,8 @@ function databaseCheck($dbName, $dbType, $pdo)
 	// Run the query.
 	$stmt->execute();
 	$tables = $stmt->fetchAll();
+
+	Misc::console_log('Fetched all the databases');
 
 	// Store the query result as an array.
 	$tablearr = [];
