@@ -46,14 +46,14 @@ use newzflash\utility\Misc;
  * a relatively low value.
  * @default '125000'
  */
-\define('nZEDb_MAX_PAGER_RESULTS', 125000);
+\define('NEWZFLASH_MAX_PAGER_RESULTS', 125000);
 
 /**
  * If the PRE API page (preinfo) is open to the public or only accessible by registered / api users.
  *
  * @default false
  */
-\define('nZEDb_PREINFO_OPEN', false);
+\define('NEWZFLASH_PREINFO_OPEN', false);
 
 /**
  * Whether to check if a person is trying to send too many requests in a given amount of time,
@@ -61,7 +61,7 @@ use newzflash\utility\Misc;
  *
  * @default false
  */
-\define('nZEDb_FLOOD_CHECK', false);
+\define('NEWZFLASH_FLOOD_CHECK', false);
 
 /**
  * How many seconds should the person be locked out of the site.

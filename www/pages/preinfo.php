@@ -129,7 +129,7 @@
 
 use newzflash\db\DB;
 
-if (nZEDb_PREINFO_OPEN) {
+if (NEWZFLASH_PREINFO_OPEN) {
 	if (!$page->users->isLoggedIn()) {
 		if (!isset($_GET['apikey'])) {
 			apiError('Missing parameter (apikey)', 200);
