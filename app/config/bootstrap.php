@@ -9,9 +9,9 @@
 namespace app\config;
 
 /**
- * Load nZEDb global constants.
+ * Load Newzflash global constants.
  */
-require_once \dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'newzflash' . DIRECTORY_SEPARATOR . 'constants.php';
+require_once realpath(\dirname(__DIR__, 2) . '/..' . DIRECTORY_SEPARATOR . 'newzflash' . DIRECTORY_SEPARATOR . 'constants.php');
 
 /**
  * This is the primary bootstrap file of your application, and is loaded immediately after the front

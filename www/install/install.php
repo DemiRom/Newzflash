@@ -19,10 +19,10 @@
  * @copyright 2015 nZEDb
  */
 
-if (!defined('nZEDb_INSTALLER')) {
-	define('nZEDb_INSTALLER', true);
+if (!defined('NEWZFLASH_INSTALLER')) {
+	define('NEWZFLASH_INSTALLER', true);
 }
-require_once realpath(dirname(__DIR__, 2) .
+require_once realpath(dirname('./', 2) .
 	DIRECTORY_SEPARATOR .
 	'app' .
 	DIRECTORY_SEPARATOR .
@@ -30,7 +30,7 @@ require_once realpath(dirname(__DIR__, 2) .
 	DIRECTORY_SEPARATOR .
 	'bootstrap.php');
 
-use nzedb\config\Configure;
+use newzflash\config\Configure;
 
 $config = new Configure('install');
 
