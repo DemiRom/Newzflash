@@ -18,7 +18,13 @@
  * @author niel
  * @copyright 2015 nZEDb
  */
-require_once realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php');
+
+$constants_file = realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php');
+
+if($constants_file != false) {
+	require_once realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php');
+}
+
 require_once NEWZFLASH_ROOT . 'app' . DS . 'config' . DS . 'bootstrap.php';
 
 use newzflash\config\Configure;
