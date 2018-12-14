@@ -71,169 +71,173 @@ function databaseCheck($dbName, $dbType, $pdo)
 
 $cfg = $cfg->getSession();
 
-if ($page->isPostBack()) {
-	$cfg->doCheck = true;
+try {
 
-	Misc::console_log("At postback!!");
+	if ($page->isPostBack()) {
+		$cfg->doCheck = true;
 
-	// Get the information the user typed into the website.
-	$cfg->DB_HOST = trim($_POST['host']);
-	$cfg->DB_PORT = trim($_POST['sql_port']);
-	$cfg->DB_SOCKET = trim($_POST['sql_socket']);
-	$cfg->DB_USER = trim($_POST['user']);
-	$cfg->DB_PASSWORD = trim($_POST['pass']);
-	$cfg->DB_NAME = trim($_POST['db']);
-	$cfg->DB_SYSTEM = strtolower(trim($_POST['db_system']));
-	$cfg->error = false;
+		// Get the information the user typed into the website.
+		$cfg->DB_HOST = trim($_POST['host']);
+		$cfg->DB_PORT = trim($_POST['sql_port']);
+		$cfg->DB_SOCKET = trim($_POST['sql_socket']);
+		$cfg->DB_USER = trim($_POST['user']);
+		$cfg->DB_PASSWORD = trim($_POST['pass']);
+		$cfg->DB_NAME = trim($_POST['db']);
+		$cfg->DB_SYSTEM = strtolower(trim($_POST['db_system']));
+		$cfg->error = false;
 
-	$validTypes = ['mysql'];
-	// Check if user selected a valid DB type.
-	if (!in_array($cfg->DB_SYSTEM, $validTypes)) {
-		$cfg->emessage = 'Invalid database system. Must be one of: [' . implode(', ', $validTypes) .
-			']; Not: ' . $cfg->DB_SYSTEM;
-		$cfg->error = true;
-	} else {
-		// Connect to the SQL server.
-		try {
-			// HAS to be DB because settings table does not exist yet.
-			$pdo = new DB(
-				[
-					'checkVersion' => true,
-					'createDb'     => true,
-					'dbhost'       => $cfg->DB_HOST,
-					'dbname'       => $cfg->DB_NAME,
-					'dbpass'       => $cfg->DB_PASSWORD,
-					'dbport'       => $cfg->DB_PORT,
-					'dbsock'       => $cfg->DB_SOCKET,
-					'dbtype'       => $cfg->DB_SYSTEM,
-					'dbuser'       => $cfg->DB_USER,
-				]
-			);
-			$cfg->dbConnCheck = true;
-		} catch (\PDOException $e) {
-			$cfg->emessage = "Unable to connect to the SQL server.\n" . $e->getMessage();
+		$validTypes = ['mysql'];
+		// Check if user selected a valid DB type.
+		if (!in_array($cfg->DB_SYSTEM, $validTypes)) {
+			$cfg->emessage = 'Invalid database system. Must be one of: [' . implode(', ', $validTypes) .
+				']; Not: ' . $cfg->DB_SYSTEM;
 			$cfg->error = true;
-			$cfg->dbConnCheck = false;
-			Misc::console_log("Unable to connect to the SQL server \n" . $e->getMessage());
-
-		} catch (\RuntimeException $e) {
-			switch ($e->getCode()) {
-				case 1:
-				case 2:
-				case 3:
-				case 4:
-				case 5:
-					$cfg->error    = true;
-					$cfg->emessage = $e->getMessage();
-					trigger_error($e->getMessage(), E_USER_WARNING);
-					break;
-				default:
-					var_dump($e);
-					Misc::console_log("Runtime exception: " . $e->getMessage() . " : " . $e->getCode());
-					throw new \RuntimeException($e->getMessage(), $e->getCode(), $e);
-
-			}
-		}
-
-		// Check if the MySQL version is correct.
-		$goodVersion = false;
-		if (!$cfg->error) {
+		} else {
+			// Connect to the SQL server.
 			try {
-				$goodVersion = $pdo->isVendorVersionValid();
+				// HAS to be DB because settings table does not exist yet.
+				$pdo = new DB(
+					[
+						'checkVersion' => true,
+						'createDb' => true,
+						'dbhost' => $cfg->DB_HOST,
+						'dbname' => $cfg->DB_NAME,
+						'dbpass' => $cfg->DB_PASSWORD,
+						'dbport' => $cfg->DB_PORT,
+						'dbsock' => $cfg->DB_SOCKET,
+						'dbtype' => $cfg->DB_SYSTEM,
+						'dbuser' => $cfg->DB_USER,
+					]
+				);
+				$cfg->dbConnCheck = true;
 			} catch (\PDOException $e) {
-				$goodVersion   = false;
-				$cfg->error    = true;
-				$cfg->emessage = 'Could not get version from SQL server.';
-			}
-
-			if ($goodVersion === false) {
+				$cfg->emessage = "Unable to connect to the SQL server.\n" . $e->getMessage();
 				$cfg->error = true;
-				$vendor = $pdo->getVendor();
-				switch (strtolower($vendor)) {
-					case 'mariadb':
-						$version = DB::MINIMUM_VERSION_MARIADB;
+				$cfg->dbConnCheck = false;
+				Misc::console_log("Unable to connect to the SQL server \n" . $e->getMessage());
+
+			} catch (\RuntimeException $e) {
+				switch ($e->getCode()) {
+					case 1:
+					case 2:
+					case 3:
+					case 4:
+					case 5:
+						$cfg->error = true;
+						$cfg->emessage = $e->getMessage();
+						trigger_error($e->getMessage(), E_USER_WARNING);
 						break;
 					default:
-						$version = DB::MINIMUM_VERSION_MYSQL;
+						var_dump($e);
+						Misc::console_log("Runtime exception: " . $e->getMessage() . " : " . $e->getCode());
+						throw new \RuntimeException($e->getMessage(), $e->getCode(), $e);
+
 				}
-				$cfg->emessage = 'You are using an unsupported version of the ' . $vendor .
-					' server, the minimum allowed version is ' . $version;
+			}
+
+			// Check if the MySQL version is correct.
+			$goodVersion = false;
+			if (!$cfg->error) {
+				try {
+					$goodVersion = $pdo->isVendorVersionValid();
+				} catch (\PDOException $e) {
+					$goodVersion = false;
+					$cfg->error = true;
+					$cfg->emessage = 'Could not get version from SQL server.';
+				}
+
+				if ($goodVersion === false) {
+					$cfg->error = true;
+					$vendor = $pdo->getVendor();
+					switch (strtolower($vendor)) {
+						case 'mariadb':
+							$version = DB::MINIMUM_VERSION_MARIADB;
+							break;
+						default:
+							$version = DB::MINIMUM_VERSION_MYSQL;
+					}
+					$cfg->emessage = 'You are using an unsupported version of the ' . $vendor .
+						' server, the minimum allowed version is ' . $version;
+				}
 			}
 		}
-	}
 
-	// Start inserting data into the DB.
-	if (!$cfg->error) {
-		$cfg->setSession();
+		// Start inserting data into the DB.
+		if (!$cfg->error) {
+			$cfg->setSession();
 
-		$DbSetup = new \newzflash\db\DbUpdate(
-			[
-				'backup' => false,
-				'db'     => $pdo,
-			]
-		);
-
-		try {
-			$DbSetup->processSQLFile(); // Setup default schema
-			$DbSetup->processSQLFile( // Process any custom stuff.
+			$DbSetup = new \newzflash\db\DbUpdate(
 				[
-					'filepath' => NEWZFLASH_RES . 'db' . DS . 'schema' . DS . 'mysql-data.sql'
+					'backup' => false,
+					'db' => $pdo,
 				]
 			);
-			$DbSetup->loadTables(); // Load default data files
-		} catch (\PDOException $err) {
-			$cfg->error = true;
-			$cfg->emessage = "Error inserting: (" . $err->getMessage() . ")";
-		}
 
-		if (!$cfg->error) {
-			// Check one of the standard tables was created and has data.
-			$dbInstallWorked = false;
-			$reschk = $pdo->query("SELECT COUNT(id) AS num FROM tmux");
-			if ($reschk === false) {
-				$cfg->dbCreateCheck = false;
+			try {
+				$DbSetup->processSQLFile(); // Setup default schema
+				$DbSetup->processSQLFile( // Process any custom stuff.
+					[
+						'filepath' => NEWZFLASH_RES . 'db' . DS . 'schema' . DS . 'mysql-data.sql'
+					]
+				);
+				$DbSetup->loadTables(); // Load default data files
+			} catch (\PDOException $err) {
 				$cfg->error = true;
-				$cfg->emessage = 'Could not select data from your database, check that tables and data are properly created/inserted.';
-			} else {
-				foreach ($reschk as $row) {
-					if ($row['num'] > 0) {
-						$dbInstallWorked = true;
-						break;
-					}
-				}
+				$cfg->emessage = "Error inserting: (" . $err->getMessage() . ")";
 			}
 
-			$ver = new Versions();
-			$patch = $ver->getSQLPatchFromFile();
-
-			if ($dbInstallWorked) {
-				if ($patch > 0) {
-					$updateSettings = $pdo->exec(
-						"UPDATE settings SET value = '$patch' WHERE section = '' AND subsection = '' AND name = 'sqlpatch'"
-					);
+			if (!$cfg->error) {
+				// Check one of the standard tables was created and has data.
+				$dbInstallWorked = false;
+				$reschk = $pdo->query("SELECT COUNT(id) AS num FROM tmux");
+				if ($reschk === false) {
+					$cfg->dbCreateCheck = false;
+					$cfg->error = true;
+					$cfg->emessage = 'Could not select data from your database, check that tables and data are properly created/inserted.';
 				} else {
-					$updateSettings = false;
-				}
-
-				// If it all worked, move to the next page.
-				if ($updateSettings) {
-					header("Location: ?success");
-					if (file_exists($cfg->DB_DIR . '/post_install.php')) {
-						exec("php " . $cfg->DB_DIR . "/post_install.php ${pdo}");
+					foreach ($reschk as $row) {
+						if ($row['num'] > 0) {
+							$dbInstallWorked = true;
+							break;
+						}
 					}
-					exit();
-				} else {
-					$cfg->error    = true;
-					$cfg->emessage = "Could not update sqlpatch to '$patch' for your database.";
 				}
-			} else {
-				$cfg->dbCreateCheck = false;
-				$cfg->error         = true;
-				$cfg->emessage      = 'Could not select data from your database.';
+
+				$ver = new Versions();
+				$patch = $ver->getSQLPatchFromFile();
+
+				if ($dbInstallWorked) {
+					if ($patch > 0) {
+						$updateSettings = $pdo->exec(
+							"UPDATE settings SET value = '$patch' WHERE section = '' AND subsection = '' AND name = 'sqlpatch'"
+						);
+					} else {
+						$updateSettings = false;
+					}
+
+					// If it all worked, move to the next page.
+					if ($updateSettings) {
+						header("Location: ?success");
+						if (file_exists($cfg->DB_DIR . '/post_install.php')) {
+							exec("php " . $cfg->DB_DIR . "/post_install.php ${pdo}");
+						}
+						exit();
+					} else {
+						$cfg->error = true;
+						$cfg->emessage = "Could not update sqlpatch to '$patch' for your database.";
+					}
+				} else {
+					$cfg->dbCreateCheck = false;
+					$cfg->error = true;
+					$cfg->emessage = 'Could not select data from your database.';
+				}
 			}
 		}
 	}
+} catch(Exception $e) {
+	Misc::console_log("Something went seriously wrong!: " . $e->getMessage() . " : " . $e->getTraceAsString());
 }
+
 
 $page->smarty->assign('cfg', $cfg);
 $page->smarty->assign('page', $page);
