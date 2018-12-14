@@ -4,9 +4,11 @@
  * No point having a check for PHP version if we can't get to that page because of higher version
  * requirements.
  */
-require_once realpath(__DIR__ . DIRECTORY_SEPARATOR . 'install.php');
+//require_once realpath(__DIR__ . DIRECTORY_SEPARATOR . 'install.php');
 
-use nzedb\Install;
+require_once '/var/www/Newzflash/www/install/install.php';
+
+use newzflash\Install;
 use nzedb\utility\Misc;
 
 $page = new InstallPage();
