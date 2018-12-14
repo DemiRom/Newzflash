@@ -96,6 +96,7 @@ try {
 			// Connect to the SQL server.
 			try {
 				// HAS to be DB because settings table does not exist yet.
+				Misc::console_log("New DB()");
 				$pdo = new DB(
 					[
 						'checkVersion' => true,
@@ -109,6 +110,7 @@ try {
 						'dbuser' => $cfg->DB_USER,
 					]
 				);
+				Misc::console_log("$pdo");
 				$cfg->dbConnCheck = true;
 			} catch (\PDOException $e) {
 				$cfg->emessage = "Unable to connect to the SQL server.\n" . $e->getMessage();

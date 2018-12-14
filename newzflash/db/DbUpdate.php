@@ -67,19 +67,23 @@ class DbUpdate
 
 	public function __construct(array $options = [])
 	{
-		$options += [
-			'backup' => true,
-			'db'     => null,
-			'git'    => new Git(),
-			'logger' => new ColorCLI(),
-		];
+		try {
+			$options += [
+				'backup' => true,
+				'db' => null,
+				'git' => new Git(),
+				'logger' => new ColorCLI(),
+			];
 
-		$this->backup = $options['backup'];
-		$this->git    = $options['git'];
-		$this->log    = $options['logger'];
-		// Must be DB not Settings because the Settings table may not exist yet.
-		$this->pdo = (($options['db'] instanceof DB) ? $options['db'] : new DB());
-		$this->_DbSystem = strtolower($this->pdo->dbSystem());
+			$this->backup = $options['backup'];
+			$this->git = $options['git'];
+			$this->log = $options['logger'];
+			// Must be DB not Settings because the Settings table may not exist yet.
+			$this->pdo = (($options['db'] instanceof DB) ? $options['db'] : new DB());
+			$this->_DbSystem = strtolower($this->pdo->dbSystem());
+		} catch(Exception $e) {
+			Misc::console_log("Error at DB Update: " . $e->getMessage() );
+		}
 	}
 
 	public function loadTables(array $options = [])
