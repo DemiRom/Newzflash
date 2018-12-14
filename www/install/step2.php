@@ -234,12 +234,14 @@ try {
 			}
 		}
 	}
+
+
+
+	$page->smarty->assign('cfg', $cfg);
+	$page->smarty->assign('page', $page);
+	$page->content = $page->smarty->fetch('step2.tpl');
+	$page->render();
+
 } catch(Exception $e) {
 	Misc::console_log("Something went seriously wrong!: " . $e->getMessage() . " : " . $e->getTraceAsString());
 }
-
-
-$page->smarty->assign('cfg', $cfg);
-$page->smarty->assign('page', $page);
-$page->content = $page->smarty->fetch('step2.tpl');
-$page->render();
