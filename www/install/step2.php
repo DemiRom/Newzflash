@@ -74,6 +74,8 @@ $cfg = $cfg->getSession();
 if ($page->isPostBack()) {
 	$cfg->doCheck = true;
 
+	Misc::console_log("At postback!!");
+
 	// Get the information the user typed into the website.
 	$cfg->DB_HOST = trim($_POST['host']);
 	$cfg->DB_PORT = trim($_POST['sql_port']);
@@ -112,6 +114,8 @@ if ($page->isPostBack()) {
 			$cfg->emessage = "Unable to connect to the SQL server.\n" . $e->getMessage();
 			$cfg->error = true;
 			$cfg->dbConnCheck = false;
+			Misc::console_log("Unable to connect to the SQL server \n" . $e->getMessage());
+
 		} catch (\RuntimeException $e) {
 			switch ($e->getCode()) {
 				case 1:
@@ -125,7 +129,9 @@ if ($page->isPostBack()) {
 					break;
 				default:
 					var_dump($e);
+					Misc::console_log("Runtime exception: " . $e->getMessage() . " : " . $e->getCode());
 					throw new \RuntimeException($e->getMessage(), $e->getCode(), $e);
+
 			}
 		}
 
