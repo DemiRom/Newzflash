@@ -179,83 +179,87 @@ class DB extends \PDO
 	 */
 	public function __construct(array $options = [])
 	{
-		$this->cli = Misc::isCLI();
+		try {
+			$this->cli = Misc::isCLI();
 
-		$defaults = [
-			'checkVersion'	=> true,
-			'createDb'		=> false, // create dbname if it does not exist?
-			'ct'			=> new ConsoleTools(),
-			'dbhost'		=> defined('DB_HOST') ? DB_HOST : '',
-			'dbname'		=> defined('DB_NAME') ? DB_NAME : '', // '' means it is a Sphinx connection
-			'dbpass'		=> defined('DB_PASSWORD') ? DB_PASSWORD : '',
-			'dbport'		=> defined('DB_PORT') ? DB_PORT : '',
-			'dbsock'		=> defined('DB_SOCKET') ? DB_SOCKET : '',
-			'dbtype'		=> defined('DB_SYSTEM') ? DB_SYSTEM : '',
-			'dbuser'		=> defined('DB_USER') ? DB_USER : '',
-			'log'			=> '',
-			'persist'		=> false,
-			'timezone'		=> ini_get('date.timezone'),
-			'sphinx'		=> false,
-		];
-		$defaults['log'] = ($this->cli && !isset($options['log'])) ? new ColorCLI() : null;
-		$options += $defaults;
+			$defaults = [
+				'checkVersion' => true,
+				'createDb' => false, // create dbname if it does not exist?
+				'ct' => new ConsoleTools(),
+				'dbhost' => defined('DB_HOST') ? DB_HOST : '',
+				'dbname' => defined('DB_NAME') ? DB_NAME : '', // '' means it is a Sphinx connection
+				'dbpass' => defined('DB_PASSWORD') ? DB_PASSWORD : '',
+				'dbport' => defined('DB_PORT') ? DB_PORT : '',
+				'dbsock' => defined('DB_SOCKET') ? DB_SOCKET : '',
+				'dbtype' => defined('DB_SYSTEM') ? DB_SYSTEM : '',
+				'dbuser' => defined('DB_USER') ? DB_USER : '',
+				'log' => '',
+				'persist' => false,
+				'timezone' => ini_get('date.timezone'),
+				'sphinx' => false,
+			];
+			$defaults['log'] = ($this->cli && !isset($options['log'])) ? new ColorCLI() : null;
+			$options += $defaults;
 
-		if (empty($options['dbtype'])) {
-			throw new \RuntimeException("No Database system supplied. Currently this must be one of: " .
-				implode(',', $this->validTypes), 1);
-		} else {
-			$this->dbSystem = $options['dbtype'];
-		}
-
-		$this->sphinx = $options['sphinx'];
-
-		$this->connect($options);
-
-		if ($options['checkVersion']) {
-			$this->validateVendorVersion();
-		}
-
-		if (!empty($options['dbname'])) {
-			if ($options['createDb']) {
-			// Note this only ensures the database exists, not the tables.
-				$this->initialiseDatabase($options['dbname']);
+			if (empty($options['dbtype'])) {
+				throw new \RuntimeException("No Database system supplied. Currently this must be one of: " .
+					implode(',', $this->validTypes), 1);
+			} else {
+				$this->dbSystem = $options['dbtype'];
 			}
 
-			$this->pdo->query("USE {$options['dbname']}");
-		}
+			$this->sphinx = $options['sphinx'];
 
-		$this->consoleTools =& $options['ct'];
-		$this->log =& $options['log'];
+			$this->connect($options);
 
-		$this->cacheEnabled = (defined('nZEDb_CACHE_TYPE') && (nZEDb_CACHE_TYPE > 0) ? true : false);
-
-		if ($this->cacheEnabled) {
-			try {
-				$this->cacheServer = new Cache();
-			} catch (CacheException $error) {
-				$this->cacheEnabled = false;
-				$this->echoError($error->getMessage(), '__construct', 4);
+			if ($options['checkVersion']) {
+				$this->validateVendorVersion();
 			}
-		}
 
-		$this->_debug = (nZEDb_DEBUG || nZEDb_LOGGING);
-		if ($this->_debug) {
-			try {
-				$this->debugging = new Logger(['ColorCLI' => $this->log]);
-			} catch (LoggerException $error) {
-				$this->_debug = false;
+			if (!empty($options['dbname'])) {
+				if ($options['createDb']) {
+					// Note this only ensures the database exists, not the tables.
+					$this->initialiseDatabase($options['dbname']);
+				}
+
+				$this->pdo->query("USE {$options['dbname']}");
 			}
-		}
 
-		if (defined('nZEDb_SQL_DELETE_LOW_PRIORITY') && nZEDb_SQL_DELETE_LOW_PRIORITY) {
-			$this->sqlDeleteLowPriority = ' LOW_PRIORITY ';
-		}
+			$this->consoleTools =& $options['ct'];
+			$this->log =& $options['log'];
 
-		if (defined('nZEDb_SQL_DELETE_QUICK') && nZEDb_SQL_DELETE_QUICK) {
-			$this->sqlDeleteQuick = ' QUICK ';
-		}
+			$this->cacheEnabled = (defined('nZEDb_CACHE_TYPE') && (nZEDb_CACHE_TYPE > 0) ? true : false);
 
-		return $this->pdo;
+			if ($this->cacheEnabled) {
+				try {
+					$this->cacheServer = new Cache();
+				} catch (CacheException $error) {
+					$this->cacheEnabled = false;
+					$this->echoError($error->getMessage(), '__construct', 4);
+				}
+			}
+
+			$this->_debug = (nZEDb_DEBUG || nZEDb_LOGGING);
+			if ($this->_debug) {
+				try {
+					$this->debugging = new Logger(['ColorCLI' => $this->log]);
+				} catch (LoggerException $error) {
+					$this->_debug = false;
+				}
+			}
+
+			if (defined('nZEDb_SQL_DELETE_LOW_PRIORITY') && nZEDb_SQL_DELETE_LOW_PRIORITY) {
+				$this->sqlDeleteLowPriority = ' LOW_PRIORITY ';
+			}
+
+			if (defined('nZEDb_SQL_DELETE_QUICK') && nZEDb_SQL_DELETE_QUICK) {
+				$this->sqlDeleteQuick = ' QUICK ';
+			}
+
+			return $this->pdo;
+		} catch (Exception $e) {
+			Misc::console_log("Error creating db object: " . $e->getMessage());
+		}
 	}
 
 	public function __destruct()
