@@ -144,6 +144,7 @@ try {
 					$goodVersion = false;
 					$cfg->error = true;
 					$cfg->emessage = 'Could not get version from SQL server.';
+					Misc::console_log("Could not get SQL version " . $e->getMessage());
 				}
 
 				if ($goodVersion === false) {
@@ -184,6 +185,7 @@ try {
 			} catch (\PDOException $err) {
 				$cfg->error = true;
 				$cfg->emessage = "Error inserting: (" . $err->getMessage() . ")";
+				Misc::console_log("Error inserting: " . $err->getMessage());
 			}
 
 			if (!$cfg->error) {
