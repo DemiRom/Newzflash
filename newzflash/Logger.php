@@ -1,7 +1,7 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\utility\Misc;
+use newzflash\utility\Misc;
 
 /**
  * Show log message to CLI/Web and log it to a file.

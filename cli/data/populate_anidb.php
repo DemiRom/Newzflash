@@ -1,9 +1,9 @@
 <?php
 require_once realpath(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\db\populate\AniDB;
-use nzedb\ColorCLI;
-use nzedb\db\DB;
+use newzflash\db\populate\AniDB;
+use newzflash\ColorCLI;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

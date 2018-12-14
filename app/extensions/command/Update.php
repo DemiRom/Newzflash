@@ -21,7 +21,7 @@ namespace app\extensions\command;
 use app\extensions\util\Git;
 use app\extensions\util\Versions;
 use lithium\console\command\Help;
-use nzedb\db\DbUpdate;
+use newzflash\db\DbUpdate;
 use Smarty;
 
 

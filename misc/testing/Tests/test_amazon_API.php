@@ -3,7 +3,7 @@ require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR .
 
 use app\models\Settings;
 use libs\AmazonProductAPI;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 // Test if your amazon keys are working.
 

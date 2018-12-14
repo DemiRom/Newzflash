@@ -1,9 +1,9 @@
 <?php
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\ReleaseCleaning;
-use nzedb\SphinxSearch;
-use nzedb\db\DB;
+use newzflash\ReleaseCleaning;
+use newzflash\SphinxSearch;
+use newzflash\db\DB;
 
 $message =
 	'Shows old searchname vs new searchname for releases in a group using the releaseCleaning class. (Good for testing new regex)' .

@@ -1,7 +1,7 @@
 <?php
-namespace nzedb\processing\adult;
+namespace newzflash\processing\adult;
 
-use nzedb\utility\Misc;
+use newzflash\utility\Misc;
 
 /**
  * Class adultdvdempire

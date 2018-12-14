@@ -1,18 +1,18 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 class ReleaseComments
 {
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 
 	/**
-	 * @param \nzedb\db\Settings $settings
+	 * @param \newzflash\db\Settings $settings
 	 */
 	public function __construct($settings = null)
 	{

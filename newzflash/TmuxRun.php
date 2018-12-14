@@ -1,8 +1,8 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Tmux pane shell exec functions for pane respawning

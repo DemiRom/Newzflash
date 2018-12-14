@@ -18,7 +18,7 @@
  * @author niel
  * @copyright 2014 nZEDb
  */
-namespace nzedb\utility;
+namespace newzflash\utility;
 
 /**
  * Class to copy the contents of one directory to another, including subdirectories.

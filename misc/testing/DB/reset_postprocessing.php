@@ -1,9 +1,9 @@
 <?php
 require_once realpath(dirname(__DIR__, 3) . '/app/config/bootstrap.php');
 
-use nzedb\Category;
-use nzedb\ConsoleTools;
-use nzedb\db\DB;
+use newzflash\Category;
+use newzflash\ConsoleTools;
+use newzflash\db\DB;
 
 $category = new Category();
 $pdo = new DB();

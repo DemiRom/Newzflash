@@ -1,7 +1,7 @@
 <?php
 
-use nzedb\Logging;
-use nzedb\Captcha;
+use newzflash\Logging;
+use newzflash\Captcha;
 
 $page->smarty->assign(['error' => '', 'username' => '', 'rememberme' => '']);
 

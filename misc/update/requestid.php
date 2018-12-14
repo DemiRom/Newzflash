@@ -1,9 +1,9 @@
 <?php
 require_once realpath(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\ColorCLI;
-use nzedb\RequestIDLocal;
-use nzedb\RequestIDWeb;
+use newzflash\ColorCLI;
+use newzflash\RequestIDLocal;
+use newzflash\RequestIDWeb;
 
 $cli = new ColorCLI();
 

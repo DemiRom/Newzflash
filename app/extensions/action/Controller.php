@@ -19,7 +19,7 @@
  */
 namespace app\extensions\action;
 
-use nzedb\data\Source;
+use newzflash\data\Source;
 
 class Controller extends \lithium\action\Controller
 {

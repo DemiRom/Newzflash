@@ -2,7 +2,7 @@
 require_once './config.php';
 require_once NEWZFLASH_WWW . 'pages/smartyTV.php';
 
-use nzedb\Videos;
+use newzflash\Videos;
 
 $page   = new AdminPage();
 $tv = new smartyTV(['Settings' => $page->settings]);

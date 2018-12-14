@@ -18,7 +18,7 @@
  * @author niel
  * @copyright 2015 nZEDb
  */
-namespace nzedb\processing\post;
+namespace newzflash\processing\post;
 
 
 class ProcessAdditionalException extends \Exception

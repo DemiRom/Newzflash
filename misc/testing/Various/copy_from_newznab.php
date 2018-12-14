@@ -3,7 +3,7 @@ require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR .
 require_once NEWZFLASH_LIB . 'utility' . DS . 'CopyFileTree.php';
 
 use app\models\Settings;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 $reorg = NEWZFLASH_MISC . 'testing' . DS . 'NZBs' . DS . 'nzb-reorg.php';
 $pdo = new DB();
@@ -16,12 +16,12 @@ if (!isset($argv[1])) {
 	exit("$argv[1]) is an invalid path\n");
 } else {
 	$source = realpath($argv[1] . DS . 'nzbfiles');
-	$files = new \nzedb\utility\CopyFileTree($argv[1], $nzbpath);
+	$files = new \newzflash\utility\CopyFileTree($argv[1], $nzbpath);
 	echo "Copying nzbs from " . $argv[1] . "\n";
 	$files->copy('*');
 
 	$source = realpath($argv[1] . DS . 'www' . DS . 'covers'); // NN+ path, do not change.
-	$files = new \nzedb\utility\CopyFileTree($source, nZEDb_COVERS);
+	$files = new \newzflash\utility\CopyFileTree($source, nZEDb_COVERS);
 	echo "Copying covers from $source\n";
 	$files->copy('*');
 

@@ -1,8 +1,8 @@
 <?php
 require_once realpath(__DIR__ . DIRECTORY_SEPARATOR . 'install.php');
 
-use nzedb\Install;
-use nzedb\Users;
+use newzflash\Install;
+use newzflash\Users;
 
 $page = new InstallPage();
 $page->title = "Setup Admin User";

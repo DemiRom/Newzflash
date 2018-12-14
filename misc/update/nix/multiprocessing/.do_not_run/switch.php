@@ -2,17 +2,17 @@
 
 use app\models\Groups as Group;
 use app\models\Settings;
-use nzedb\Backfill;
-use nzedb\Binaries;
-use nzedb\Groups;
-use nzedb\Nfo;
-use nzedb\NNTP;
-use nzedb\RequestIDLocal;
-use nzedb\processing\ProcessReleases;
-use nzedb\processing\ProcessReleasesMultiGroup;
-use nzedb\processing\PostProcess;
-use nzedb\processing\post\ProcessAdditional;
-use nzedb\db\DB;
+use newzflash\Backfill;
+use newzflash\Binaries;
+use newzflash\Groups;
+use newzflash\Nfo;
+use newzflash\NNTP;
+use newzflash\RequestIDLocal;
+use newzflash\processing\ProcessReleases;
+use newzflash\processing\ProcessReleasesMultiGroup;
+use newzflash\processing\PostProcess;
+use newzflash\processing\post\ProcessAdditional;
+use newzflash\db\DB;
 
 if (!isset($argv[1])) {
 	exit("This script is not intended to be run manually." . PHP_EOL);

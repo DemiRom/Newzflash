@@ -2,7 +2,7 @@
 require_once './config.php';
 
 use app\models\MultigroupPosters;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 $page   = new AdminPage();
 $pdo = new DB();

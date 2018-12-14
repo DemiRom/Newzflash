@@ -9,7 +9,7 @@ if (!isset($argv[1]) || !in_array($argv[1], ['backfill', 'binaries'])) {
 
 require('.do_not_run/require.php');
 
-use nzedb\libraries\Forking;
+use newzflash\libraries\Forking;
 
 declare(ticks = 1)
 

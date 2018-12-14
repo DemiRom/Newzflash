@@ -32,7 +32,7 @@
 
 namespace libs;
 
-use nzedb\utility\Misc;
+use newzflash\utility\Misc;
 
 class AmazonProductAPI
 {

@@ -2,8 +2,8 @@
 /* Fixes NZB files with a blank first line. */
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\NZB;
-use nzedb\db\DB;
+use newzflash\NZB;
+use newzflash\db\DB;
 
 $pdo = new DB();
 
@@ -19,7 +19,7 @@ if (isset($argv[1]) && $argv[1] == "true") {
 			$nzbpath = $nzb->NZBPath($guid["guid"]);
 			if ($nzbpath !== false) {
 				$nzbcount++;
-				$nzbfile = nzedb\utility\Misc::unzipGzipFile($nzbpath);
+				$nzbfile = newzflash\utility\Misc::unzipGzipFile($nzbpath);
 
 				if ($nzbfile && preg_match('/^[\r\n]+<\?xml/', $nzbfile)) {
 					$brokencount++;

@@ -1,9 +1,9 @@
 <?php
 require_once './config.php';
 
-use nzedb\Content;
-use nzedb\Contents;
-use nzedb\Users;
+use newzflash\Content;
+use newzflash\Contents;
+use newzflash\Users;
 
 $page     = new AdminPage();
 $contents = new Contents(['Settings' => $page->settings]);

@@ -77,7 +77,7 @@ use lithium\data\Connections;
 // ]);
 
 use app\models\Settings;
-use nzedb\utility\Misc;
+use newzflash\utility\Misc;
 
 \lithium\util\Inflector::rules('uninflected', ['predb']);
 

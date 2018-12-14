@@ -1,11 +1,11 @@
 <?php
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\ConsoleTools;
-use nzedb\NZB;
-use nzedb\ReleaseImage;
-use nzedb\Releases;
-use nzedb\db\DB;
+use newzflash\ConsoleTools;
+use newzflash\NZB;
+use newzflash\ReleaseImage;
+use newzflash\Releases;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

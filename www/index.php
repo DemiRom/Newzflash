@@ -1,7 +1,7 @@
 <?php
 require_once 'smarty.php';
 
-nzedb\utility\Misc::maintainanceCheck();
+newzflash\utility\Misc::maintainanceCheck();
 
 if (!file_exists(NEWZFLASH_CONFIGS . 'install.lock')) {
 	header('Location: install');

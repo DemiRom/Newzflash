@@ -1,10 +1,10 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
 use DBorsatto\GiantBomb\Config;
 use DBorsatto\GiantBomb\Client;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 class Games
 {
@@ -46,7 +46,7 @@ class Games
 	public $maxHitRequest;
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 

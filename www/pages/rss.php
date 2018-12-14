@@ -1,10 +1,10 @@
 <?php
 
 use app\models\Settings;
-use nzedb\Category;
-use nzedb\http\RSS;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\Category;
+use newzflash\http\RSS;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 $category = new Category(['Settings' => $page->settings]);
 $rss = new RSS(['Settings' => $page->settings]);

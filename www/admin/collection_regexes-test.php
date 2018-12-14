@@ -2,7 +2,7 @@
 require_once './config.php';
 
 use app\models\Settings;
-use nzedb\Regexes;
+use newzflash\Regexes;
 
 $page = new AdminPage();
 

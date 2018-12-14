@@ -1,8 +1,8 @@
 <?php
 require_once realpath(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\ColorCLI;
-use nzedb\NameFixer;
+use newzflash\ColorCLI;
+use newzflash\NameFixer;
 
 $cli = new ColorCLI();
 

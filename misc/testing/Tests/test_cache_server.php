@@ -2,7 +2,7 @@
 // Test the cache server connection.
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\libraries\Cache;
+use newzflash\libraries\Cache;
 
 try {
 	$cache = new Cache();

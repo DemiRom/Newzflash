@@ -1,5 +1,5 @@
 <?php
-namespace nzedb\libraries;
+namespace newzflash\libraries;
 
 /**
  * Class Cache

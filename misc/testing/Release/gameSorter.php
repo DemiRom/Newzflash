@@ -1,9 +1,9 @@
 <?php
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\Category;
-use nzedb\Games;
-use nzedb\db\DB;
+use newzflash\Category;
+use newzflash\Games;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

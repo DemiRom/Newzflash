@@ -1,6 +1,6 @@
 <?php
 
-namespace nzedb\processing\adult;
+namespace newzflash\processing\adult;
 
 
 abstract class AdultMovies

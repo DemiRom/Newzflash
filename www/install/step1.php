@@ -9,7 +9,7 @@
 require_once '/var/www/Newzflash/www/install/install.php';
 
 use newzflash\Install;
-use nzedb\utility\Misc;
+use newzflash\utility\Misc;
 
 $page = new InstallPage();
 $page->title = "Preflight Checklist";

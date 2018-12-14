@@ -1,9 +1,9 @@
 <?php
-namespace nzedb\processing\tv;
+namespace newzflash\processing\tv;
 
 use app\models\Settings;
-use nzedb\ColorCLI;
-use nzedb\ReleaseImage;
+use newzflash\ColorCLI;
+use newzflash\ReleaseImage;
 use Tmdb\ApiToken;
 use Tmdb\Client;
 use Tmdb\Exception\TmdbApiException;

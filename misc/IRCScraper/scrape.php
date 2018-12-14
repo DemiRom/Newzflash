@@ -1,7 +1,7 @@
 <?php
 require_once realpath(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\IRCScraper;
+use newzflash\IRCScraper;
 
 if (!defined('IRC_SCRAPER_CONFIG')) {
 	define('IRC_SCRAPER_CONFIG', NEWZFLASH_CONFIGS . 'ircscraper_settings.php');

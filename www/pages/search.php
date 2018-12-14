@@ -1,9 +1,9 @@
 <?php
 
-use nzedb\Category;
-use nzedb\Groups;
-use nzedb\ReleaseSearch;
-use nzedb\Releases;
+use newzflash\Category;
+use newzflash\Groups;
+use newzflash\ReleaseSearch;
+use newzflash\Releases;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

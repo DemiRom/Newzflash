@@ -1,8 +1,8 @@
 <?php
 
 use app\models\Settings;
-use nzedb\utility\Misc;
-use nzedb\Captcha;
+use newzflash\utility\Misc;
+use newzflash\Captcha;
 
 if ($page->users->isLoggedIn()) {
 	header('Location: ' . WWW_TOP . '/');

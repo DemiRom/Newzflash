@@ -1,9 +1,9 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 /**
  * Class Users
@@ -39,7 +39,7 @@ class Users
 	const QUEUE_NZBGET  = 2;
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 

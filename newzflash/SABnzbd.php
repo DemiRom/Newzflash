@@ -1,8 +1,8 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
-use nzedb\utility\Misc;
+use newzflash\utility\Misc;
 
 /**
  * Class SABnzbd

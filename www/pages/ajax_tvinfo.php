@@ -1,7 +1,7 @@
 <?php
 
-use nzedb\Releases;
-use nzedb\Videos;
+use newzflash\Releases;
+use newzflash\Videos;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

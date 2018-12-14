@@ -2,7 +2,7 @@
 
 require_once './config.php';
 
-use nzedb\Logger;
+use newzflash\Logger;
 
 $page        = new AdminPage();
 $page->title = 'View Logs';

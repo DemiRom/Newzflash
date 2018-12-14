@@ -2,8 +2,8 @@
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
 use app\models\Settings;
-use nzedb\ColorCLI;
-use nzedb\RottenTomato;
+use newzflash\ColorCLI;
+use newzflash\RottenTomato;
 
 $cli = new ColorCLI();
 

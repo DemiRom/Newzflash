@@ -1,10 +1,10 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Groups as Group;
-use nzedb\db\DB;
-use nzedb\processing\PostProcess;
-use nzedb\utility\Text;
+use newzflash\db\DB;
+use newzflash\processing\PostProcess;
+use newzflash\utility\Text;
 
 /**
  * Class NameFixer
@@ -101,32 +101,32 @@ class NameFixer
 	protected $fullall;
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 
 	/**
-	 * @var \nzedb\ConsoleTools
+	 * @var \newzflash\ConsoleTools
 	 */
 	public $consoletools;
 
 	/**
-	 * @var \nzedb\Category
+	 * @var \newzflash\Category
 	 */
 	public $category;
 
 	/**
-	 * @var \nzedb\utility\Text
+	 * @var \newzflash\utility\Text
 	 */
 	public $text;
 
 	/**
-	 * @var \nzedb\Groups
+	 * @var \newzflash\Groups
 	 */
 	public $_groups;
 
 	/**
-	 * @var \nzedb\SphinxSearch
+	 * @var \newzflash\SphinxSearch
 	 */
 	public $sphinx;
 

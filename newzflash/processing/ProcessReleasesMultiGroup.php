@@ -1,9 +1,9 @@
 <?php
 
-namespace nzedb\processing;
+namespace newzflash\processing;
 
 use app\models\MultigroupPosters;
-use nzedb\NZBMultiGroup;
+use newzflash\NZBMultiGroup;
 
 class ProcessReleasesMultiGroup extends ProcessReleases
 {

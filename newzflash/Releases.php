@@ -1,10 +1,10 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Groups as Group;
 use app\models\Settings;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 /**
  * Class Releases
@@ -18,7 +18,7 @@ class Releases
 	const PASSWD_RAR       = 10; // Definitely passworded.
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 
@@ -59,8 +59,8 @@ class Releases
 		$options += $defaults;
 
 		$this->pdo = ($options['Settings'] instanceof DB ? $options['Settings'] : new DB());
-		$this->groups = ($options['Groups'] instanceof \nzedb\Groups ? $options['Groups'] :
-			new \nzedb\Groups(['Settings' => $this->pdo]));
+		$this->groups = ($options['Groups'] instanceof \newzflash\Groups ? $options['Groups'] :
+			new \newzflash\Groups(['Settings' => $this->pdo]));
 		$this->updategrabs = (Settings::value('..grabstatus') == '0' ? false : true);
 		$this->passwordStatus = (Settings::value('..checkpasswordedrar') == 1 ? -1 : 0);
 		$this->sphinxSearch = new SphinxSearch();

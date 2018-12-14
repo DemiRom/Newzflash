@@ -1,11 +1,11 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Groups as Group;
 use app\models\Settings;
-use nzedb\db\DB;
-use nzedb\processing\PostProcess;
-use nzedb\utility\Misc;
+use newzflash\db\DB;
+use newzflash\processing\PostProcess;
+use newzflash\utility\Misc;
 //use newzflash\processing\tv\TvRage;
 
 /**
@@ -17,7 +17,7 @@ class Nfo
 	/**
 	 * Instance of class DB
 	 *
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 * @access public
 	 */
 	public $pdo;
@@ -195,7 +195,7 @@ class Nfo
 	 *
 	 * @param string $nfo     The nfo.
 	 * @param array  $release The SQL row for this release.
-	 * @param \nzedb\NNTP  $nntp    Instance of class NNTP.
+	 * @param \newzflash\NNTP  $nntp    Instance of class NNTP.
 	 *
 	 * @return boolean        True on success, False on failure.
 	 *

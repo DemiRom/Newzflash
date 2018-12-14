@@ -1,9 +1,9 @@
 <?php
 
 use app\models\Settings;
-use nzedb\Category;
-use nzedb\Movie;
-use nzedb\UserMovies;
+use newzflash\Category;
+use newzflash\Movie;
+use newzflash\UserMovies;
 use Tmdb\ApiToken;
 use Tmdb\Client;
 use Tmdb\Exception\TmdbApiException;

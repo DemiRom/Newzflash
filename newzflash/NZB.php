@@ -1,9 +1,9 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\extensions\util\Versions as li3Versions;
 use app\models\Settings;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Class for reading and writing NZB files on the hard disk,
@@ -45,13 +45,13 @@ class NZB
 	/**
 	 * Instance of class db.
 	 *
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 * @access public
 	 */
 	public $pdo;
 
 	/**
-	 * @var \nzedb\Logger
+	 * @var \newzflash\Logger
 	 */
 	protected $debugging;
 

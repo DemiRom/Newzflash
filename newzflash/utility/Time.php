@@ -18,7 +18,7 @@
  * @author    ruhllatio
  * @copyright 2015 nZEDb
  */
-namespace nzedb\utility;
+namespace newzflash\utility;
 
 /**
  * Class Time -- functions for working with time string and DTOs

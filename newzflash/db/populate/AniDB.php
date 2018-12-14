@@ -1,11 +1,11 @@
 <?php
 
-namespace nzedb\db\populate;
+namespace newzflash\db\populate;
 
 use app\models\Settings;
-use nzedb\ColorCLI;
-use nzedb\ReleaseImage;
-use nzedb\db\DB;
+use newzflash\ColorCLI;
+use newzflash\ReleaseImage;
+use newzflash\db\DB;
 
 class AniDB
 {
@@ -24,7 +24,7 @@ class AniDB
 	public $imgSavePath;
 
 	/**
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 */
 	public $pdo;
 

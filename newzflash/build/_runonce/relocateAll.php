@@ -22,7 +22,7 @@ require_once realpath(dirname(__FILE__) . '/../www/config.php');
 require_once NEWZFLASH_LIB . 'utility' . DS . 'MoveFileTree.php';
 
 use app\models\Settings;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 $dirs = array(
 	[
@@ -105,7 +105,7 @@ foreach ($dirs as $path) {
 	$basemv = isset($path['basemv']) ? $path['basemv'] : true;
 
 	if (file_exists($source)) {
-		$mover = new \nzedb\utility\MoveFileTree($source, $target, $basemv);
+		$mover = new \newzflash\utility\MoveFileTree($source, $target, $basemv);
 
 		if (!$mover->isWIndows()) {
 			setPerms($target);

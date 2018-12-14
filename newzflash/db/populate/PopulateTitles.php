@@ -18,15 +18,15 @@
  * @author niel
  * @copyright 2014 nZEDb
  */
-namespace nzedb\db\populate;
+namespace newzflash\db\populate;
 
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 class PopulateTitles
 {
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 

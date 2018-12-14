@@ -18,7 +18,7 @@
  * @author niel
  * @copyright 2015 nZEDb
  */
-namespace nzedb;
+namespace newzflash;
 
 
 class LoggerException extends \Exception

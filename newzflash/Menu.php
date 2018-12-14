@@ -1,17 +1,17 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 class Menu
 {
 	/**
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 */
 	public $pdo;
 
 	/**
-	 * @param \nzedb\db\DB $pdo
+	 * @param \newzflash\db\DB $pdo
 	 */
 	public function __construct($pdo = null)
 	{

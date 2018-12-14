@@ -17,7 +17,7 @@
  * @copyright 2016 nZEDb
  */
 
-use nzedb\Category;
+use newzflash\Category;
 
 /**
  * Returns the value of the specified Category constant.

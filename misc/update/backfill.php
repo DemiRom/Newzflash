@@ -1,9 +1,9 @@
 <?php
 require_once realpath(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\Backfill;
-use nzedb\NNTP;
-use nzedb\db\DB;
+use newzflash\Backfill;
+use newzflash\NNTP;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

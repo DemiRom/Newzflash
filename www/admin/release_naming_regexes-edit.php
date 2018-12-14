@@ -1,8 +1,8 @@
 <?php
 require_once './config.php';
 
-use nzedb\Category;
-use nzedb\Regexes;
+use newzflash\Category;
+use newzflash\Regexes;
 
 $page    = new AdminPage();
 $regexes = new Regexes(['Settings' => $page->settings, 'Table_Name' => 'release_naming_regexes']);

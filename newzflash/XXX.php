@@ -1,13 +1,13 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
-use nzedb\db\DB;
-use nzedb\processing\adult\ADE;
-use nzedb\processing\adult\ADM;
-use nzedb\processing\adult\AEBN;
-use nzedb\processing\adult\Hotmovies;
-use nzedb\processing\adult\Popporn;
+use newzflash\db\DB;
+use newzflash\processing\adult\ADE;
+use newzflash\processing\adult\ADM;
+use newzflash\processing\adult\AEBN;
+use newzflash\processing\adult\Hotmovies;
+use newzflash\processing\adult\Popporn;
 
 /**
  * Class XXX
@@ -15,7 +15,7 @@ use nzedb\processing\adult\Popporn;
 class XXX
 {
 	/**
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 */
 	public $pdo;
 
@@ -33,7 +33,7 @@ class XXX
 	protected $currentTitle = '';
 
 	/**
-	 * @var \nzedb\Logger
+	 * @var \newzflash\Logger
 	 */
 	protected $debugging;
 
@@ -43,7 +43,7 @@ class XXX
 	protected $debug;
 
 	/**
-	 * @var \nzedb\ReleaseImage
+	 * @var \newzflash\ReleaseImage
 	 */
 	protected $releaseImage;
 

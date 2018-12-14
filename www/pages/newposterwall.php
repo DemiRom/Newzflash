@@ -1,8 +1,8 @@
 <?php
 
-use nzedb\Category;
-use nzedb\Contents;
-use nzedb\Releases;
+use newzflash\Category;
+use newzflash\Contents;
+use newzflash\Releases;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\AniDB;
+use newzflash\AniDB;
 
 $page  = new AdminPage();
 $AniDB = new AniDB(['Settings' => $page->settings]);

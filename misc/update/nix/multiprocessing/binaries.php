@@ -5,7 +5,7 @@ if (!isset($argv[1]) || !is_numeric($argv[1])) {
 
 require('.do_not_run/require.php');
 
-use nzedb\libraries\Forking;
+use newzflash\libraries\Forking;
 
 declare(ticks = 1);
 

@@ -18,7 +18,7 @@
  * @author    niel
  * @copyright 2015 nZEDb
  */
-namespace nzedb\utility;
+namespace newzflash\utility;
 
 class Text
 {

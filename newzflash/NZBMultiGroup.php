@@ -1,5 +1,5 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 /**
  * Class for reading and writing NZB files on the hard disk,

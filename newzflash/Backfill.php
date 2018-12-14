@@ -1,16 +1,16 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Groups as Group;
 use app\models\Settings;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 class Backfill
 {
 	/**
 	 * Instance of class Settings
 	 *
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 */
 	public $pdo;
 

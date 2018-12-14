@@ -1,10 +1,10 @@
 <?php
 
 use app\models\Settings;
-use nzedb\Category;
-use nzedb\Releases;
-use nzedb\UserSeries;
-use nzedb\Videos;
+use newzflash\Category;
+use newzflash\Releases;
+use newzflash\UserSeries;
+use newzflash\Videos;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

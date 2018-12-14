@@ -1,8 +1,8 @@
 <?php
 require_once './config.php';
 
-use nzedb\Binaries;
-use nzedb\Category;
+use newzflash\Binaries;
+use newzflash\Category;
 
 $page = new AdminPage();
 $bin  = new Binaries(['Settings' => $page->settings]);

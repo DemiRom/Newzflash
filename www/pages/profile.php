@@ -1,8 +1,8 @@
 <?php
 
 use app\models\Settings;
-use nzedb\ReleaseComments;
-use nzedb\SABnzbd;
+use newzflash\ReleaseComments;
+use newzflash\SABnzbd;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

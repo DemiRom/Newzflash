@@ -18,9 +18,9 @@
  * @author    niel
  * @copyright 2015 nZEDb
  */
-namespace nzedb\processing;
+namespace newzflash\processing;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Parent class for TV/Film and any similar classes to inherit from.
@@ -35,7 +35,7 @@ abstract class Videos
 	const TYPE_ANIME	= 2; // Type of video is a Anime
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 

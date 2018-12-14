@@ -1,9 +1,9 @@
 <?php
 require_once './config.php';
 
-use nzedb\Releases;
-use nzedb\NZB;
-use nzedb\utility\Misc;
+use newzflash\Releases;
+use newzflash\NZB;
+use newzflash\utility\Misc;
 
 $page = new AdminPage;
 

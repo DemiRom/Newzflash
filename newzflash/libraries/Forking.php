@@ -1,17 +1,17 @@
 <?php
-namespace nzedb\libraries;
+namespace newzflash\libraries;
 
 use app\models\Settings;
-use nzedb\Category;
-use nzedb\ColorCLI;
-use nzedb\MiscSorter;
-use nzedb\NameFixer;
-use nzedb\Nfo;
-use nzedb\NNTP;
-use nzedb\NZB;
-use nzedb\RequestID;
-use nzedb\db\DB;
-use nzedb\processing\PostProcess;
+use newzflash\Category;
+use newzflash\ColorCLI;
+use newzflash\MiscSorter;
+use newzflash\NameFixer;
+use newzflash\Nfo;
+use newzflash\NNTP;
+use newzflash\NZB;
+use newzflash\RequestID;
+use newzflash\db\DB;
+use newzflash\processing\PostProcess;
 
 /**
  * Class Forking
@@ -1093,7 +1093,7 @@ class Forking extends \fork_daemon
 	private $safeBackfillGroup = '';
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 

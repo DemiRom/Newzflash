@@ -1,13 +1,13 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 class SphinxSearch
 {
 	/**
 	 * SphinxQL connection.
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 */
 	public $sphinxQL = null;
 
@@ -62,7 +62,7 @@ class SphinxSearch
 	/**
 	 * Delete release from Sphinx RT tables.
 	 * @param array $identifiers ['g' => Release GUID(mandatory), 'id' => ReleaseID(optional, pass false)]
-	 * @param \nzedb\db\Settings $pdo
+	 * @param \newzflash\db\Settings $pdo
 	 */
 	public function deleteRelease($identifiers, DB $pdo)
 	{
@@ -101,7 +101,7 @@ class SphinxSearch
 	 * Update Sphinx Releases index for given releaseid.
 	 *
 	 * @param int $releaseID
-	 * @param \nzedb\db\DB $pdo
+	 * @param \newzflash\db\DB $pdo
 	 */
 	public function updateRelease($releaseID, DB $pdo)
 	{

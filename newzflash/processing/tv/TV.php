@@ -1,11 +1,11 @@
 <?php
-namespace nzedb\processing\tv;
+namespace newzflash\processing\tv;
 
 use app\models\Settings;
-use nzedb\Category;
-use nzedb\processing\Videos;
-use nzedb\utility\Country;
-use nzedb\utility\Text;
+use newzflash\Category;
+use newzflash\processing\Videos;
+use newzflash\utility\Country;
+use newzflash\utility\Text;
 
 /**
  * Class TV -- abstract extension of Videos

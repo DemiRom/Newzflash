@@ -21,9 +21,9 @@
 
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'bootstrap.php';
 
-use nzedb\db\DbUpdate;
-use nzedb\utility\Git;
-use nzedb\utility\Misc;
+use newzflash\db\DbUpdate;
+use newzflash\utility\Git;
+use newzflash\utility\Misc;
 
 if (!Misc::isCLI()) {
 	exit;

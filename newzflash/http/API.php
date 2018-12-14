@@ -18,12 +18,12 @@
  * @author    ruhllatio
  * @copyright 2016 nZEDb
  */
-namespace nzedb\http;
+namespace newzflash\http;
 
 use app\models\Groups;
-use nzedb\Category;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\Category;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 /**
  * Class API
@@ -33,7 +33,7 @@ use nzedb\utility\Misc;
 class API extends Capabilities {
 
 	/** Settings class
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 

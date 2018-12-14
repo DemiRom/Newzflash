@@ -1,9 +1,9 @@
 <?php
 
-use nzedb\Category;
-use nzedb\Genres;
-use nzedb\Music;
-use nzedb\DnzbFailures;
+use newzflash\Category;
+use newzflash\Genres;
+use newzflash\Music;
+use newzflash\DnzbFailures;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

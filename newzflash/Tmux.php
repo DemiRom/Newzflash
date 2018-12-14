@@ -1,9 +1,9 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
 use app\extensions\util\Versions;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Class Tmux
@@ -13,7 +13,7 @@ use nzedb\db\DB;
 class Tmux
 {
 	/**
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 */
 	public $pdo;
 
@@ -25,7 +25,7 @@ class Tmux
 	/**
 	 * Tmux constructor.
 	 *
-	 * @param \nzedb\db\DB|null $pdo
+	 * @param \newzflash\db\DB|null $pdo
 	 */
 	function __construct(DB $pdo = null)
 	{

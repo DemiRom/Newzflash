@@ -1,7 +1,7 @@
 <?php
 require_once realpath(dirname(__DIR__, 3) . '/app/config/bootstrap.php');
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 //	This script can dump all tables or just collections/binaries/parts/partrepair/groups.
 

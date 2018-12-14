@@ -18,13 +18,13 @@
  * @author    ruhllatio
  * @copyright 2016 nZEDb
  */
-namespace nzedb\http;
+namespace newzflash\http;
 
 use app\extensions\util\Versions;
 use app\models\Settings;
-use nzedb\Category;
-use nzedb\Utility\Misc;
-use nzedb\db\DB;
+use newzflash\Category;
+use newzflash\Utility\Misc;
+use newzflash\db\DB;
 
 /**
  * Class Output -- abstract class for printing web requests outside of Smarty
@@ -34,7 +34,7 @@ use nzedb\db\DB;
 abstract class Capabilities
 {
 	/**
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 */
 	public $pdo;
 

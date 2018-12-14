@@ -1,9 +1,9 @@
 <?php
 
-use nzedb\Category;
-use nzedb\Console;
-use nzedb\Genres;
-use nzedb\DnzbFailures;
+use newzflash\Category;
+use newzflash\Console;
+use newzflash\Genres;
+use newzflash\DnzbFailures;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

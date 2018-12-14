@@ -1,7 +1,7 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Class for inserting names/categories etc from PreDB sources into the DB,
@@ -29,7 +29,7 @@ class PreDb
 	protected $echooutput;
 
 	/**
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 */
 	protected $pdo;
 

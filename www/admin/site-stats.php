@@ -2,8 +2,8 @@
 require_once './config.php';
 
 use app\models\Settings;
-use nzedb\Logging;
-use nzedb\Releases;
+use newzflash\Logging;
+use newzflash\Releases;
 
 $page     = new AdminPage();
 $releases = new Releases(['Settings' => $page->settings]);

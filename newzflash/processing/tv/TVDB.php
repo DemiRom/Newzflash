@@ -1,10 +1,10 @@
 <?php
-namespace nzedb\processing\tv;
+namespace newzflash\processing\tv;
 
 use Moinax\TvDb\Client;
 use Moinax\TvDb\CurlException;
 use Moinax\TvDb\XmlException;
-use nzedb\ReleaseImage;
+use newzflash\ReleaseImage;
 
 /**
  * Class TVDB -- functions used to post process releases against TVDB

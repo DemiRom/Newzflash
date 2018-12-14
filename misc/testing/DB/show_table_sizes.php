@@ -2,7 +2,7 @@
 require_once realpath(dirname(__DIR__, 3) . '/app/config/bootstrap.php');
 require_once realpath(dirname(__DIR__, 3) . DS . 'configuration' . DS . 'settings.php');
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

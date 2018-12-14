@@ -3,13 +3,13 @@ require_once realpath(dirname(dirname(dirname(dirname(__DIR__)))) . DIRECTORY_SE
 
 use app\extensions\util\Versions;
 use app\models\Settings;
-use nzedb\Binaries;
-use nzedb\Categorize;
-use nzedb\ConsoleTools;
-use nzedb\NZB;
-use nzedb\ReleaseCleaning;
-use nzedb\Releases;
-use nzedb\db\DB;
+use newzflash\Binaries;
+use newzflash\Categorize;
+use newzflash\ConsoleTools;
+use newzflash\NZB;
+use newzflash\ReleaseCleaning;
+use newzflash\Releases;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\Regexes;
+use newzflash\Regexes;
 
 $page = new AdminPage();
 

@@ -2,9 +2,9 @@
 
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\processing\tv\TraktTv;
+use newzflash\processing\tv\TraktTv;
 
-$c = new nzedb\ColorCLI();
+$c = new newzflash\ColorCLI();
 $trakt = new TraktTv();
 
 if (!empty($argv[1]) && is_numeric($argv[2]) && is_numeric($argv[3])) {

@@ -1,7 +1,7 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /*
  * Cleans names for releases/imports/namefixer.
@@ -35,7 +35,7 @@ class ReleaseCleaning
 	public $groupName = '';
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 
@@ -55,7 +55,7 @@ class ReleaseCleaning
 	protected $_regexes;
 
 	/**
-	 * @param \nzedb\db\Settings $settings
+	 * @param \newzflash\db\Settings $settings
 	 */
 	public function __construct($settings = null)
 	{

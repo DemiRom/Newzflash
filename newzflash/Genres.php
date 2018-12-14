@@ -1,7 +1,7 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 class Genres
 {
@@ -13,7 +13,7 @@ class Genres
 	const STATUS_DISABLED = 1;
 
 	/**
-	 * @var \nzedb\db\Settings;
+	 * @var \newzflash\db\Settings;
 	 */
 	public $pdo;
 

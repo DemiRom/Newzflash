@@ -1,7 +1,7 @@
 <?php
 
-use nzedb\NZBGet;
-use nzedb\SABnzbd;
+use newzflash\NZBGet;
+use newzflash\SABnzbd;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

@@ -19,8 +19,8 @@
  * @copyright 2016 nZEDb
  */
 
-use \nzedb\config\Configure;
-use nzedb\utility\Misc;
+use \newzflash\config\Configure;
+use newzflash\utility\Misc;
 
 
 if (!defined('HAS_WHICH')) {

@@ -1,6 +1,6 @@
 <?php
 
-use nzedb\NZBImport;
+use newzflash\NZBImport;
 
 // Check if the user is running from CLI.
 if (PHP_SAPI === 'cli') {

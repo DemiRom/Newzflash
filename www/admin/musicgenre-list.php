@@ -1,8 +1,8 @@
 <?php
 require_once './config.php';
 
-use nzedb\Genres;
-use nzedb\Category;
+use newzflash\Genres;
+use newzflash\Category;
 
 $page = new AdminPage();
 $genres = new Genres(['Settings' => $page->settings]);

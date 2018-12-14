@@ -1,8 +1,8 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 /**
  * Export NZB's to a folder.
@@ -24,7 +24,7 @@ class NZBExport
 	protected $retVal;
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 * @access protected
 	 */
 	protected $pdo;

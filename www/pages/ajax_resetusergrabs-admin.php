@@ -1,6 +1,6 @@
 <?php
 
-use nzedb\Users;
+use newzflash\Users;
 
 $page = new AdminPage();
 $u = new Users();

@@ -1,9 +1,9 @@
 <?php
 
-use nzedb\Category;
-use nzedb\Releases;
-use nzedb\Videos;
-use nzedb\UserSeries;
+use newzflash\Category;
+use newzflash\Releases;
+use newzflash\Videos;
+use newzflash\UserSeries;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

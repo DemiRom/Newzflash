@@ -2,9 +2,9 @@
 //This script will update all records in the consoleinfo table
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\Category;
-use nzedb\Console;
-use nzedb\db\DB;
+use newzflash\Category;
+use newzflash\Console;
+use newzflash\db\DB;
 
 $category = new Category();
 $pdo = new DB();

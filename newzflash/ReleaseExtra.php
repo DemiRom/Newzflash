@@ -1,19 +1,19 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use Mhor\MediaInfo\Container\MediaInfoContainer;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 class ReleaseExtra
 {
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 
 	/**
-	 * @param \nzedb\db\Settings $settings
+	 * @param \newzflash\db\Settings $settings
 	 */
 	public function __construct($settings = null)
 	{

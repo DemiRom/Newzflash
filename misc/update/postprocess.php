@@ -2,9 +2,9 @@
 require_once realpath(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
 use app\models\Settings;
-use nzedb\NNTP;
-use nzedb\db\DB;
-use nzedb\processing\PostProcess;
+use newzflash\NNTP;
+use newzflash\db\DB;
+use newzflash\processing\PostProcess;
 
 $pdo = new DB();
 

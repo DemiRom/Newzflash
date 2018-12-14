@@ -1,8 +1,8 @@
 <?php
 
 use app\models\Settings;
-use nzedb\Captcha;
-use nzedb\utility\Misc;
+use newzflash\Captcha;
+use newzflash\utility\Misc;
 
 $captcha = new Captcha($page);
 $msg = '';

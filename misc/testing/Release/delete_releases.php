@@ -2,8 +2,8 @@
 // Include config.php
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\ReleaseRemover;
-use nzedb\ColorCLI;
+use newzflash\ReleaseRemover;
+use newzflash\ColorCLI;
 
 // New line for CLI.
 $n = PHP_EOL;

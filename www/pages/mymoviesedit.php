@@ -1,7 +1,7 @@
 <?php
 
-use nzedb\Category;
-use nzedb\UserMovies;
+use newzflash\Category;
+use newzflash\UserMovies;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

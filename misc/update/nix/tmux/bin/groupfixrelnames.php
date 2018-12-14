@@ -2,15 +2,15 @@
 require_once realpath(dirname(dirname(dirname(dirname(dirname(__DIR__))))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
 use app\models\Settings;
-use nzedb\Category;
-use nzedb\MiscSorter;
-use nzedb\NameFixer;
-use nzedb\Nfo;
-use nzedb\NNTP;
-use nzedb\NZB;
-use nzedb\NZBContents;
-use nzedb\db\DB;
-use nzedb\processing\PostProcess;
+use newzflash\Category;
+use newzflash\MiscSorter;
+use newzflash\NameFixer;
+use newzflash\Nfo;
+use newzflash\NNTP;
+use newzflash\NZB;
+use newzflash\NZBContents;
+use newzflash\db\DB;
+use newzflash\processing\PostProcess;
 
 $pdo = new DB();
 

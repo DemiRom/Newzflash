@@ -1,10 +1,10 @@
 <?php
-namespace nzedb\processing\tv;
+namespace newzflash\processing\tv;
 
 use app\models\Settings;
-use nzedb\libraries\TraktAPI;
-use nzedb\ReleaseImage;
-use nzedb\utility\Time;
+use newzflash\libraries\TraktAPI;
+use newzflash\ReleaseImage;
+use newzflash\utility\Time;
 
 /**
  * Class TraktTv
@@ -18,7 +18,7 @@ class TraktTv extends TV
 	/**
 	 * Client for Trakt API
 	 *
-	 * @var \nzedb\libraries\TraktAPI
+	 * @var \newzflash\libraries\TraktAPI
 	 */
 	public $client;
 

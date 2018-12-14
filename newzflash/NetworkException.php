@@ -19,7 +19,7 @@
  */
 
 
-namespace nzedb;
+namespace newzflash;
 
 /**
  * A `NetworkException` may be thrown whenever an unsuccessful attempt is made to connect to a

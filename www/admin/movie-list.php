@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\Movie;
+use newzflash\Movie;
 
 $page  = new AdminPage();
 $movie = new Movie(['Settings' => $page->settings]);

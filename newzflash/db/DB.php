@@ -1,14 +1,14 @@
 <?php
-namespace nzedb\db;
+namespace newzflash\db;
 
-use nzedb\ColorCLI;
-use nzedb\ConsoleTools;
-use nzedb\Logger;
-use nzedb\LoggerException;
-use nzedb\utility\Misc;
-use nzedb\utility\Text;
-use nzedb\libraries\Cache;
-use nzedb\libraries\CacheException;
+use newzflash\ColorCLI;
+use newzflash\ConsoleTools;
+use newzflash\Logger;
+use newzflash\LoggerException;
+use newzflash\utility\Misc;
+use newzflash\utility\Text;
+use newzflash\libraries\Cache;
+use newzflash\libraries\CacheException;
 
 
 /**
@@ -41,7 +41,7 @@ class DB extends \PDO
 	public $consoleTools;
 
 	/**
-	 * @var \nzedb\ColorCLI	Instance variable for logging object. Currently only ColorCLI supported,
+	 * @var \newzflash\ColorCLI	Instance variable for logging object. Currently only ColorCLI supported,
 	 * but expanding for full logging with agnostic API planned.
 	 */
 	public $log;
@@ -64,7 +64,7 @@ class DB extends \PDO
 	private $cacheEnabled = false;
 
 	/**
-	 * @var null|\nzedb\libraries\Cache
+	 * @var null|\newzflash\libraries\Cache
 	 */
 	private $cacheServer = null;
 

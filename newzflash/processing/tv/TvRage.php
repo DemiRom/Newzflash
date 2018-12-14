@@ -1,9 +1,9 @@
 <?php
-namespace nzedb\processing\tv;
+namespace newzflash\processing\tv;
 
-use nzedb\utility\Misc;
-use nzedb\utility\Country;
-use nzedb\ReleaseImage;
+use newzflash\utility\Misc;
+use newzflash\utility\Country;
+use newzflash\ReleaseImage;
 
 /**
  * Class TvRage - functions used to post process releases against TvRage

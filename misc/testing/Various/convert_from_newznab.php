@@ -1,7 +1,7 @@
 <?php
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 // Check argument count.
 if (!isset($argv[1]) || !isset($argv[2]) || !isset($argv[3])) {

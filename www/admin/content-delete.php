@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\Contents;
+use newzflash\Contents;
 
 $page = new AdminPage();
 

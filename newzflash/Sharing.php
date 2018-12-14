@@ -1,7 +1,7 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * @note Does not currently work with NntpProxy because it does not implement all of NNTP's command.
@@ -45,7 +45,7 @@ class Sharing
 	 */
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 * @access protected
 	 */
 	protected $pdo;

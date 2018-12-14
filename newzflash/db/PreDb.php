@@ -18,7 +18,7 @@
  * @author niel
  * @copyright 2014 nZEDb
  */
-namespace nzedb\db;
+namespace newzflash\db;
 
 
 class PreDb extends DB

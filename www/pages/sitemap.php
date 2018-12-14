@@ -1,8 +1,8 @@
 <?php
 
 use app\models\Settings;
-use nzedb\Contents;
-use nzedb\SiteMap;
+use newzflash\Contents;
+use newzflash\SiteMap;
 
 $te = $page->smarty;
 $arPages = array();

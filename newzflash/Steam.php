@@ -1,10 +1,10 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\SteamApps;
 use app\models\Settings;
 use b3rs3rk\steamfront\Main;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 class Steam
 {

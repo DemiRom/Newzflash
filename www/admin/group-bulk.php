@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\Groups;
+use newzflash\Groups;
 
 $page = new AdminPage();
 $msgs = $error = false;

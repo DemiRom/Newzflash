@@ -1,11 +1,11 @@
 <?php
 
-use nzedb\Category;
-use nzedb\NZBGet;
-use nzedb\SABnzbd;
-use nzedb\Users;
-use nzedb\utility\Misc;
-use nzedb\utility\Text;
+use newzflash\Category;
+use newzflash\NZBGet;
+use newzflash\SABnzbd;
+use newzflash\Users;
+use newzflash\utility\Misc;
+use newzflash\utility\Text;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

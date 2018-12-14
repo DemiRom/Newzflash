@@ -1,11 +1,11 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 
 use app\models\Groups;
 use app\models\Settings;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 /**
  * Import NZB files into the database.
@@ -14,7 +14,7 @@ use nzedb\utility\Misc;
 class NZBImport
 {
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 * @access protected
 	 */
 	protected $pdo;

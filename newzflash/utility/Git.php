@@ -18,7 +18,7 @@
  * @author niel
  * @copyright 2014 nZEDb
  */
-namespace nzedb\utility;
+namespace newzflash\utility;
 
 /**
  * Class Git - Wrapper for various git operations.

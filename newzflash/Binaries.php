@@ -1,11 +1,11 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Groups as Group;
 use app\models\Settings;
 use app\models\Tables;
-use nzedb\db\DB;
-use nzedb\processing\ProcessReleasesMultiGroup;
+use newzflash\db\DB;
+use newzflash\processing\ProcessReleasesMultiGroup;
 
 /**
  * Class Binaries
@@ -82,7 +82,7 @@ class Binaries
 	protected $_partRepair;
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	protected $_pdo;
 

@@ -19,11 +19,10 @@
  * @copyright 2016 nZEDb
  */
 
-namespace nzedb\http;
+namespace newzflash\http;
 
-
-use nzedb\Category;
-use nzedb\utility\Misc;
+use newzflash\Category;
+use newzflash\utility\Misc;
 
 
 /**

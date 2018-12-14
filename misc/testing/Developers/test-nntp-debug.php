@@ -4,9 +4,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\ColorCLI;
-use nzedb\NNTP;
-use nzedb\db\DB;
+use newzflash\ColorCLI;
+use newzflash\NNTP;
+use newzflash\db\DB;
 
 echo 'This script is going to run without debug, you can turn on debug by passing true as an argument.' . PHP_EOL;
 

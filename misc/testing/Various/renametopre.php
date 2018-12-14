@@ -3,15 +3,15 @@
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
 use app\models\Groups as Group;
-use nzedb\Categorize;
-use nzedb\Category;
-use nzedb\ColorCLI;
-use nzedb\ConsoleTools;
-use nzedb\Groups;
-use nzedb\NameFixer;
-use nzedb\ReleaseCleaning;
-use nzedb\ReleaseFiles;
-use nzedb\db\DB;
+use newzflash\Categorize;
+use newzflash\Category;
+use newzflash\ColorCLI;
+use newzflash\ConsoleTools;
+use newzflash\Groups;
+use newzflash\NameFixer;
+use newzflash\ReleaseCleaning;
+use newzflash\ReleaseFiles;
+use newzflash\db\DB;
 
 /*
  *

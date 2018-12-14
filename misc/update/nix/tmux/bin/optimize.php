@@ -1,8 +1,8 @@
 <?php
 require_once realpath(dirname(dirname(dirname(dirname(dirname(__DIR__))))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\Tmux;
-use nzedb\db\DB;
+use newzflash\Tmux;
+use newzflash\db\DB;
 
 $pdo = new DB();
 $DIR = NEWZFLASH_MISC;

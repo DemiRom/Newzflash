@@ -1,9 +1,9 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Groups as Group;
 use app\models\Settings;
-use nzedb\utility\Misc;
+use newzflash\utility\Misc;
 
 /**
  * Attempts to find a PRE name for a release using a request ID from our local pre database,

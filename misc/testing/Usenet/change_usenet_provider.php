@@ -1,9 +1,9 @@
 <?php
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\Binaries;
-use nzedb\NNTP;
-use nzedb\db\DB;
+use newzflash\Binaries;
+use newzflash\NNTP;
+use newzflash\db\DB;
 
 /* This script will update the groups table to get the new article numbers for each group you have activated.
   It will also truncate the parts, binaries, collections, and missed_parts tables.

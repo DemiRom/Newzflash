@@ -1,10 +1,10 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\extensions\util\Yenc;
 use app\models\Settings;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 /**
  * Class for connecting to the usenet, retrieving articles and article headers,

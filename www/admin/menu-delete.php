@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\Menu;
+use newzflash\Menu;
 
 $page = new AdminPage();
 

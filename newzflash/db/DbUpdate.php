@@ -18,14 +18,14 @@
  * @author    niel
  * @copyright 2014 nZEDb
  */
-namespace nzedb\db;
+namespace newzflash\db;
 
 use app\models\Settings;
-use nzedb\ColorCLI;
-use nzedb\db\DB;
-use nzedb\utility\Git;
-use nzedb\utility\Misc;
-use nzedb\utility\Text;
+use newzflash\ColorCLI;
+use newzflash\db\DB;
+use newzflash\utility\Git;
+use newzflash\utility\Misc;
+use newzflash\utility\Text;
 
 
 class DbUpdate
@@ -33,12 +33,12 @@ class DbUpdate
 	public $backedup;
 
 	/**
-	 * @var \nzedb\db\Settings    Instance variable for DB object.
+	 * @var \newzflash\db\Settings    Instance variable for DB object.
 	 */
 	public $pdo;
 
 	/**
-	 * @var \nzedb\utility\Git instance
+	 * @var \newzflash\utility\Git instance
 	 */
 	public $git;
 

@@ -3,9 +3,9 @@ require_once realpath(dirname(__DIR__, 3) . '/app/config/bootstrap.php');
 
 use app\models\Groups as Group;
 use app\models\Tables;
-use nzedb\ConsoleTools;
-use nzedb\Groups;
-use nzedb\db\DB;
+use newzflash\ConsoleTools;
+use newzflash\Groups;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

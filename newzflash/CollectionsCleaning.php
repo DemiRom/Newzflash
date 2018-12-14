@@ -1,7 +1,7 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Cleans names for collections/imports/namefixer.
@@ -73,7 +73,7 @@ class CollectionsCleaning
 	public $subject = '';
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 

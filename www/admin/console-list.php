@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\Console;
+use newzflash\Console;
 
 $page = new AdminPage();
 $con  = new Console(['Settings' => $page->settings]);

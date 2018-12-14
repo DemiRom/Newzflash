@@ -1,6 +1,6 @@
 <?php
 
-use nzedb\SABnzbd;
+use newzflash\SABnzbd;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

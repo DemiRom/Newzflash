@@ -1,5 +1,5 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
 

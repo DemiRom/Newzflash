@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\Games;
+use newzflash\Games;
 
 $page = new AdminPage();
 $game = new Games(['Settings' => $page->settings]);

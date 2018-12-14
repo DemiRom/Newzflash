@@ -1,8 +1,8 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 /**
  * Tmux output functions for printing monitor data

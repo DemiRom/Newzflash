@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\ReleaseRemover;
+use newzflash\ReleaseRemover;
 
 $page        = new AdminPage();
 $page->title = "Delete Releases";

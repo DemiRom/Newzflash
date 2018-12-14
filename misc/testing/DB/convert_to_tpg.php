@@ -4,9 +4,9 @@ require_once realpath(dirname(__DIR__, 3) . '/app/config/bootstrap.php');
 use app\models\Groups as Group;
 use app\models\Settings;
 use app\models\Tables;
-use nzedb\ConsoleTools;
-use nzedb\Groups;
-use nzedb\db\DB;
+use newzflash\ConsoleTools;
+use newzflash\Groups;
+use newzflash\db\DB;
 
 /* This script will allow you to move from single collections/binaries/parts tables to TPG without having to run reset_truncate.
   Please STOP all update scripts before running this script.

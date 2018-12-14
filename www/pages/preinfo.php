@@ -127,7 +127,7 @@
  *              )
  */
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 if (nZEDb_PREINFO_OPEN) {
 	if (!$page->users->isLoggedIn()) {

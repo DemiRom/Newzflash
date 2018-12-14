@@ -1,9 +1,9 @@
 <?php
 require_once './config.php';
 
-use nzedb\NZBExport;
-use nzedb\Releases;
-use nzedb\utility\Misc;
+use newzflash\NZBExport;
+use newzflash\Releases;
+use newzflash\utility\Misc;
 
 if (Misc::isCLI()) {
 	exit ('This script is only for exporting from the web, use the script in misc/testing' . PHP_EOL);

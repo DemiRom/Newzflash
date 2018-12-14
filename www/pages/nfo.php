@@ -1,7 +1,7 @@
 <?php
 
-use nzedb\Releases;
-use nzedb\utility\Text;
+use newzflash\Releases;
+use newzflash\utility\Text;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

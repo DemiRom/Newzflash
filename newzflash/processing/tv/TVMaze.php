@@ -1,9 +1,9 @@
 <?php
 
-namespace nzedb\processing\tv;
+namespace newzflash\processing\tv;
 
 use JPinkney\TVMaze\TVMaze as Client;
-use nzedb\ReleaseImage;
+use newzflash\ReleaseImage;
 
 /**
  * Class TVMaze

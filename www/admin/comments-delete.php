@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\ReleaseComments;
+use newzflash\ReleaseComments;
 
 $page = new AdminPage();
 

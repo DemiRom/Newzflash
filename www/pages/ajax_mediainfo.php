@@ -1,6 +1,6 @@
 <?php
 
-use nzedb\ReleaseExtra;
+use newzflash\ReleaseExtra;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

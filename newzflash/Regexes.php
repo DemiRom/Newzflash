@@ -1,14 +1,14 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Groups as Group;
 use app\models\Tables;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 class Regexes
 {
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 

@@ -1,7 +1,7 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Adds/fetches rar/zip/etc files for a release.
@@ -11,7 +11,7 @@ use nzedb\db\DB;
 class ReleaseFiles
 {
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	protected $pdo;
 
@@ -21,7 +21,7 @@ class ReleaseFiles
 	public $sphinxSearch;
 
 	/**
-	 * @param \nzedb\db\Settings $settings
+	 * @param \newzflash\db\Settings $settings
 	 */
 	public function __construct($settings = null)
 	{

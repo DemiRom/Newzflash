@@ -1,10 +1,10 @@
 <?php
 
 use app\models\Settings;
-use nzedb\Releases;
-use nzedb\NZB;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\Releases;
+use newzflash\NZB;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 $uid = 0;
 

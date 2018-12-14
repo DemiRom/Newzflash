@@ -3,7 +3,7 @@
 require_once './config.php';
 
 use app\models\MultigroupPosters;
-use nzedb\processing\ProcessReleasesMultiGroup;
+use newzflash\processing\ProcessReleasesMultiGroup;
 
 $page = new AdminPage();
 $relPosters = new ProcessReleasesMultiGroup(['Settings' => $page->settings]);

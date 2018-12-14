@@ -1,24 +1,24 @@
 <?php
-namespace nzedb\processing;
+namespace newzflash\processing;
 
 use app\models\Groups as Group;
 use app\models\MultigroupPosters;
 use app\models\ReleasesGroups;
 use app\models\Settings;
 use app\models\Tables;
-use nzedb\Categorize;
-use nzedb\Category;
-use nzedb\ConsoleTools;
-use nzedb\Genres;
-use nzedb\Groups;
-use nzedb\NZB;
-use nzedb\PreDb;
-use nzedb\ReleaseCleaning;
-use nzedb\ReleaseImage;
-use nzedb\Releases;
-use nzedb\RequestIDLocal;
-use nzedb\RequestIDWeb;
-use nzedb\db\DB;
+use newzflash\Categorize;
+use newzflash\Category;
+use newzflash\ConsoleTools;
+use newzflash\Genres;
+use newzflash\Groups;
+use newzflash\NZB;
+use newzflash\PreDb;
+use newzflash\ReleaseCleaning;
+use newzflash\ReleaseImage;
+use newzflash\Releases;
+use newzflash\RequestIDLocal;
+use newzflash\RequestIDWeb;
+use newzflash\db\DB;
 
 class ProcessReleases
 {
@@ -35,7 +35,7 @@ class ProcessReleases
 	const FILE_COMPLETE   = 1; // We have all the parts for the file (binaries table partcheck column).
 
 	/**
-	 * @var \nzedb\Groups
+	 * @var \newzflash\Groups
 	 */
 	public $groups;
 
@@ -70,32 +70,32 @@ class ProcessReleases
 	public $echoCLI;
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 
 	/**
-	 * @var \nzedb\ConsoleTools
+	 * @var \newzflash\ConsoleTools
 	 */
 	public $consoleTools;
 
 	/**
-	 * @var \nzedb\NZB
+	 * @var \newzflash\NZB
 	 */
 	public $nzb;
 
 	/**
-	 * @var \nzedb\ReleaseCleaning
+	 * @var \newzflash\ReleaseCleaning
 	 */
 	public $releaseCleaning;
 
 	/**
-	 * @var \nzedb\Releases
+	 * @var \newzflash\Releases
 	 */
 	public $releases;
 
 	/**
-	 * @var \nzedb\ReleaseImage
+	 * @var \newzflash\ReleaseImage
 	 */
 	public $releaseImage;
 
@@ -163,7 +163,7 @@ class ProcessReleases
 	 * @param int    $categorize
 	 * @param int    $postProcess
 	 * @param string $groupName (optional)
-	 * @param \nzedb\NNTP   $nntp
+	 * @param \newzflash\NNTP   $nntp
 	 * @param bool   $echooutput
 	 *
 	 * @return int
@@ -928,7 +928,7 @@ class ProcessReleases
 	 * Post-process releases.
 	 *
 	 * @param int        $postProcess
-	 * @param \nzedb\NNTP       $nntp
+	 * @param \newzflash\NNTP       $nntp
 	 *
 	 * @void
 	 * @access public

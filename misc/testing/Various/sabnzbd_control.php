@@ -4,7 +4,7 @@
 // --------------------------------------------------------------
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

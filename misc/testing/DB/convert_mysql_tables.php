@@ -1,8 +1,8 @@
 <?php
 require_once realpath(dirname(__DIR__, 3) . '/app/config/bootstrap.php');
 
-use nzedb\ColorCLI;
-use nzedb\db\DB;
+use newzflash\ColorCLI;
+use newzflash\db\DB;
 
 $cli = new ColorCLI();
 

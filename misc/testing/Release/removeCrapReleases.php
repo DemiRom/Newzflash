@@ -2,8 +2,8 @@
 /* This script deletes releases that match certain criteria, type php removeCrapReleases.php false for details. */
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\ColorCLI;
-use nzedb\ReleaseRemover;
+use newzflash\ColorCLI;
+use newzflash\ReleaseRemover;
 
 $cli = new ColorCLI();
 

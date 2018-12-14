@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\Category;
+use newzflash\Category;
 
 $page     = new AdminPage();
 $page->title = "Category List";

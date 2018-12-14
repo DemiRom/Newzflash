@@ -1,10 +1,10 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
-use nzedb\db\DB;
-use nzedb\processing\PostProcess;
-use nzedb\utility\Misc;
+use newzflash\db\DB;
+use newzflash\processing\PostProcess;
+use newzflash\utility\Misc;
 
 /**
  * Gets information contained within the NZB.
@@ -14,13 +14,13 @@ use nzedb\utility\Misc;
 class NZBContents
 {
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 * @access protected
 	 */
 	public $pdo;
 
 	/**
-	 * @var \nzedb\NNTP
+	 * @var \newzflash\NNTP
 	 * @access protected
 	 */
 	protected $nntp;

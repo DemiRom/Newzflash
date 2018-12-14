@@ -1,8 +1,8 @@
 <?php
 
-use nzedb\AniDB;
-use nzedb\Category;
-use nzedb\Releases;
+use newzflash\AniDB;
+use newzflash\Category;
+use newzflash\Releases;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

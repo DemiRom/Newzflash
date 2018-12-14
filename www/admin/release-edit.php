@@ -1,8 +1,8 @@
 <?php
 require_once './config.php';
 
-use nzedb\Category;
-use nzedb\Releases;
+use newzflash\Category;
+use newzflash\Releases;
 
 $page = new AdminPage(true);
 $releases = new Releases(['Settings' => $page->settings]);

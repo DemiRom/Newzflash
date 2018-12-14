@@ -21,8 +21,8 @@ namespace app\extensions\command;
 
 use app\extensions\util\Yenc;
 use app\models\Settings;
-use nzedb\db\DB;
-use nzedb\NNTP;
+use newzflash\db\DB;
+use newzflash\NNTP;
 
 
 /**
@@ -43,7 +43,7 @@ class Usenet extends \app\extensions\console\Command
 	public $showHeader = false;
 
 	/**
-	 * @var \nzedb\NNTP object
+	 * @var \newzflash\NNTP object
 	 */
 	private $usp = null;
 

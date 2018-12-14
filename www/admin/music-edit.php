@@ -1,9 +1,9 @@
 <?php
 require_once './config.php';
 
-use nzedb\Genres;
-use nzedb\Music;
-use nzedb\Category;
+use newzflash\Genres;
+use newzflash\Music;
+use newzflash\Category;
 
 $page  = new AdminPage();
 $music = new Music(['Settings' => $page->settings]);

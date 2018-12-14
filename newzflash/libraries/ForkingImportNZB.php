@@ -1,7 +1,7 @@
 <?php
-namespace nzedb\libraries;
+namespace newzflash\libraries;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Class ForkingImportNZB

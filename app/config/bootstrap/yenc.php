@@ -22,7 +22,7 @@ use lithium\aop\Filters;
 use lithium\action\Dispatcher;
 
 
-if (defined('nZEDb_INSTALLER') && nZEDb_INSTALLER !== false) {
+if (defined('NEWZFLASH_INSTALLER') && NEWZFLASH_INSTALLER !== false) {
 		$adapter = 'Php';
 } else {
 		switch (true) {

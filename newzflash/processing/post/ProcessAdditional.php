@@ -16,26 +16,26 @@
  * @author    niel
  * @copyright 2018 nZEDb
  */
-namespace nzedb\processing\post;
+namespace newzflash\processing\post;
 
 use app\models\Groups as Group;
 use app\models\Settings;
 use lithium\analysis\Logger;
 use Mhor\MediaInfo\MediaInfo;
-use nzedb\Categorize;
-use nzedb\Category;
-use nzedb\db\DB;
-use nzedb\Groups;
-use nzedb\NameFixer;
-use nzedb\Nfo;
-use nzedb\NNTP;
-use nzedb\NZB;
-use nzedb\ReleaseExtra;
-use nzedb\ReleaseFiles;
-use nzedb\ReleaseImage;
-use nzedb\Releases;
-use nzedb\SphinxSearch;
-use nzedb\utility\Misc;
+use newzflash\Categorize;
+use newzflash\Category;
+use newzflash\db\DB;
+use newzflash\Groups;
+use newzflash\NameFixer;
+use newzflash\Nfo;
+use newzflash\NNTP;
+use newzflash\NZB;
+use newzflash\ReleaseExtra;
+use newzflash\ReleaseFiles;
+use newzflash\ReleaseImage;
+use newzflash\Releases;
+use newzflash\SphinxSearch;
+use newzflash\utility\Misc;
 
 class ProcessAdditional
 {
@@ -47,7 +47,7 @@ class ProcessAdditional
 	const maxCompressedFilesToCheck = 20;
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 
@@ -75,7 +75,7 @@ class ProcessAdditional
 	protected $_release;
 
 	/**
-	 * @var \nzedb\NZB
+	 * @var \newzflash\NZB
 	 */
 	protected $_nzb;
 
@@ -86,7 +86,7 @@ class ProcessAdditional
 	protected $_nzbContents;
 
 	/**
-	 * @var \nzedb\Groups
+	 * @var \newzflash\Groups
 	 */
 	protected $_groups;
 
@@ -186,37 +186,37 @@ class ProcessAdditional
 	protected $_echoCLI;
 
 	/**
-	 * @var \nzedb\NNTP
+	 * @var \newzflash\NNTP
 	 */
 	protected $_nntp;
 
 	/**
-	 * @var \nzedb\ReleaseFiles
+	 * @var \newzflash\ReleaseFiles
 	 */
 	protected $_releaseFiles;
 
 	/**
-	 * @var \nzedb\Categorize
+	 * @var \newzflash\Categorize
 	 */
 	protected $_categorize;
 
 	/**
-	 * @var \nzedb\NameFixer
+	 * @var \newzflash\NameFixer
 	 */
 	protected $_nameFixer;
 
 	/**
-	 * @var \nzedb\ReleaseExtra
+	 * @var \newzflash\ReleaseExtra
 	 */
 	protected $_releaseExtra;
 
 	/**
-	 * @var \nzedb\ReleaseImage
+	 * @var \newzflash\ReleaseImage
 	 */
 	protected $_releaseImage;
 
 	/**
-	 * @var \nzedb\Nfo
+	 * @var \newzflash\Nfo
 	 */
 	protected $_nfo;
 

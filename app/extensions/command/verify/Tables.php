@@ -24,7 +24,7 @@ use app\models\Groups as Group;
 use app\models\Settings;
 use app\models\Tables as Schema;
 use lithium\data\Connections;
-use nzedb\Groups;
+use newzflash\Groups;
 
 class Tables extends \app\extensions\console\Command
 {

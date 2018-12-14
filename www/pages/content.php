@@ -1,6 +1,6 @@
 <?php
 
-use nzedb\Contents;
+use newzflash\Contents;
 
 $contents = new Contents(['Settings' => $page->settings]);
 

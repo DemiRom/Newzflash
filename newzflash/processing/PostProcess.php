@@ -1,34 +1,34 @@
 <?php
-namespace nzedb\processing;
+namespace newzflash\processing;
 
 use app\models\Groups as Group;
 use app\models\Settings;
-use nzedb\Books;
-use nzedb\Category;
-use nzedb\Console;
-use nzedb\Games;
-use nzedb\Groups;
-use nzedb\Logger;
-use nzedb\Movie;
-use nzedb\Music;
-use nzedb\NameFixer;
-use nzedb\Nfo;
-use nzedb\Sharing;
-use nzedb\processing\tv\TVDB;
-use nzedb\processing\tv\TVMaze;
-use nzedb\processing\tv\TMDB;
-use nzedb\processing\tv\TraktTv;
-use nzedb\XXX;
-use nzedb\ReleaseFiles;
-use nzedb\db\DB;
-use nzedb\processing\post\AniDB;
-use nzedb\processing\post\ProcessAdditional;
-use nzedb\utility;
+use newzflash\Books;
+use newzflash\Category;
+use newzflash\Console;
+use newzflash\Games;
+use newzflash\Groups;
+use newzflash\Logger;
+use newzflash\Movie;
+use newzflash\Music;
+use newzflash\NameFixer;
+use newzflash\Nfo;
+use newzflash\Sharing;
+use newzflash\processing\tv\TVDB;
+use newzflash\processing\tv\TVMaze;
+use newzflash\processing\tv\TMDB;
+use newzlash\processing\tv\TraktTv;
+use newzflash\XXX;
+use newzflash\ReleaseFiles;
+use newzflash\db\DB;
+use newzflash\processing\post\AniDB;
+use newzflash\processing\post\ProcessAdditional;
+use newzflash\utility;
 
 class PostProcess
 {
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 
@@ -69,12 +69,12 @@ class PostProcess
 	private $echooutput;
 
 	/**
-	 * @var \nzedb\Groups
+	 * @var \newzflash\Groups
 	 */
 	private $groups;
 
 	/**
-	 * @var \nzedb\Nfo
+	 * @var \newzflash\Nfo
 	 */
 	private $Nfo;
 
@@ -121,7 +121,7 @@ class PostProcess
 	/**
 	 * Go through every type of post proc.
 	 *
-	 * @param \nzedb\NNTP $nntp
+	 * @param \newzflash\NNTP $nntp
 	 *
 	 * @return void
 	 */
@@ -221,7 +221,7 @@ class PostProcess
 	/**
 	 * Process nfo files.
 	 *
-	 * @param \nzedb\NNTP   $nntp
+	 * @param \newzflash\NNTP   $nntp
 	 * @param string $groupID  (Optional) ID of a group to work on.
 	 * @param string $guidChar (Optional) First letter of a release GUID to use to get work.
 	 *
@@ -237,7 +237,7 @@ class PostProcess
 	/**
 	 * Process comments.
 	 *
-	 * @param \nzedb\NNTP $nntp
+	 * @param \newzflash\NNTP $nntp
 	 */
 	public function processSharing(&$nntp)
 	{
@@ -284,7 +284,7 @@ class PostProcess
 	 *
 	 * @note Called externally by tmux/bin/update_per_group and update/postprocess.php
 	 *
-	 * @param \nzedb\NNTP       $nntp    Class NNTP
+	 * @param \newzflash\NNTP       $nntp    Class NNTP
 	 * @param int|string $groupID  (Optional) ID of a group to work on.
 	 * @param string     $guidChar (Optional) First char of release GUID, can be used to select work.
 	 *
@@ -303,7 +303,7 @@ class PostProcess
 	 * @param string $messageID MessageID from NZB file.
 	 * @param int    $relID     ID of the release.
 	 * @param int    $groupID   Group ID of the release.
-	 * @param \nzedb\NNTP   $nntp      Class NNTP
+	 * @param \newzflash\NNTP   $nntp      Class NNTP
 	 * @param int    $show      Only show result or apply iy.
 	 *
 	 * @return bool

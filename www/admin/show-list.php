@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\Videos;
+use newzflash\Videos;
 
 $page   = new AdminPage();
 $tv = new Videos(['Settings' => $page->settings]);

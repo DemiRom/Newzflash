@@ -21,8 +21,8 @@
 
 require_once realpath(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\db\PreDb;
-use nzedb\utility\Misc;
+use newzflash\db\PreDb;
+use newzflash\utility\Misc;
 
 if (!Misc::isWin()) {
 	$canExeRead = Misc::canExecuteRead(NEWZFLASH_RES);

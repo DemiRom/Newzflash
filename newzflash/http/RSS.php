@@ -1,11 +1,11 @@
 <?php
 
-namespace nzedb\http;
+namespace newzflash\http;
 
-use nzedb\Releases;
-use nzedb\Category;
-use nzedb\NZB;
-use nzedb\db\DB;
+use newzflash\Releases;
+use newzflash\Category;
+use newzflash\NZB;
+use newzflash\db\DB;
 
 /**
  * Class RSS -- contains specific functions for RSS
@@ -20,7 +20,7 @@ Class RSS extends Capabilities
 	public $releases;
 
 	/** Settings class
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 

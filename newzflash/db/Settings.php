@@ -18,11 +18,11 @@
  * @author    niel
  * @copyright 2014 nZEDb
  */
-namespace nzedb\db;
+namespace newzflash\db;
 
 use app\extensions\util\Versions;
-use nzedb\utility\Misc;
-use nzedb\utility\Text;
+use newzflash\utility\Misc;
+use newzflash\utility\Text;
 
 class Settings extends DB
 {

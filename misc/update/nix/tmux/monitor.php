@@ -2,12 +2,12 @@
 require_once realpath(dirname(dirname(dirname(dirname(__DIR__)))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
 use app\models\Settings;
-use nzedb\Category;
-use nzedb\Tmux;
-use nzedb\TmuxOutput;
-use nzedb\TmuxRun;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\Category;
+use newzflash\Tmux;
+use newzflash\TmuxOutput;
+use newzflash\TmuxRun;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 $pdo = new DB();
 $tMain = new Tmux($pdo);

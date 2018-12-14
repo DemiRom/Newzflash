@@ -1,11 +1,11 @@
 <?php
-namespace nzedb\utility;
+namespace newzflash\utility;
 
 if (!defined('GIT_PRE_COMMIT')) {
 	define('GIT_PRE_COMMIT', false);
 }
 
-use nzedb\ColorCLI;
+use newzflash\ColorCLI;
 
 class Versions
 {
@@ -18,7 +18,7 @@ class Versions
 	const UPDATED_SQL_FILE_LAST	= 8;
 
 	/**
-	 * @var \nzedb\utility\Git instance variable.
+	 * @var \newzflash\utility\Git instance variable.
 	 */
 	public $git;
 

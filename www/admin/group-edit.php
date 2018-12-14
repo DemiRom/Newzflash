@@ -2,7 +2,7 @@
 require_once './config.php';
 
 use app\models\Groups as Group;
-use nzedb\Groups;
+use newzflash\Groups;
 
 $page   = new AdminPage();
 $groups = new Groups(['Settings' => $page->settings]);

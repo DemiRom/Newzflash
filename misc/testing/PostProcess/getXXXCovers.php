@@ -2,8 +2,8 @@
 //This script will update all records in the xxxinfo table where there is no cover
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\XXX;
-use nzedb\db\DB;
+use newzflash\XXX;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

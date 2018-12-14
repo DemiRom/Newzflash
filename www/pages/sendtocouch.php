@@ -1,6 +1,6 @@
 <?php
 
-use nzedb\CouchPotato;
+use newzflash\CouchPotato;
 
 if (!$page->users->isLoggedIn()){
 	$page->show403();

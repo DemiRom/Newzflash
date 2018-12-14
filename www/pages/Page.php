@@ -1,10 +1,10 @@
 <?php
 /* This is a smarty/www file and should be moved to the nZEDb_WWW/pages directory? */
 
-use nzedb\Category;
-use nzedb\Contents;
-use nzedb\Menu;
-use nzedb\Users;
+use newzflash\Category;
+use newzflash\Contents;
+use newzflash\Menu;
+use newzflash\Users;
 
 class Page extends BasePage
 {

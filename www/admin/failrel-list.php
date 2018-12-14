@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\DnzbFailures;
+use newzflash\DnzbFailures;
 
 $page = new AdminPage();
 

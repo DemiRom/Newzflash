@@ -2,13 +2,13 @@
 require_once dirname(__FILE__) . '/../../../config.php';
 
 use app\models\Settings;
-use nzedb\MiscSorter;
-use nzedb\NameFixer;
-use nzedb\Nfo;
-use nzedb\NZBContents;
-use nzedb\NNTP;
-use nzedb\db\DB;
-use nzedb\processing\PostProcess;
+use newzflash\MiscSorter;
+use newzflash\NameFixer;
+use newzflash\Nfo;
+use newzflash\NZBContents;
+use newzflash\NNTP;
+use newzflash\db\DB;
+use newzflash\processing\PostProcess;
 
 $pdo = new DB();
 

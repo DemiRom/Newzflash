@@ -21,7 +21,7 @@
 require_once dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php';
 
 use app\models\Settings;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

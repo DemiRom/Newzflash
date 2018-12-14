@@ -1,11 +1,11 @@
 <?php
 
 use app\models\Settings;
-use nzedb\Releases;
-use nzedb\http\API;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
-use nzedb\utility\Text;
+use newzflash\Releases;
+use newzflash\http\API;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
+use newzflash\utility\Text;
 
 // API functions.
 $function = 's';

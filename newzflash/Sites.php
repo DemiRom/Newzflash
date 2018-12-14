@@ -1,7 +1,7 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\Settings;
+use newzflash\db\Settings;
 use app\extensions\util\Versions;
 
 class Sites
@@ -22,7 +22,7 @@ class Sites
 	const ERR_BAD_YYDECODER_PATH = -10;
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	protected $_db;
 

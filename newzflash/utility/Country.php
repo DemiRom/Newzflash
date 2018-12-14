@@ -18,9 +18,9 @@
  * @author    ruhllatio
  * @copyright 2015 nZEDb
  */
-namespace nzedb\utility;
+namespace newzflash\utility;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Class Country
@@ -34,7 +34,7 @@ class Country
 	 *
 	 * @param string $country
 	 *
-	 * @param \nzedb\db\DB $pdo
+	 * @param \newzflash\db\DB $pdo
 	 *
 	 * @return mixed
 	 */

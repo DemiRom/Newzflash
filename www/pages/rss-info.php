@@ -1,6 +1,6 @@
 <?php
 
-use nzedb\http\RSS;
+use newzflash\http\RSS;
 
 $rss = new RSS(['Settings' => $page->settings]);
 

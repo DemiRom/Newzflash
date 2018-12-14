@@ -1,7 +1,7 @@
 <?php
-namespace nzedb\libraries;
+namespace newzflash\libraries;
 
-use nzedb\utility\Misc;
+use newzflash\utility\Misc;
 
 /**
  * Class TraktAPI

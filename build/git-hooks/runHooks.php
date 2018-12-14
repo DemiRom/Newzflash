@@ -22,7 +22,7 @@ define('GIT_PRE_COMMIT', true);
 
 require_once realpath(dirname(__DIR__, 2) . '/app/config/bootstrap.php');
 
-use nzedb\utility\Git;
+use newzflash\utility\Git;
 use app\extensions\util\Versions;
 
 echo "Running pre-commit hooks\n";

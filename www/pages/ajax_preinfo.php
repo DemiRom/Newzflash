@@ -1,6 +1,6 @@
 <?php
 
-use nzedb\PreDb;
+use newzflash\PreDb;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

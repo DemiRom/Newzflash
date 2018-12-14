@@ -1,5 +1,5 @@
 <?php
-namespace nzedb\utility;
+namespace newzflash\utility;
 
 use app\extensions\util\Versions;
 use app\models\Settings;
@@ -7,7 +7,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use GuzzleHttp\Cookie\SetCookie;
 use GuzzleHttp\Exception\RequestException;
-use nzedb\ColorCLI;
+use newzflash\ColorCLI;
 use PHPMailer\PHPMailer\Exception as PHPMailerException;
 use PHPMailer\PHPMailer\PHPMailer;
 

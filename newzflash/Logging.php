@@ -1,8 +1,8 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Logs/Reports stuff

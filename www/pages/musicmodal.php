@@ -1,6 +1,6 @@
 <?php
 
-use nzedb\Music;
+use newzflash\Music;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

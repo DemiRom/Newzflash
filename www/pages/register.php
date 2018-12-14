@@ -1,9 +1,9 @@
 <?php
 
 use app\models\Settings;
-use nzedb\Users;
-use nzedb\db\DB;
-use nzedb\Captcha;
+use newzflash\Users;
+use newzflash\db\DB;
+use newzflash\Captcha;
 
 require_once('config.php');
 

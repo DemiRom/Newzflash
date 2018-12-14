@@ -1,8 +1,8 @@
 <?php
 
-use nzedb\NZB;
-use nzedb\Releases;
-use nzedb\utility\Misc;
+use newzflash\NZB;
+use newzflash\Releases;
+use newzflash\utility\Misc;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

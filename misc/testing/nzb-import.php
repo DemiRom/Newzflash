@@ -1,7 +1,7 @@
 <?php
 require_once realpath(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\NZBImport;
+use newzflash\NZBImport;
 
 $n = PHP_EOL;
 

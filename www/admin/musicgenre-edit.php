@@ -7,7 +7,7 @@ if (!isset($_GET['id'])) {
 	exit();
 }
 
-use nzedb\Genres;
+use newzflash\Genres;
 
 $page   = new AdminPage();
 $genres = new Genres(['Settings' => $page->settings]);

@@ -1,18 +1,18 @@
 <?php
 
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 class DnzbFailures
 {
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 
 	/**
-	 * @var \nzedb\ReleaseComments
+	 * @var \newzflash\ReleaseComments
 	 */
 	public $rc;
 

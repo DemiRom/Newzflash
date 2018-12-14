@@ -2,10 +2,10 @@
 require_once './config.php';
 
 use app\models\Settings;
-use nzedb\Category;
-use nzedb\SABnzbd;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
+use newzflash\Category;
+use newzflash\SABnzbd;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
 
 // new to get information on books groups
 

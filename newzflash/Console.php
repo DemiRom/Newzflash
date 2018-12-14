@@ -1,8 +1,8 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
-use nzedb\db\DB;
+use newzflash\db\DB;
 use libs\AmazonProductAPI;
 
 class Console
@@ -11,7 +11,7 @@ class Console
 	const CONS_NTFND = -2;
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 

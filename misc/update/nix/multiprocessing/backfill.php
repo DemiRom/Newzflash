@@ -3,7 +3,7 @@ declare(ticks = 1);
 
 require('.do_not_run/require.php');
 
-use nzedb\libraries\Forking;
+use newzflash\libraries\Forking;
 
 // Check if argument 1 is numeric, which is to limit article count.
 (new Forking())->processWorkType(

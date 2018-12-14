@@ -1,11 +1,11 @@
 <?php
 
-namespace nzedb\processing\post;
+namespace newzflash\processing\post;
 
 use app\models\Settings;
-use nzedb\Category;
-use nzedb\NZB;
-use nzedb\db\DB;
+use newzflash\Category;
+use newzflash\NZB;
+use newzflash\db\DB;
 
 class AniDB
 {
@@ -20,12 +20,12 @@ class AniDB
 	public $echooutput;
 
 	/**
-	 * @var \nzedb\db\populate\AniDB
+	 * @var \newzflash\db\populate\AniDB
 	 */
 	public $padb;
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 
@@ -83,7 +83,7 @@ class AniDB
 
 			$this->doRandomSleep();
 
-			$this->padb = new \nzedb\db\populate\AniDB(
+			$this->padb = new \newzflash\db\populate\AniDB(
 				[
 					'Echo'     => $this->echooutput,
 					'Settings' => $this->pdo

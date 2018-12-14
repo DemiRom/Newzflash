@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\Tmux;
+use newzflash\Tmux;
 
 $page = new AdminPage();
 $tmux = new Tmux();

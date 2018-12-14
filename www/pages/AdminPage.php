@@ -1,8 +1,8 @@
 <?php
 require_once NEWZFLASH_ROOT . 'app' . DS . 'config' . DS . 'bootstrap' . DS . 'libraries.php';
 
-use nzedb\Category;
-use nzedb\Users;
+use newzflash\Category;
+use newzflash\Users;
 
 class AdminPage extends BasePage
 {

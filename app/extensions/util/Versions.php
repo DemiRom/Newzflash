@@ -20,7 +20,7 @@ namespace app\extensions\util;
 
 use app\models\Settings;
 use lithium\core\ConfigException;
-use nzedb\utility\Misc;
+use newzflash\utility\Misc;
 
 class Versions extends \lithium\core\BaseObject
 {

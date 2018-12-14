@@ -18,7 +18,7 @@
  * @author niel
  * @copyright 2015 nZEDb
  */
-namespace nzedb\libraries;
+namespace newzflash\libraries;
 
 
 class ForkingException extends \Exception

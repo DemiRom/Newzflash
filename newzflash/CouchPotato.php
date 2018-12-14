@@ -19,9 +19,9 @@
  * @copyright 2016 nZEDb
  */
 
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\utility\Misc;
+use newzflash\utility\Misc;
 
 /**
  * Class CouchPotato

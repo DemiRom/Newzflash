@@ -1,9 +1,9 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
 use libs\AmazonProductAPI;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Class Music
@@ -11,7 +11,7 @@ use nzedb\db\DB;
 class Music
 {
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	public $pdo;
 

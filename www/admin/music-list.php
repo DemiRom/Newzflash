@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-use nzedb\Music;
+use newzflash\Music;
 
 $page = new AdminPage();
 $m    = new Music(['Settings' => $page->settings]);

@@ -20,7 +20,7 @@
  */
 require_once '../../newzflash/processing/tv/TV.php';
 
-use nzedb\processing\tv\TV;
+use newzflash\processing\tv\TV;
 
 class smartyTV extends TV
 {

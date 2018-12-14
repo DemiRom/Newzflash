@@ -1,8 +1,8 @@
 <?php
 
-use nzedb\Books;
-use nzedb\Category;
-use nzedb\DnzbFailures;
+use newzflash\Books;
+use newzflash\Category;
+use newzflash\DnzbFailures;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

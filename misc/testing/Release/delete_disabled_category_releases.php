@@ -2,11 +2,11 @@
 /* Deletes releases in categories you have disabled here : http://localhost/admin/category-list.php */
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\Category;
-use nzedb\NZB;
-use nzedb\ReleaseImage;
-use nzedb\Releases;
-use nzedb\db\DB;
+use newzflash\Category;
+use newzflash\NZB;
+use newzflash\ReleaseImage;
+use newzflash\Releases;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

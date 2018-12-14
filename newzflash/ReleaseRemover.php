@@ -1,7 +1,7 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Handles removing of various unwanted releases.
@@ -28,7 +28,7 @@ class ReleaseRemover
 	protected $browser;
 
 	/**
-	 * @var \nzedb\ConsoleTools
+	 * @var \newzflash\ConsoleTools
 	 */
 	protected $consoleTools;
 
@@ -72,7 +72,7 @@ class ReleaseRemover
 	protected $method = '';
 
 	/**
-	 * @var \nzedb\db\Settings
+	 * @var \newzflash\db\Settings
 	 */
 	protected $pdo;
 

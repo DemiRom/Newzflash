@@ -2,9 +2,9 @@
 
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\processing\tv\TVDB;
+use newzflash\processing\tv\TVDB;
 
-$c = new nzedb\ColorCLI();
+$c = new newzflash\ColorCLI();
 $tvdb = new TVDB();
 
 if (isset($argv[1]) && !empty($argv[1]) && isset($argv[2]) && is_numeric($argv[2]) && isset($argv[3]) && is_numeric($argv[3])) {

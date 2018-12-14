@@ -1,8 +1,8 @@
 <?php
 
 use app\models\Settings;
-use nzedb\DnzbFailures;
-use nzedb\db\DB;
+use newzflash\DnzbFailures;
+use newzflash\db\DB;
 
 // Page is accessible only by the rss token, or logged in users.
 if ($page->users->isLoggedIn()) {

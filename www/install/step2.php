@@ -3,8 +3,8 @@ require_once realpath(__DIR__ . DIRECTORY_SEPARATOR . 'install.php');
 
 
 use app\extensions\util\Versions;
-use nzedb\db\DB;
-use nzedb\Install;
+use newzflash\db\DB;
+use newzflash\Install;
 
 $page = new InstallPage();
 $page->title = "Database Setup";
@@ -157,7 +157,7 @@ if ($page->isPostBack()) {
 	if (!$cfg->error) {
 		$cfg->setSession();
 
-		$DbSetup = new \nzedb\db\DbUpdate(
+		$DbSetup = new \newzflash\db\DbUpdate(
 			[
 				'backup' => false,
 				'db'     => $pdo,

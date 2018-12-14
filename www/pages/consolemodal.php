@@ -1,6 +1,6 @@
 <?php
 
-use nzedb\Console;
+use newzflash\Console;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

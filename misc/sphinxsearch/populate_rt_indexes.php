@@ -1,9 +1,9 @@
 <?php
 require_once realpath(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\ReleaseSearch;
-use nzedb\SphinxSearch;
-use nzedb\db\DB;
+use newzflash\ReleaseSearch;
+use newzflash\SphinxSearch;
+use newzflash\db\DB;
 
 if (nZEDb_RELEASE_SEARCH_TYPE != ReleaseSearch::SPHINX) {
 	exit('Error, nZEDb_RELEASE_SEARCH_TYPE in newzflash/config/settings.php must be set to SPHINX!' . PHP_EOL);

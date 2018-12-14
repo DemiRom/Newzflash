@@ -1,7 +1,7 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\utility\Misc;
+use newzflash\utility\Misc;
 
 /**
  * Fetches and returns JSON documents from the Rotten Tomato API using a supplied API key.

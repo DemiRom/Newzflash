@@ -1,6 +1,6 @@
 <?php
 
-use nzedb\Movie;
+use newzflash\Movie;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

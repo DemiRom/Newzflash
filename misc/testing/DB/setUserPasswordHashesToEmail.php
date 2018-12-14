@@ -17,9 +17,9 @@
  */
 require_once realpath(dirname(__DIR__, 3) . '/app/config/bootstrap.php');
 
-use nzedb\ColorCLI;
-use nzedb\Users;
-use nzedb\db\DB;
+use newzflash\ColorCLI;
+use newzflash\Users;
+use newzflash\db\DB;
 
 $colorCLI = new ColorCLI();
 

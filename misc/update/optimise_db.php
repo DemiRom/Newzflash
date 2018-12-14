@@ -1,7 +1,7 @@
 <?php
 require_once realpath(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 $pdo = new DB();
 if (isset($argv[1]) && in_array($argv[1], ['space', 'analyze', 'full'])) {

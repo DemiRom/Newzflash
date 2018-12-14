@@ -2,11 +2,11 @@
 require_once realpath(dirname(__DIR__, 3) . '/app/config/bootstrap.php');
 
 use app\models\Settings;
-use nzedb\ConsoleTools;
-use nzedb\NZB;
-use nzedb\ReleaseImage;
-use nzedb\SphinxSearch;
-use nzedb\db\DB;
+use newzflash\ConsoleTools;
+use newzflash\NZB;
+use newzflash\ReleaseImage;
+use newzflash\SphinxSearch;
+use newzflash\db\DB;
 
 passthru('clear');
 $pdo = new DB();

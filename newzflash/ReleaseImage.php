@@ -1,8 +1,8 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\Settings;
-use nzedb\utility\Misc;
+use newzflash\db\Settings;
+use newzflash\utility\Misc;
 
 /**
  * Resize/save/delete images to disk.

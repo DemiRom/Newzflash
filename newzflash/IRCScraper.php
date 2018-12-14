@@ -1,10 +1,10 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Groups;
 use app\models\Predb as PredbModel;
 use lithium\data\Connections;
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 /**
  * Class IRCScraper
@@ -39,7 +39,7 @@ class IRCScraper extends IRCClient
 
 	/**
 	 * Logging object for reporting errors.
-	 * @var \nzedb\Logger|null Object for logging events.
+	 * @var \newzflash\Logger|null Object for logging events.
 	 */
 	protected $log = null;
 
@@ -61,7 +61,7 @@ class IRCScraper extends IRCClient
 	protected $dbEntry;
 
 	/**
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 * @access protected
 	 */
 	protected $_pdo;

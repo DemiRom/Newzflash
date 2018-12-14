@@ -18,7 +18,7 @@
  */
 namespace app\models;
 
-use nzedb\utility\Text;
+use newzflash\utility\Text;
 
 
 /**

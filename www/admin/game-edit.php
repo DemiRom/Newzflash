@@ -1,9 +1,9 @@
 <?php
 require_once './config.php';
 
-use nzedb\Games;
-use nzedb\Genres;
-use nzedb\Category;
+use newzflash\Games;
+use newzflash\Genres;
+use newzflash\Category;
 
 $page  = new AdminPage();
 $games = new Games(['Settings' => $page->settings]);

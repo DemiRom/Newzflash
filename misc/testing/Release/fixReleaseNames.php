@@ -10,10 +10,10 @@
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
 use app\models\Settings;
-use nzedb\NameFixer;
-use nzedb\NNTP;
-use nzedb\PreDb;
-use nzedb\db\DB;
+use newzflash\NameFixer;
+use newzflash\NNTP;
+use newzflash\PreDb;
+use newzflash\db\DB;
 
 $n = "\n";
 $pdo = new DB();

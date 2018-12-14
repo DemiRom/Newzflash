@@ -1,11 +1,11 @@
 <?php
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\Categorize;
-use nzedb\Category;
-use nzedb\ColorCLI;
-use nzedb\ConsoleTools;
-use nzedb\db\DB;
+use newzflash\Categorize;
+use newzflash\Category;
+use newzflash\ColorCLI;
+use newzflash\ConsoleTools;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

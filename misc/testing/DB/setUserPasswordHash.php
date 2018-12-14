@@ -8,8 +8,8 @@
  */
 require_once realpath(dirname(__DIR__, 3) . '/app/config/bootstrap.php');
 
-use nzedb\Users;
-use nzedb\db\DB;
+use newzflash\Users;
+use newzflash\db\DB;
 
 $pdo = new DB();
 

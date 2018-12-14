@@ -1,10 +1,10 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 use app\models\Settings;
-use nzedb\db\DB;
-use nzedb\utility\Misc;
-use nzedb\processing\tv\TraktTv;
+use newzflash\db\DB;
+use newzflash\utility\Misc;
+use newzflash\processing\tv\TraktTv;
 use Tmdb\ApiToken;
 use Tmdb\Client as TmdbClient;
 use Tmdb\Exception\TmdbApiException;
@@ -22,7 +22,7 @@ class Movie
 	const SRC_DVD = 5;
 
 	/**
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 */
 	public $pdo;
 
@@ -51,7 +51,7 @@ class Movie
 	protected $currentRelID = '';
 
 	/**
-	 * @var \nzedb\Logger
+	 * @var \newzflash\Logger
 	 */
 	protected $debugging;
 
@@ -1539,7 +1539,7 @@ class Movie
 
 	/**
 	 * @param string $operation
-	 * @param \nzedb\RottenTomato $rt
+	 * @param \newzflash\RottenTomato $rt
 	 */
 	protected function _getRTData($operation = '', $rt)
 	{

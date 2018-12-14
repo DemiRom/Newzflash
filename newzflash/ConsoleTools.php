@@ -1,5 +1,5 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
 
 /**
@@ -9,7 +9,7 @@ class ConsoleTools
 {
 
 	/**
-	 * @var \nzedb\ColorCLI
+	 * @var \newzflash\ColorCLI
 	 */
 	public $cli;
 

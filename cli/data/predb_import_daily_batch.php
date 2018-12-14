@@ -24,8 +24,8 @@
 */
 require_once realpath(dirname(__DIR__, 2) . '/app/config/bootstrap.php');
 
-use nzedb\db\PreDb;
-use nzedb\utility\Misc;
+use newzflash\db\PreDb;
+use newzflash\utility\Misc;
 
 if (!Misc::isWin()) {
 	if (nZEDb_DEBUG) {

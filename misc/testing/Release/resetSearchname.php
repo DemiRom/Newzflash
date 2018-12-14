@@ -3,12 +3,12 @@
  * Type php resetSearchname.php to see detailed info. */
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\ConsoleTools;
-use nzedb\NameFixer;
-use nzedb\processing\ProcessReleases;
-use nzedb\ReleaseCleaning;
-use nzedb\SphinxSearch;
-use nzedb\db\DB;
+use newzflash\ConsoleTools;
+use newzflash\NameFixer;
+use newzflash\processing\ProcessReleases;
+use newzflash\ReleaseCleaning;
+use newzflash\SphinxSearch;
+use newzflash\db\DB;
 
 $pdo = new DB();
 $sphinx = new SphinxSearch();

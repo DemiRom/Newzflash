@@ -13,7 +13,7 @@ if (!isset($argv[1]) || $argv[1] !== 'yes') {
 
 require_once realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'bootstrap.php');
 
-use nzedb\ReleaseImage;
+use newzflash\ReleaseImage;
 
 define('R', 4);
 define('W', 2);
@@ -91,7 +91,7 @@ foreach ($folders as $folder => $check) {
 
 echo 'Your permissions seem right for this user. Note, this script does not verify all paths, only the most important ones.' . PHP_EOL;
 
-if (!nzedb\utility\Misc::isWin()) {
+if (!newzflash\utility\Misc::isWin()) {
 	$user = posix_getpwuid(posix_geteuid());
 	if ($user['name'] !== 'www-data') {
 		echo 'If you have not already done so, please rerun this script using the www-data user: sudo -u www-data php verify_permissions.php yes' . PHP_EOL;

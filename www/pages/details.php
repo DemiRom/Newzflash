@@ -1,20 +1,20 @@
 <?php
 
 use app\models\Settings;
-use nzedb\AniDB;
-use nzedb\Books;
-use nzedb\Console;
-use nzedb\Games;
-use nzedb\Movie;
-use nzedb\Music;
-use nzedb\PreDb;
-use nzedb\ReleaseComments;
-use nzedb\ReleaseExtra;
-use nzedb\ReleaseFiles;
-use nzedb\Releases;
-use nzedb\Videos;
-use nzedb\XXX;
-use nzedb\DnzbFailures;
+use newzflash\AniDB;
+use newzflash\Books;
+use newzflash\Console;
+use newzflash\Games;
+use newzflash\Movie;
+use newzflash\Music;
+use newzflash\PreDb;
+use newzflash\ReleaseComments;
+use newzflash\ReleaseExtra;
+use newzflash\ReleaseFiles;
+use newzflash\Releases;
+use newzflash\Videos;
+use newzflash\XXX;
+use newzflash\DnzbFailures;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

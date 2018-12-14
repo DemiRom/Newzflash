@@ -1,9 +1,9 @@
 <?php
 require_once './config.php';
 
-use nzedb\Category;
-use nzedb\Genres;
-use nzedb\XXX;
+use newzflash\Category;
+use newzflash\Genres;
+use newzflash\XXX;
 
 $page     = new AdminPage();
 $xxxmovie = new XXX(['Settings' => $page->settings]);

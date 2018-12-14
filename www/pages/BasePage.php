@@ -3,14 +3,14 @@
 require_once NEWZFLASH_LIB . 'utility' . DS . 'SmartyUtils.php';
 
 use app\models\Settings;
-use nzedb\SABnzbd;
-use nzedb\Users;
-use nzedb\db\DB;
+use newzflash\SABnzbd;
+use newzflash\Users;
+use newzflash\db\DB;
 
 class BasePage
 {
 	/**
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 */
 	public $settings = null;
 
@@ -78,7 +78,7 @@ class BasePage
 	/**
 	 * Public access to Captcha object for error checking.
 	 *
-	 * @var \nzedb\Captcha
+	 * @var \newzflash\Captcha
 	 */
 	public $captcha;
 

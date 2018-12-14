@@ -8,11 +8,11 @@ if (!isset($_GET['action'])) {
 
 require_once './config.php';
 
-use nzedb\Binaries;
-use nzedb\Groups;
-use nzedb\Regexes;
-use nzedb\ReleaseComments;
-use nzedb\Sharing;
+use newzflash\Binaries;
+use newzflash\Groups;
+use newzflash\Regexes;
+use newzflash\ReleaseComments;
+use newzflash\Sharing;
 
 // Make sure the user is an admin and logged in.
 $admin = new AdminPage;

@@ -1,7 +1,7 @@
 <?php
-namespace nzedb;
+namespace newzflash;
 
-use nzedb\db\DB;
+use newzflash\db\DB;
 
 class ReleaseSearch
 {
@@ -10,7 +10,7 @@ class ReleaseSearch
 	const SPHINX   = 2;
 
 	/***
-	 * @var \nzedb\db\DB
+	 * @var \newzflash\db\DB
 	 */
 	public $pdo;
 
@@ -27,7 +27,7 @@ class ReleaseSearch
 	private $fullTextJoinString;
 
 	/**
-	 * @param \nzedb\db\DB $pdo
+	 * @param \newzflash\db\DB $pdo
 	 */
 	public function __construct(DB $pdo)
 	{

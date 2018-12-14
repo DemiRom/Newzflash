@@ -1,7 +1,7 @@
 <?php
 
 use app\models\Settings;
-use nzedb\Forum;
+use newzflash\Forum;
 
 if (!$page->users->isLoggedIn()) {
 	$page->show403();

@@ -1,9 +1,9 @@
 <?php
 require_once './config.php';
 
-use nzedb\Console;
-use nzedb\Genres;
-use nzedb\Category;
+use newzflash\Console;
+use newzflash\Genres;
+use newzflash\Category;
 
 $page    = new AdminPage();
 $console = new Console(['Settings' => $page->settings]);
