@@ -11,16 +11,10 @@
  * GNU General Public License for more details.
 **/
 
-//$constants_file = realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php');
 
-//if($constants_file != false) {
-
-//}
-
-require_once realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php');
+//require_once realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php');
+require_once realpath('../newzflash/constants.php');
 require_once NEWZFLASH_ROOT . 'app' . DS . 'config' . DS . 'bootstrap.php';
-
-echo "DIRNAME: " . dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php';
 
 use newzflash\config\Configure;
 
