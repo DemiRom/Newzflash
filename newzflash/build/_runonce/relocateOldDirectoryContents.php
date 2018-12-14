@@ -74,9 +74,9 @@ $dirs = [
 $tatus = 0;
 foreach ($dirs as $dir) {
 	if (isset($dir['old'])) {
-		$pathOld = nZEDb_ROOT . $dir['old'];
+		$pathOld = NEWZFLASH_ROOT . $dir['old'];
 		if (file_exists($pathOld)) {
-			$pathNew = nZEDb_ROOT . $dir['newpath'];
+			$pathNew = NEWZFLASH_ROOT . $dir['newpath'];
 			echo $output->info("Moving contents of '$pathOld' to '$pathNew'");
 			$dirIt = new \DirectoryIterator($pathOld);
 			foreach ($dirIt as $item) {

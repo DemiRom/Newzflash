@@ -14,9 +14,9 @@ $tMain = new Tmux($pdo);
 $tRun = new TmuxRun($pdo);
 $tOut = new TmuxOutput($pdo);
 
-$runVar['paths']['misc'] = nZEDb_MISC;
-$runVar['paths']['cli'] = nZEDb_ROOT . 'cli/';
-$runVar['paths']['scraper'] = nZEDb_MISC . 'IRCScraper' . DS . 'scrape.php';
+$runVar['paths']['misc'] = NEWZFLASH_MISC;
+$runVar['paths']['cli'] = NEWZFLASH_ROOT . 'cli/';
+$runVar['paths']['scraper'] = NEWZFLASH_MISC . 'IRCScraper' . DS . 'scrape.php';
 
 $db_name = DB_NAME;
 $dbtype = DB_SYSTEM;

@@ -15,7 +15,7 @@ if ($cfg->isLocked()) {
 	$cfg->error = true;
 }
 
-$cfg->cacheCheck = is_writable(nZEDb_RES . 'smarty' . DS . 'templates_c');
+$cfg->cacheCheck = is_writable(NEWZFLASH_RES . 'smarty' . DS . 'templates_c');
 if ($cfg->cacheCheck === false) {
 	$cfg->error = true;
 }
@@ -50,8 +50,8 @@ if (!$cfg->error) {
 		<li>Your database credentials.</li>
 		<li>Your news server credentials.</li>
 		<li>SSH & root ability on your server (in case you need to install missing packages).</li>
-		<li>You should consider copying <?php echo nZEDb_CONFIGS ?>settings.example.php to
-			<?php echo nZEDb_CONFIGS ?>settings.php and customising the settings (Default settings
+		<li>You should consider copying <?php echo NEWZFLASH_CONFIGS ?>settings.example.php to
+			<?php echo NEWZFLASH_CONFIGS ?>settings.php and customising the settings (Default settings
 			should be fine for installing).</li>
 	</ol>
 	<br/><br/>
@@ -75,13 +75,13 @@ if (!$cfg->error) {
 				<div class="error">
 					The template compile dir must be writable.<br />A quick solution is to run:	<br />
 					<?php
-					echo 'chmod 777 ' . nZEDb_RES . 'smarty' . DS . 'templates_c';
+					echo 'chmod 777 ' . NEWZFLASH_RES . 'smarty' . DS . 'templates_c';
 					if (extension_loaded('posix') && strtolower(substr(PHP_OS, 0, 3)) !== 'win') {
 						$group = posix_getgrgid(posix_getgid());
 						echo
-						'<br /><br />Another solution is to run:<br />chown -R YourUnixUserName:' . $group['name'] . ' ' . nZEDb_ROOT .
+						'<br /><br />Another solution is to run:<br />chown -R YourUnixUserName:' . $group['name'] . ' ' . NEWZFLASH_ROOT .
 						'<br />Then give your user access to the group:<br />usermod -a -G ' . $group['name'] . ' YourUnixUserName' .
-						'<br />Finally give read/write access to your user/group:<br />chmod -R 774 ' . nZEDb_ROOT;
+						'<br />Finally give read/write access to your user/group:<br />chmod -R 774 ' . NEWZFLASH_ROOT;
 					}
 					?>
 				</div>
@@ -89,7 +89,7 @@ if (!$cfg->error) {
 			} else {
 				?>
 				<div class="error">Installation Locked! If reinstalling, please remove <?php echo
-                        nZEDb_CONFIGS . 'install.lock' ?>.</div>
+                        NEWZFLASH_CONFIGS . 'install.lock' ?>.</div>
 			<?php
 			}
 		}

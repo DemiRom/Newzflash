@@ -113,7 +113,7 @@ if (DB_MOCK === true) {
 if (file_exists(INSTALLED)) {
 	// This allows us to set up a db config separate to that created by /install
 	$config1 = LITHIUM_APP_PATH . DS . 'config' . DS . 'db-config.php';
-	$config2 = nZEDb_CONFIGS . 'config.php';
+	$config2 = NEWZFLASH_CONFIGS . 'config.php';
 	$config = file_exists($config1) ? $config1 : $config2;
 
 	if (!file_exists($config)) {
@@ -183,8 +183,8 @@ if (file_exists(INSTALLED)) {
 			"No valid database adapter provided in configuration file '$config'"
 		);
 	}
-} else if (file_exists(nZEDb_CONFIGS . 'dev-config.json')) {
-	$config = json_decode(file_get_contents(nZEDb_CONFIGS . 'dev-config.json'), true);
+} else if (file_exists(NEWZFLASH_CONFIGS . 'dev-config.json')) {
+	$config = json_decode(file_get_contents(NEWZFLASH_CONFIGS . 'dev-config.json'), true);
 	$db =& $config['db'];
 
 	switch ($db['system']) {

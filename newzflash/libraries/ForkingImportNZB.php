@@ -26,7 +26,7 @@ class ForkingImportNZB extends Forking
 		$options += $defaults;
 
 		parent::__construct($options);
-		$this->importPath = (PHP_BINARY . ' ' . nZEDb_MISC . 'testing' . DS . 'nzb-import.php ');
+		$this->importPath = (PHP_BINARY . ' ' . NEWZFLASH_MISC . 'testing' . DS . 'nzb-import.php ');
 		$this->pdo = $options['settings'];
 	}
 

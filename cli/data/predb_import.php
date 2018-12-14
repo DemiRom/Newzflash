@@ -25,7 +25,7 @@ use nzedb\db\PreDb;
 use nzedb\utility\Misc;
 
 if (!Misc::isWin()) {
-	$canExeRead = Misc::canExecuteRead(nZEDb_RES);
+	$canExeRead = Misc::canExecuteRead(NEWZFLASH_RES);
 	if (is_string($canExeRead)) {
 		exit($canExeRead);
 	}

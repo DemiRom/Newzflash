@@ -18,7 +18,7 @@
  * @author    niel
  * @copyright 2015 nZEDb
  */
-namespace nzedb\config;
+namespace newzflash\config;
 
 class Configure
 {
@@ -44,7 +44,7 @@ class Configure
 
 	public function loadSettings($filename, $throwException = true)
 	{
-		$file = nZEDb_CONFIGS . $filename . '.php';
+		$file = NEWZFLASH_CONFIGS . $filename . '.php';
 		if (!file_exists($file)) {
 			if ($throwException) {
 				$errorCode = (int)($filename === 'config');
@@ -62,7 +62,7 @@ class Configure
 				$this->defaultSSL();
 				break;
 			case 'settings':
-				$settings_file = nZEDb_CONFIGS . 'settings.php';
+				$settings_file = NEWZFLASH_CONFIGS . 'settings.php';
 				if (is_file($settings_file)) {
 					require_once($settings_file);
 					if (php_sapi_name() == 'cli') {

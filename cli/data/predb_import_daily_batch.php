@@ -31,7 +31,7 @@ if (!Misc::isWin()) {
 	if (nZEDb_DEBUG) {
 		echo "Checking resource path\n";
 	}
-	$canExeRead = Misc::canExecuteRead(nZEDb_RES);
+	$canExeRead = Misc::canExecuteRead(NEWZFLASH_RES);
 	if (is_string($canExeRead)) {
 		exit($canExeRead);
 	}
@@ -41,8 +41,8 @@ if (!Misc::isWin()) {
 if (nZEDb_DEBUG) {
 	echo "Checking directory is writable\n";
 }
-if (!is_writable(nZEDb_RES)) {
-	exit('The (' . nZEDb_RES . ') folder must be writable.' . PHP_EOL);
+if (!is_writable(NEWZFLASH_RES)) {
+	exit('The (' . NEWZFLASH_RES . ') folder must be writable.' . PHP_EOL);
 }
 
 if (!isset($argv[1]) || !is_numeric($argv[1]) && $argv[1] != 'progress' || !isset($argv[2]) ||
@@ -163,10 +163,10 @@ foreach ($data as $dir => $files) {
 				}
 
 				// Store the dump.
-				$dumpFile = nZEDb_TMP . $match['stamp'] . '_predb_dump.csv';
+				$dumpFile = NEWZFLASH_TMP . $match['stamp'] . '_predb_dump.csv';
 				$fetched = file_put_contents($dumpFile, $dump);
 				if (!$fetched) {
-					echo "Error storing dump file {$match['stamp']} in (" . nZEDb_RES . ').' .
+					echo "Error storing dump file {$match['stamp']} in (" . NEWZFLASH_RES . ').' .
 						PHP_EOL;
 					continue;
 				}

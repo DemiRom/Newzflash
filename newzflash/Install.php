@@ -66,7 +66,7 @@ class Install
 	 * @var bool Is the PHP version higher than nZEDb_MINIMUM_PHP_VERSION?
 	 */
 	public $phpCheck;
-	public $minPhpVersion = nZEDb_MINIMUM_PHP_VERSION;
+	public $minPhpVersion = NEWZFLASH_MINIMUM_PHP_VERSION;
 
 	public $timelimitCheck;
 	public $memlimitCheck;
@@ -97,15 +97,15 @@ class Install
 
 	public function __construct()
 	{
-		$this->CONFIG_PATH = nZEDb_CONFIGS;
-		$this->COVERS_PATH = nZEDb_RES . 'covers' . DS;
-		$this->DB_DIR = nZEDb_RES . 'db' . DS . 'schema' . DS;
-		$this->SMARTY_COMPILED_TEMPLATES = nZEDb_RES . 'smarty' . DS . 'templates_c' . DS;
-		$this->INSTALL_DIR = nZEDb_WWW . 'install';
-		$this->NZB_PATH = nZEDb_RES . 'nzb' . DS;
-		$this->TMP_PATH = nZEDb_RES . 'tmp' . DS;
+		$this->CONFIG_PATH = NEWZFLASH_CONFIGS;
+		$this->COVERS_PATH = NEWZFLASH_RES . 'covers' . DS;
+		$this->DB_DIR = NEWZFLASH_RES . 'db' . DS . 'schema' . DS;
+		$this->SMARTY_COMPILED_TEMPLATES = NEWZFLASH_RES . 'smarty' . DS . 'templates_c' . DS;
+		$this->INSTALL_DIR = NEWZFLASH_WWW . 'install';
+		$this->NZB_PATH = NEWZFLASH_RES . 'nzb' . DS;
+		$this->TMP_PATH = NEWZFLASH_RES . 'tmp' . DS;
 		$this->UNRAR_PATH = $this->TMP_PATH . 'unrar' . DS;
-		$this->WWW_TOP = nZEDb_WWW;
+		$this->WWW_TOP = NEWZFLASH_WWW;
 	}
 
 	public function setSession()
@@ -174,7 +174,7 @@ class Install
 		$tmpCfg = str_replace('%%nZEDb_SSL_ALLOW_SELF_SIGNED%%', $this->nZEDb_SSL_ALLOW_SELF_SIGNED, $tmpCfg);
 
 		$this->COMPILED_CONFIG = $tmpCfg;
-		return @file_put_contents(nZEDb_CONFIGS . 'config.php', $tmpCfg, LOCK_EX);
+		return @file_put_contents(NEWZFLASH_CONFIGS . 'config.php', $tmpCfg, LOCK_EX);
 	}
 
 	public function saveInstallLock()

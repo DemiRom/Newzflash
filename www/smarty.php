@@ -19,17 +19,17 @@
  * @copyright 2015 nZEDb
  */
 require_once realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php');
-require_once nZEDb_ROOT . 'app' . DS . 'config' . DS . 'bootstrap.php';
+require_once NEWZFLASH_ROOT . 'app' . DS . 'config' . DS . 'bootstrap.php';
 
-use nzedb\config\Configure;
+use newzflash\config\Configure;
 
 try {
 	$config = new Configure('smarty');
 } catch (\RuntimeException $e) {
 	if ($e->getCode() == 1) {
-		if (file_exists(nZEDb_WWW . 'config.php')) {
+		if (file_exists(NEWZFLASH_WWW . 'config.php')) {
 			echo "Move: .../www/config.php to .../newzflash/config/config.php<br />\n Remove any line that says require_once 'automated.config.php';<br />\n";
-			if (file_exists(nZEDb_WWW . 'settings.php')) {
+			if (file_exists(NEWZFLASH_WWW . 'settings.php')) {
 				echo "Move: .../www/settings.php to  .../newzflash/config/settings.php<br />\n";
 			}
 			exit();
@@ -41,7 +41,7 @@ try {
 }
 
 if (function_exists('ini_set') && function_exists('ini_get')) {
-	ini_set('include_path', nZEDb_WWW . PATH_SEPARATOR . ini_get('include_path'));
+	ini_set('include_path', NEWZFLASH_WWW . PATH_SEPARATOR . ini_get('include_path'));
 }
 
 $www_top = str_replace("\\", "/", dirname($_SERVER['PHP_SELF']));

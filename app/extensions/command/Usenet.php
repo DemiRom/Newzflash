@@ -86,7 +86,7 @@ class Usenet extends \app\extensions\console\Command
 
 		$this->out("{:cyan}Using\nmessage-id: '{$this->msgid}'\nGroup: {$this->group}{:end}");
 
-		$path = nZEDb_TMP . trim($this->msgid, '<>');
+		$path = NEWZFLASH_TMP . trim($this->msgid, '<>');
 		if (!file_exists($path)) {
 			mkdir($path);
 		}

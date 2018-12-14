@@ -40,7 +40,7 @@ class Git extends \lithium\core\BaseObject
 			],
 			'create'		=> false,
 			'initialise'	=> false,
-			'filepath'		=> nZEDb_ROOT,
+			'filepath'		=> NEWZFLASH_ROOT,
 		];
 
 		parent::__construct($config += $defaults);

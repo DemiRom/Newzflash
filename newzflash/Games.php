@@ -117,7 +117,7 @@ class Games
 		$this->renamed = '';
 		$this->matchPercentage = 60;
 		$this->maxHitRequest = false;
-		$this->cookie = nZEDb_TMP . 'xxx.cookie';
+		$this->cookie = NEWZFLASH_TMP . 'xxx.cookie';
 		if (Settings::value('..lookupgames') == 2) {
 			$this->renamed = 'AND isrenamed = 1';
 		}

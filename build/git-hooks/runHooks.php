@@ -53,7 +53,7 @@ if ($error === false) {
 				$vers->checkSQLDb(false);
 				$vers->save();
 
-				$git->add(nZEDb_VERSIONS);
+				$git->add(NEWZFLASH_VERSIONS);
 			} catch (\Exception $e) {
 				$error = 1;
 				echo "Error while checking versions!\n";

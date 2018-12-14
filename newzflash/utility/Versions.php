@@ -69,7 +69,7 @@ class Versions
 	{
 		if (empty($filepath)) {
 			if (defined('nZEDb_VERSIONS')) {
-				$filepath = nZEDb_VERSIONS;
+				$filepath = NEWZFLASH_VERSIONS;
 			}
 		}
 
@@ -210,9 +210,9 @@ class Versions
 	public function checkSQLFileLatest($update = true)
 	{
 		$options = [
-			'data'  => nZEDb_RES . 'db' . DS . 'schema' . DS . 'data' . DS,
+			'data'  => NEWZFLASH_RES . 'db' . DS . 'schema' . DS . 'data' . DS,
 			'ext'   => 'sql',
-			'path'  => nZEDb_RES . 'db' . DS . 'patches' . DS . 'mysql',
+			'path'  => NEWZFLASH_RES . 'db' . DS . 'patches' . DS . 'mysql',
 			'regex' =>
 				'#^' . Misc::PATH_REGEX . '(?P<patch>\d{4})~(?P<table>\w+)\.sql$#',
 			'safe'  => true,

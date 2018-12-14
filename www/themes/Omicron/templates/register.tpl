@@ -109,6 +109,10 @@
 {/if}
 
 <!-- Your JS File -->
+<script>
+var stripe = Stripe('{$page->stripe_key}')
+</script>
 <script src="/themes/shared/js/charge.js"></script>
+
 
 </html>

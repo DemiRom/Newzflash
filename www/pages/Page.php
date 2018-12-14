@@ -19,9 +19,9 @@ class Page extends BasePage
 		// Tell Smarty which directories to use for templates
 		$this->smarty->setTemplateDir(
 			[
-				'user'    => nZEDb_THEMES . $this->theme . '/templates',
-				'shared'  => nZEDb_THEMES . 'shared/templates',
-				'default' => nZEDb_THEMES . 'Default/templates'
+				'user'    => NEWZFLASH_THEMES . $this->theme . '/templates',
+				'shared'  => NEWZFLASH_THEMES . 'shared/templates',
+				'default' => NEWZFLASH_THEMES . 'Default/templates'
 			]
 		);
 

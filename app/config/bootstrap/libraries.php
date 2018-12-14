@@ -144,7 +144,7 @@ if (file_exists(INSTALLED)) {
 	Libraries::add('newzflash',
 	[
 		'bootstrap'	=> 'bootstrap.php',
-		'path'	=> nZEDb_ROOT . 'newzflash',
+		'path'	=> NEWZFLASH_ROOT . 'newzflash',
 	]);
 }
 

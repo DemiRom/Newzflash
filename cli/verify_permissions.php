@@ -21,7 +21,7 @@ define('E', 1);
 
 // Check All folders up to nZEDb root folder.
 $string = DS;
-foreach (explode(DS, nZEDb_ROOT) as $folder) {
+foreach (explode(DS, NEWZFLASH_ROOT) as $folder) {
 	if ($folder) {
 		$string .= $folder . DS;
 		readable($string);
@@ -31,30 +31,30 @@ foreach (explode(DS, nZEDb_ROOT) as $folder) {
 
 // List of folders to check with required permissions.
 $folders = [
-	nZEDb_LIBS										=> [R],
-	nZEDb_RES . 'smarty' . DS . 'templates_c'		=> [R, W],
-	nZEDb_RES										=> [R, W, E],
-	nZEDb_RES . 'db'								=> [R, E],
-	nZEDb_RES . 'db' . DS . 'patches'				=> [R, E],
-	nZEDb_RES . 'db' . DS . 'schema'				=> [R, E],
-	nZEDb_RES . 'db' . DS . 'schema' . DS . 'data'	=> [R, E],
-	nZEDb_RES . 'nzb'								=> [R],
-	nZEDb_LOGS										=> [R, W],
-	nZEDb_TMP										=> [R, W],
-	nZEDb_TMP . 'unrar'								=> [R, W, E],
-	nZEDb_TMP . 'yEnc'								=> [R, W, E],
-	nZEDb_VERSIONS									=> [R],
+	NEWZFLASH_LIBS										=> [R],
+	NEWZFLASH_RES . 'smarty' . DS . 'templates_c'		=> [R, W],
+	NEWZFLASH_RES										=> [R, W, E],
+	NEWZFLASH_RES . 'db'								=> [R, E],
+	NEWZFLASH_RES . 'db' . DS . 'patches'				=> [R, E],
+	NEWZFLASH_RES . 'db' . DS . 'schema'				=> [R, E],
+	NEWZFLASH_RES . 'db' . DS . 'schema' . DS . 'data'	=> [R, E],
+	NEWZFLASH_RES . 'nzb'								=> [R],
+	NEWZFLASH_LOGS										=> [R, W],
+	NEWZFLASH_TMP										=> [R, W],
+	NEWZFLASH_TMP . 'unrar'								=> [R, W, E],
+	NEWZFLASH_TMP . 'yEnc'								=> [R, W, E],
+	NEWZFLASH_VERSIONS									=> [R],
 ];
 
 // Add nzb folders.
 foreach ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'] as $identifier) {
-	$nzbFolder = nZEDb_RES . 'nzb' . DS . $identifier . DS;
+	$nzbFolder = NEWZFLASH_RES . 'nzb' . DS . $identifier . DS;
 	$folders[$nzbFolder] = [R, W];
 }
 
 // Add covers paths.
 foreach (['anime', 'audio', 'audiosample', 'book', 'console', 'games', 'movies', 'music', 'preview', 'sample', 'tvrage', 'video', 'xxx'] as $identifier) {
-	$nzbFolder = nZEDb_RES . 'covers' . DS . $identifier . DS;
+	$nzbFolder = NEWZFLASH_RES . 'covers' . DS . $identifier . DS;
 	$folders[$nzbFolder] = [R, W];
 }
 

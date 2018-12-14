@@ -199,7 +199,7 @@ class ProcessReleases
 		$this->processCollectionSizes($groupID);
 		$this->deleteUnwantedCollections($groupID);
 
-		$DIR = nZEDb_MISC;
+		$DIR = NEWZFLASH_MISC;
 
 		$totalReleasesAdded = 0;
 		do {

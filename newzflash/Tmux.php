@@ -358,7 +358,7 @@ class Tmux
 	 */
 	public function writelog($pane)
 	{
-		$path = nZEDb_LOGS;
+		$path = NEWZFLASH_LOGS;
 		$getdate = gmdate("Ymd");
 		$tmux = $this->get();
 		$logs = (isset($tmux->write_logs)) ? $tmux->write_logs : 0;

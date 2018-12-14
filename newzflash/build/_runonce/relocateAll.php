@@ -19,7 +19,7 @@
  * @copyright 2014 nZEDb
  */
 require_once realpath(dirname(__FILE__) . '/../www/config.php');
-require_once nZEDb_LIB . 'utility' . DS . 'MoveFileTree.php';
+require_once NEWZFLASH_LIB . 'utility' . DS . 'MoveFileTree.php';
 
 use app\models\Settings;
 use nzedb\db\DB;
@@ -27,64 +27,64 @@ use nzedb\db\DB;
 $dirs = array(
 	[
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'testing/DB_scripts',
-		'target' => nZEDb_MISC . 'testing/DB'
+		'source' => NEWZFLASH_MISC . 'testing/DB_scripts',
+		'target' => NEWZFLASH_MISC . 'testing/DB'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'testing/Dev_testing/Subject_testing',
-		'target' => nZEDb_MISC . 'testing/Developers/Subject'
+		'source' => NEWZFLASH_MISC . 'testing/Dev_testing/Subject_testing',
+		'target' => NEWZFLASH_MISC . 'testing/Developers/Subject'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'testing/Dev_testing',
-		'target' => nZEDb_MISC . 'testing/Developers'
+		'source' => NEWZFLASH_MISC . 'testing/Dev_testing',
+		'target' => NEWZFLASH_MISC . 'testing/Developers'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'testing/PostProc_testing',
-		'target' => nZEDb_MISC . 'testing/PostProcess'
+		'source' => NEWZFLASH_MISC . 'testing/PostProc_testing',
+		'target' => NEWZFLASH_MISC . 'testing/PostProcess'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'testing/Regex_testing',
-		'target' => nZEDb_MISC . 'testing/Regex'
+		'source' => NEWZFLASH_MISC . 'testing/Regex_testing',
+		'target' => NEWZFLASH_MISC . 'testing/Regex'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'testing/Release_scripts',
-		'target' => nZEDb_MISC . 'testing/Release'
+		'source' => NEWZFLASH_MISC . 'testing/Release_scripts',
+		'target' => NEWZFLASH_MISC . 'testing/Release'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'update_scripts/nix_scripts/tmux/powerline/themes',
-		'target' => nZEDb_MISC . 'update/nix/tmux/powerline/themes'
+		'source' => NEWZFLASH_MISC . 'update_scripts/nix_scripts/tmux/powerline/themes',
+		'target' => NEWZFLASH_MISC . 'update/nix/tmux/powerline/themes'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'update_scripts/nix_scripts/tmux/powerline',
-		'target' => nZEDb_MISC . 'update/nix/tmux/powerline'
+		'source' => NEWZFLASH_MISC . 'update_scripts/nix_scripts/tmux/powerline',
+		'target' => NEWZFLASH_MISC . 'update/nix/tmux/powerline'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'update_scripts/nix_scripts/screen/sequential',
-		'target' => nZEDb_MISC . 'update/nix/screen/sequential'
+		'source' => NEWZFLASH_MISC . 'update_scripts/nix_scripts/screen/sequential',
+		'target' => NEWZFLASH_MISC . 'update/nix/screen/sequential'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'update_scripts/nix_scripts/tmux/',
-		'target' => nZEDb_MISC . 'update/nix/tmux'
+		'source' => NEWZFLASH_MISC . 'update_scripts/nix_scripts/tmux/',
+		'target' => NEWZFLASH_MISC . 'update/nix/tmux'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'update_scripts/nix_scripts',
-		'target' => nZEDb_MISC . 'update/nix'
+		'source' => NEWZFLASH_MISC . 'update_scripts/nix_scripts',
+		'target' => NEWZFLASH_MISC . 'update/nix'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'update_scripts/python_scripts/lib',
-		'target' => nZEDb_MISC . 'update/python/lib'
+		'source' => NEWZFLASH_MISC . 'update_scripts/python_scripts/lib',
+		'target' => NEWZFLASH_MISC . 'update/python/lib'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'update_scripts/python_scripts',
-		'target' => nZEDb_MISC . 'update/python'
+		'source' => NEWZFLASH_MISC . 'update_scripts/python_scripts',
+		'target' => NEWZFLASH_MISC . 'update/python'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'update_scripts/win_scripts',
-		'target' => nZEDb_MISC . 'update/win'
+		'source' => NEWZFLASH_MISC . 'update_scripts/win_scripts',
+		'target' => NEWZFLASH_MISC . 'update/win'
 	], [
 		'basemv' => false,
-		'source' => nZEDb_MISC . 'update_scripts',
-		'target' => nZEDb_MISC . 'update'
+		'source' => NEWZFLASH_MISC . 'update_scripts',
+		'target' => NEWZFLASH_MISC . 'update'
 	],
 
 /*

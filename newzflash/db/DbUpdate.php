@@ -88,7 +88,7 @@ class DbUpdate
 			'enclosedby'	=> null,
 			'ext'			=> 'tsv',
 			'files'			=> [],
-			'path'			=> nZEDb_RES . 'db' . DS . 'schema' . DS . 'data',
+			'path'			=> NEWZFLASH_RES . 'db' . DS . 'schema' . DS . 'data',
 			'regex'			=> '#^' . Misc::PATH_REGEX . '(?P<order>\d+)-(?P<table>\w+)\.tsv$#',
 		];
 		$options += $defaults;
@@ -155,9 +155,9 @@ class DbUpdate
 	public function newPatches(array $options = [])
 	{
 		$defaults = [
-			'data'	=> nZEDb_RES . 'db' . DS . 'schema' . DS . 'data' . DS,
+			'data'	=> NEWZFLASH_RES . 'db' . DS . 'schema' . DS . 'data' . DS,
 			'ext'	=> 'sql',
-			'path'	=> nZEDb_RES . 'db' . DS . 'patches' . DS . $this->_DbSystem,
+			'path'	=> NEWZFLASH_RES . 'db' . DS . 'patches' . DS . $this->_DbSystem,
 			'regex'	=> '#^' . Misc::PATH_REGEX . '\+(?P<order>\d+)~(?P<table>\w+)\.sql$#',
 			'safe'	=> true,
 		];
@@ -189,7 +189,7 @@ class DbUpdate
 							   $matches['table'] . '.sql';
 					rename($matches[0], $newName);
 					$this->git->add($newName);
-					if ($this->git->isCommited($this->git->getBranch() . ':' . str_replace(nZEDb_ROOT, '', $matches[0]))) {
+					if ($this->git->isCommited($this->git->getBranch() . ':' . str_replace(NEWZFLASH_ROOT, '', $matches[0]))) {
 						$this->git->add(" -u {$matches[0]}"); // remove old filename from the index.
 					}
 				}
@@ -201,9 +201,9 @@ class DbUpdate
 	{
 		$patched = 0;
 		$defaults = [
-			'data'	=> nZEDb_RES . 'db' . DS . 'schema' . DS . 'data' . DS,
+			'data'	=> NEWZFLASH_RES . 'db' . DS . 'schema' . DS . 'data' . DS,
 			'ext'	=> 'sql',
-			'path'	=> nZEDb_RES . 'db' . DS . 'patches' . DS . $this->_DbSystem,
+			'path'	=> NEWZFLASH_RES . 'db' . DS . 'patches' . DS . $this->_DbSystem,
 			'regex'	=> '#^' . Misc::PATH_REGEX . '(?P<patch>\d{4})~(?P<table>\w+)\.sql$#',
 			'safe'	=> true,
 		];
@@ -263,7 +263,7 @@ class DbUpdate
 	public function processSQLFile(array $options = [])
 	{
 		$defaults = [
-			'filepath' => nZEDb_RES . 'db' . DS . 'schema' . DS . $this->_DbSystem . '-ddl.sql',
+			'filepath' => NEWZFLASH_RES . 'db' . DS . 'schema' . DS . $this->_DbSystem . '-ddl.sql',
 		];
 		$options += $defaults;
 
@@ -346,7 +346,7 @@ class DbUpdate
 						} catch (\PDOException $e) {
 							// Log the problem and the query.
 							file_put_contents(
-								nZEDb_LOGS . 'patcherrors.log',
+								NEWZFLASH_LOGS . 'patcherrors.log',
 								'[' . date('r') . '] [ERROR] [' .
 								trim(preg_replace('/\s+/', ' ', $e->getMessage())) . ']' . PHP_EOL .
 								'[' . date('r') . '] [QUERY] [' .
@@ -448,7 +448,7 @@ class DbUpdate
 			$PHP = "php";
 		}
 
-		system("$PHP " . nZEDb_MISC . 'testing' . DS . 'DB' . DS . $this->_DbSystem .
+		system("$PHP " . NEWZFLASH_MISC . 'testing' . DS . 'DB' . DS . $this->_DbSystem .
 			   'dump_tables.php db dump');
 		$this->backedup = true;
 	}

@@ -34,7 +34,7 @@ class Git extends \GitRepo
 		$defaults = [
 			'create'		=> false,
 			'initialise'	=> false,
-			'filepath'		=> nZEDb_ROOT,
+			'filepath'		=> NEWZFLASH_ROOT,
 		];
 		$options += $defaults;
 

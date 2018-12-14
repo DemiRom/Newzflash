@@ -4,18 +4,18 @@ require_once realpath(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'bootstr
 use nzedb\IRCScraper;
 
 if (!defined('IRC_SCRAPER_CONFIG')) {
-	define('IRC_SCRAPER_CONFIG', nZEDb_CONFIGS . 'ircscraper_settings.php');
+	define('IRC_SCRAPER_CONFIG', NEWZFLASH_CONFIGS . 'ircscraper_settings.php');
 }
 
 switch (true) {
 	case is_file(IRC_SCRAPER_CONFIG):
 		break;
-	case is_file(nZEDb_ROOT . 'misc/testing/IRCScraper/settings.php'):
-		rename(nZEDb_ROOT . 'misc/testing/IRCScraper/settings.php', IRC_SCRAPER_CONFIG);
+	case is_file(NEWZFLASH_ROOT . 'misc/testing/IRCScraper/settings.php'):
+		rename(NEWZFLASH_ROOT . 'misc/testing/IRCScraper/settings.php', IRC_SCRAPER_CONFIG);
 		break;
 	default:
 		exit(
-			'Copy ' . nZEDb_CONFIGS . 'ircscraper_settings_example.php to ' .
+			'Copy ' . NEWZFLASH_CONFIGS . 'ircscraper_settings_example.php to ' .
 			IRC_SCRAPER_CONFIG . ' and change the settings.' . PHP_EOL
 		);
 }

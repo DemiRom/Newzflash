@@ -1,11 +1,11 @@
 <?php
 require_once realpath(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
-require_once nZEDb_LIB . 'utility' . DS . 'CopyFileTree.php';
+require_once NEWZFLASH_LIB . 'utility' . DS . 'CopyFileTree.php';
 
 use app\models\Settings;
 use nzedb\db\DB;
 
-$reorg = nZEDb_MISC . 'testing' . DS . 'NZBs' . DS . 'nzb-reorg.php';
+$reorg = NEWZFLASH_MISC . 'testing' . DS . 'NZBs' . DS . 'nzb-reorg.php';
 $pdo = new DB();
 $level = Settings::value('..nzbsplitlevel');
 $nzbpath = Settings::value('..nzbpath');

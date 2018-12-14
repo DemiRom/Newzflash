@@ -7,7 +7,7 @@ use nzedb\db\DB;
 use nzedb\utility\Misc;
 
 $pdo = new DB();
-$DIR = nZEDb_MISC;
+$DIR = NEWZFLASH_MISC;
 
 
 // Check that Db patch level is current. Also checks newzflash.xml is valid.
@@ -104,7 +104,7 @@ if ($seq == 1) {
  */
 function writelog($pane)
 {
-	$path = nZEDb_RES . "logs";
+	$path = NEWZFLASH_RES . "logs";
 	$getdate = gmDate("Ymd");
 	$tmux = new Tmux();
 	$logs = $tmux->get()->write_logs;

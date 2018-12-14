@@ -293,7 +293,7 @@ use nzedb\utility\Misc;
  * @example '/var/log/nZEDb/'
  * @default nZEDb_LOGS
  */
-\define('nZEDb_LOGGING_LOG_FOLDER', nZEDb_LOGS);
+\define('nZEDb_LOGGING_LOG_FOLDER', NEWZFLASH_LOGS);
 
 /**
  * The name of the log file.
@@ -605,7 +605,7 @@ if (Misc::isCLI()) {
 	 * @note    To log to syslog, put in 'syslog'
 	 * @version 4
 	 */
-	ini_set('error_log', nZEDb_LOGS . 'php_errors_cli.log');
+	ini_set('error_log', NEWZFLASH_LOGS . 'php_errors_cli.log');
 
 	/**
 	 * Log errors to error_log?
@@ -709,7 +709,7 @@ if (Misc::isCLI()) {
 	 * @note    To log to syslog, put in 'syslog'
 	 * @version 4
 	 */
-	ini_set('error_log', nZEDb_LOGS . 'php_errors_web.log');
+	ini_set('error_log', NEWZFLASH_LOGS . 'php_errors_web.log');
 
 	/**
 	 * Log errors to error_log?

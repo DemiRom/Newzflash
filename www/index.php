@@ -3,7 +3,7 @@ require_once 'smarty.php';
 
 nzedb\utility\Misc::maintainanceCheck();
 
-if (!file_exists(nZEDb_CONFIGS . 'install.lock')) {
+if (!file_exists(NEWZFLASH_CONFIGS . 'install.lock')) {
 	header('Location: install');
 	exit();
 }
@@ -87,7 +87,7 @@ switch ($page->page) {
 	case 'login':
 	case 'preinfo':
 	case 'rss':
-		require_once(nZEDb_WWW . 'pages/' . $page->page . '.php');
+		require_once(NEWZFLASH_WWW . 'pages/' . $page->page . '.php');
 		break;
 	default:
 		$page->show404();

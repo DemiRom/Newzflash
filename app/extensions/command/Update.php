@@ -38,7 +38,7 @@ use Smarty;
  */
 class Update extends \app\extensions\console\Command
 {
-	const UPDATES_FILE = nZEDb_CONFIGS . 'updates.json';
+	const UPDATES_FILE = NEWZFLASH_CONFIGS . 'updates.json';
 
 	/**
 	 * @var \app\extensions\util\Git object.
@@ -136,13 +136,13 @@ class Update extends \app\extensions\console\Command
 			$this->scripts();
 
 			$smarty = new Smarty();
-			$smarty->setCompileDir(nZEDb_SMARTY_TEMPLATES);
+			$smarty->setCompileDir(NEWZFLASH_SMARTY_TEMPLATES);
 			$cleared = $smarty->clearCompiledTemplate();
 			if ($cleared) {
 				$this->out('The Smarty compiled template cache has been cleared for you', 'primary');
-			} else if (!empty(glob(nZEDb_SMARTY_TEMPLATES . '*.php', GLOB_NOSORT))) {
+			} else if (!empty(glob(NEWZFLASH_SMARTY_TEMPLATES . '*.php', GLOB_NOSORT))) {
 				$this->out('You should clear your Smarty compiled template cache at: ' .
-					nZEDb_SMARTY_TEMPLATES,
+					NEWZFLASH_SMARTY_TEMPLATES,
 					'primary');
 			}
 		} catch (\Exception $e) {
@@ -198,7 +198,7 @@ class Update extends \app\extensions\console\Command
 		$this->out('Running composer install process...', 'primary');
 		$oldwd = getcwd();
 		if ($oldwd !== false) {
-			$oldwd = \chdir(\nZEDb_ROOT) ? $oldwd : false;
+			$oldwd = \chdir(\NEWZFLASH_ROOT) ? $oldwd : false;
 		}
 		system($command, $status);
 		if ($oldwd !== false) {

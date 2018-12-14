@@ -11,7 +11,7 @@ use nzedb\utility\Misc;
 
 $pdo = new DB();
 
-$dir = nZEDb_RES . "movednzbs/";
+$dir = NEWZFLASH_RES . "movednzbs/";
 
 if (!isset($argv[1]) || !in_array($argv[1], ["true", "move"])) {
 	exit($pdo->log->error("\nThis script can remove all nzbs not found in the db and all releases with no nzbs found. It can also move invalid nzbs.\n\n"

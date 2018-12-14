@@ -22,7 +22,7 @@ use lithium\analysis\Logger;
 Logger::config([
 	'default' => [
 		'adapter'	=> 'File',
-		'path' 		=> nZEDb_LOGS,
+		'path' 		=> NEWZFLASH_LOGS,
 		'priority'	=> ['debug','emergency', 'alert', 'critical', 'error']
 	],
 	'system' => ['adapter' => 'Syslog']

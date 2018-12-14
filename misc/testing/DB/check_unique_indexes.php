@@ -41,7 +41,7 @@ function run_query($query, $test)
 	}
 }
 
-$path = nZEDb_RES . 'db' . DS . 'schema' . DS . 'mysql-ddl.sql';
+$path = NEWZFLASH_RES . 'db' . DS . 'schema' . DS . 'mysql-ddl.sql';
 $handle = fopen($path, "r");
 if ($handle) {
 	while (($line = fgets($handle)) !== false) {

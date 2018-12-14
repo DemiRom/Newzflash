@@ -22,9 +22,9 @@ class InstallPage
 		$this->smarty = new Smarty();
 
 		$this->smarty->setTemplateDir(realpath('../install/templates/'));
-		$this->smarty->setCompileDir(nZEDb_RES . 'smarty/templates_c/');
-		$this->smarty->setConfigDir(nZEDb_RES . 'smarty/configs/');
-		$this->smarty->setCacheDir(nZEDb_RES . 'smarty/cache/');
+		$this->smarty->setCompileDir(NEWZFLASH_RES . 'smarty/templates_c/');
+		$this->smarty->setConfigDir(NEWZFLASH_RES . 'smarty/configs/');
+		$this->smarty->setCacheDir(NEWZFLASH_RES . 'smarty/cache/');
 	}
 
 	public function addToHead($headcontent)

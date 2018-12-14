@@ -55,7 +55,7 @@ class Versions extends \lithium\core\BaseObject
 	{
 		$defaults = [
 			'git'	=> null,
-			'path'	=> nZEDb_VERSIONS,
+			'path'	=> NEWZFLASH_VERSIONS,
 		];
 
 		parent::__construct($config += $defaults);
@@ -215,9 +215,9 @@ class Versions extends \lithium\core\BaseObject
 	public function getSQLPatchLast()
 	{
 		$options = [
-			'data'  => nZEDb_RES . 'db' . DS . 'schema' . DS . 'data' . DS,
+			'data'  => NEWZFLASH_RES . 'db' . DS . 'schema' . DS . 'data' . DS,
 			'ext'   => 'sql',
-			'path'  => nZEDb_RES . 'db' . DS . 'patches' . DS . 'mysql',
+			'path'  => NEWZFLASH_RES . 'db' . DS . 'patches' . DS . 'mysql',
 			'regex' => '#^' . Misc::PATH_REGEX . '(?P<patch>\d{4})~(?P<table>\w+)\.sql$#',
 			'safe'  => true,
 		];

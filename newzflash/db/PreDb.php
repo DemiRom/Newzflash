@@ -187,7 +187,7 @@ SQL_EXPORT;
 	public function progress($settings = null, array $options = [])
 	{
 		$defaults = [
-			'path'	=> nZEDb_CONFIGS . 'predb_progress.txt',
+			'path'	=> NEWZFLASH_CONFIGS . 'predb_progress.txt',
 			'read'	=> true,
 		];
 		$options += $defaults;

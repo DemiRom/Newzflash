@@ -1,5 +1,6 @@
 // Stripe API Key
-  var stripe = Stripe('__STRIPE_KEY___');
+//  var stripe = Stripe('__PUBLISHABLE_STRIPE_KEY__');
+
   var elements = stripe.elements();
   // Custom Styling
   var style = {

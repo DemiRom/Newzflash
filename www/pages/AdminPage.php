@@ -1,5 +1,5 @@
 <?php
-require_once nZEDb_ROOT . 'app' . DS . 'config' . DS . 'bootstrap' . DS . 'libraries.php';
+require_once NEWZFLASH_ROOT . 'app' . DS . 'config' . DS . 'bootstrap' . DS . 'libraries.php';
 
 use nzedb\Category;
 use nzedb\Users;
@@ -31,9 +31,9 @@ class AdminPage extends BasePage
 
 		$this->smarty->setTemplateDir(
 			[
-				'admin'		=> nZEDb_THEMES . 'shared/templates/admin',
-				'shared'	=> nZEDb_THEMES . 'shared/templates',
-				'default'	=> nZEDb_THEMES . 'Default/templates'
+				'admin'		=> NEWZFLASH_THEMES . 'shared/templates/admin',
+				'shared'	=> NEWZFLASH_THEMES . 'shared/templates',
+				'default'	=> NEWZFLASH_THEMES . 'Default/templates'
 			]
 		);
 	}

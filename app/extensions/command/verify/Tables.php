@@ -163,7 +163,7 @@ class Tables extends \app\extensions\console\Command
 
 		$dummy = $this->validate(
 			[
-				'file' => nZEDb_RES . 'db/schema/data/10-settings.tsv',
+				'file' => NEWZFLASH_RES . 'db/schema/data/10-settings.tsv',
 				'output' => $output,
 				'silent' => false,
 				'table' => 'Settings',

@@ -76,7 +76,7 @@ class Forking extends \fork_daemon
 			$this->outputType = self::OUTPUT_REALTIME;
 		}
 
-		$this->dnr_path = PHP_BINARY . ' ' . nZEDb_MULTIPROCESSING . '.do_not_run' . DS . 'switch.php "php  ';
+		$this->dnr_path = PHP_BINARY . ' ' . NEWZFLASH_MULTIPROCESSING . '.do_not_run' . DS . 'switch.php "php  ';
 	}
 
 	/**
@@ -241,7 +241,7 @@ class Forking extends \fork_daemon
 			//case 'safe_backfill':
 			case 'safe_binaries':
 				$this->_executeCommand(
-					PHP_BINARY . ' ' . nZEDb_NIX . 'tmux/bin/update_groups.php'
+					PHP_BINARY . ' ' . NEWZFLASH_NIX . 'tmux/bin/update_groups.php'
 				);
 				break;
 		}
@@ -296,7 +296,7 @@ class Forking extends \fork_daemon
 	{
 		foreach ($groups as $group) {
 			$this->_executeCommand(
-				PHP_BINARY . ' ' . nZEDb_UPDATE . 'backfill.php ' .
+				PHP_BINARY . ' ' . NEWZFLASH_UPDATE . 'backfill.php ' .
 				$group['name'] . (isset($group['max']) ? (' ' . $group['max']) : '')
 			);
 		}
@@ -420,7 +420,7 @@ class Forking extends \fork_daemon
 	{
 		foreach ($groups as $group) {
 			$this->_executeCommand(
-				PHP_BINARY . ' ' . nZEDb_UPDATE . 'update_binaries.php ' . $group['name'] . ' ' . $group['max']
+				PHP_BINARY . ' ' . NEWZFLASH_UPDATE . 'update_binaries.php ' . $group['name'] . ' ' . $group['max']
 			);
 		}
 	}
@@ -547,7 +547,7 @@ class Forking extends \fork_daemon
 	{
 		foreach ($guids as $guid) {
 			$this->_executeCommand(
-				PHP_BINARY . ' ' . nZEDb_NIX . 'tmux/bin/groupfixrelnames.php "' . $guid . '"' . ' true'
+				PHP_BINARY . ' ' . NEWZFLASH_NIX . 'tmux/bin/groupfixrelnames.php "' . $guid . '"' . ' true'
 			);
 		}
 

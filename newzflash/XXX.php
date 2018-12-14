@@ -79,7 +79,7 @@ class XXX
 		$this->debug = nZEDb_DEBUG;
 		$this->echooutput = ($options['Echo'] && nZEDb_ECHOCLI);
 		$this->imgSavePath = nZEDb_COVERS . 'xxx' . DS;
-		$this->cookie = nZEDb_TMP . 'xxx.cookie';
+		$this->cookie = NEWZFLASH_TMP . 'xxx.cookie';
 
 		$this->catWhere = 'AND categories_id IN (' .
 				Category::XXX_DVD . ', ' .

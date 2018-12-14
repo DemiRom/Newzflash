@@ -3,9 +3,9 @@
 spl_autoload_register(
 	function ($className) {
 		$paths = [
-			nZEDb_WWW . 'pages' . DS,
-			nZEDb_WWW . 'pages' . DS . 'admin' . DS,
-			nZEDb_WWW . 'pages' . DS . 'install' . DS,
+			NEWZFLASH_WWW . 'pages' . DS,
+			NEWZFLASH_WWW . 'pages' . DS . 'admin' . DS,
+			NEWZFLASH_WWW . 'pages' . DS . 'install' . DS,
 		];
 
 		foreach ($paths as $path) {

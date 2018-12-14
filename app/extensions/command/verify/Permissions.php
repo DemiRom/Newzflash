@@ -64,7 +64,7 @@ class Permissions extends \app\extensions\console\Command
 
 		// Check All folders up to nZEDb root folder.
 		$path = DS;
-		foreach (explode(DS, nZEDb_ROOT) as $folder) {
+		foreach (explode(DS, NEWZFLASH_ROOT) as $folder) {
 			if ($folder) {
 				$path .= $folder . DS;
 				$error |= !$this->isReadable($path);

@@ -16,7 +16,7 @@
  * @author    niel
  * @copyright 2017 nZEDb
  */
-namespace nzedb\build;
+namespace newzflash\build;
 
 require_once dirname(__DIR__) . '/constants.php';
 
@@ -27,8 +27,8 @@ class Composer
 	public static function postInstallCmd(Event $event)
 	{
 		$last = $output = $return = null;
-		if (!file_exists(nZEDb_CONFIGS . 'settings.php')) {
-			copy(nZEDb_CONFIGS . 'settings.example.php', nZEDb_CONFIGS . 'settings.php');
+		if (!file_exists(NEWZFLASH_CONFIGS . 'settings.php')) {
+			copy(NEWZFLASH_CONFIGS . 'settings.example.php', NEWZFLASH_CONFIGS . 'settings.php');
 		}
 
 		if (getenv('COMPOSER_DEV_MODE') == 1) {

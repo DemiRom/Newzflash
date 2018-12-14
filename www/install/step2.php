@@ -168,7 +168,7 @@ if ($page->isPostBack()) {
 			$DbSetup->processSQLFile(); // Setup default schema
 			$DbSetup->processSQLFile( // Process any custom stuff.
 				[
-					'filepath' => nZEDb_RES . 'db' . DS . 'schema' . DS . 'mysql-data.sql'
+					'filepath' => NEWZFLASH_RES . 'db' . DS . 'schema' . DS . 'mysql-data.sql'
 				]
 			);
 			$DbSetup->loadTables(); // Load default data files

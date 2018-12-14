@@ -172,11 +172,11 @@ class Misc
 
 	public static function getThemesList()
 	{
-		$themes = scandir(nZEDb_THEMES);
+		$themes = scandir(NEWZFLASH_THEMES);
 		$themelist = ['None'];
 		foreach ($themes as $theme) {
 			if (strpos($theme, ".") === false &&
-				is_dir(nZEDb_THEMES . $theme) &&
+				is_dir(NEWZFLASH_THEMES . $theme) &&
 				ucfirst($theme) === $theme
 			) {
 				$themelist[] = $theme;
@@ -422,11 +422,11 @@ class Misc
 					break;
 				case (strlen($path) > 0 && substr($path, 0, 1) != '/' && substr($path, 1, 1) != ':' &&
 					substr($path, 0, 1) != '\\'):
-					define('nZEDb_COVERS', realpath(nZEDb_ROOT . Text::trailingSlash($path)));
+					define('nZEDb_COVERS', realpath(NEWZFLASH_ROOT . Text::trailingSlash($path)));
 					break;
 				case empty($path): // Default to resources location.
 				default:
-					define('nZEDb_COVERS', nZEDb_RES . 'covers' . DS);
+					define('nZEDb_COVERS', NEWZFLASH_RES . 'covers' . DS);
 			}
 		}
 	}

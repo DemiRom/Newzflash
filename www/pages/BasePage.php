@@ -1,6 +1,6 @@
 <?php
 
-require_once nZEDb_LIB . 'utility' . DS . 'SmartyUtils.php';
+require_once NEWZFLASH_LIB . 'utility' . DS . 'SmartyUtils.php';
 
 use app\models\Settings;
 use nzedb\SABnzbd;
@@ -108,12 +108,12 @@ class BasePage
 
 		$this->smarty = new Smarty();
 
-		$this->smarty->setCacheDir(nZEDb_SMARTY_CACHE);
-		$this->smarty->setCompileDir(nZEDb_SMARTY_TEMPLATES);
-		$this->smarty->setConfigDir(nZEDb_SMARTY_CONFIGS);
+		$this->smarty->setCacheDir(NEWZFLASH_SMARTY_CACHE);
+		$this->smarty->setCompileDir(NEWZFLASH_SMARTY_TEMPLATES);
+		$this->smarty->setConfigDir(NEWZFLASH_SMARTY_CONFIGS);
 		$this->smarty->setPluginsDir([
 				SMARTY_DIR . 'plugins/',
-				nZEDb_WWW . 'plugins/',
+				NEWZFLASH_WWW . 'plugins/',
 		]);
 		$this->smarty->error_reporting = ((nZEDb_DEBUG ? E_ALL : E_ALL - E_NOTICE));
 

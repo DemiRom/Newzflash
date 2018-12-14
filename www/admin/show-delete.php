@@ -1,6 +1,6 @@
 <?php
 require_once './config.php';
-require_once nZEDb_WWW . 'pages/smartyTV.php';
+require_once NEWZFLASH_WWW . 'pages/smartyTV.php';
 
 $page = new AdminPage();
 

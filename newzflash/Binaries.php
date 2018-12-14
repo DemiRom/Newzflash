@@ -760,7 +760,7 @@ class Binaries
 				// enabled AND it's not prefixed by '"Usenet Index Post'
 				if ($this->_showDroppedYEncParts === true && strpos($header['Subject'], '"Usenet Index Post') !== 0) {
 					file_put_contents(
-						nZEDb_LOGS . 'dropped.no_yenc.' . $this->groupMySQL['name'] . '.log',
+						NEWZFLASH_LOGS . 'dropped.no_yenc.' . $this->groupMySQL['name'] . '.log',
 						$header['from'] . "\t" . $header['Subject'] . PHP_EOL,
 						FILE_APPEND
 					);
@@ -899,7 +899,7 @@ class Binaries
 					$fileCount[1] = $fileCount[3] = 0;
 					if ($this->_showDroppedYEncParts === true) {
 						file_put_contents(
-							nZEDb_LOGS . 'dropped.no_files' . $this->groupMySQL['name'] . '.log',
+							NEWZFLASH_LOGS . 'dropped.no_files' . $this->groupMySQL['name'] . '.log',
 							$this->header['From'] . "\t" . $this->header['Subject'] . PHP_EOL,
 							FILE_APPEND
 						);

@@ -140,6 +140,7 @@ $page->smarty->assign([
 		'password'          => $password,
 		'confirmpassword'   => $confirmPassword,
 		'email'             => $email,
+		'stripe_key'        => Settings::value('stripepublishablekey'),
 		'invitecode'        => $inviteCode,
 		'invite_code_query' => $inviteCodeQuery,
 		'showregister'      => $showRegister,

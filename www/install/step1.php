@@ -63,17 +63,17 @@ $cfg->curlCheck = function_exists('curl_init');
 
 if (extension_loaded('posix') && strtolower(substr(PHP_OS, 0, 3)) !== 'win') {
 	$group = posix_getgrgid(posix_getgid());
-	$fixString = '<br /><br />Another solution is to run:<br />chown -R YourUnixUserName:' . $group['name'] . ' ' . nZEDb_ROOT .
+	$fixString = '<br /><br />Another solution is to run:<br />chown -R YourUnixUserName:' . $group['name'] . ' ' . NEWZFLASH_ROOT .
 		'<br />Then give your user access to the group:<br />usermod -a -G ' . $group['name'] . ' YourUnixUserName' .
-		'<br />Finally give read/write access to your user/group:<br />chmod -R 774 ' . nZEDb_ROOT;
+		'<br />Finally give read/write access to your user/group:<br />chmod -R 774 ' . NEWZFLASH_ROOT;
 	$page->smarty->assign('fixString', $fixString);
 	$page->smarty->assign('unixGroup', $group['name']);
-	$page->smarty->assign('rootPath', nZEDb_ROOT);
+	$page->smarty->assign('rootPath', NEWZFLASH_ROOT);
 } else {
 	$page->smarty->assign('fixString', false);
 }
 
-$cfg->cacheCheck = is_writable(nZEDb_RES . 'smarty' . DS . 'templates_c');
+$cfg->cacheCheck = is_writable(NEWZFLASH_RES . 'smarty' . DS . 'templates_c');
 if ($cfg->cacheCheck === false) {
 	$cfg->error = true;
 }
@@ -128,11 +128,11 @@ if ($cfg->videoCoversCheck === false) {
 	$cfg->error = true;
 }
 
-$cfg->configCheck = is_writable(nZEDb_CONFIGS);
+$cfg->configCheck = is_writable(NEWZFLASH_CONFIGS);
 if ($cfg->configCheck === false) {
 	$cfg->error = true;
 } else {
-	$cfg->configCheck = !is_file(nZEDb_CONFIGS);
+	$cfg->configCheck = !is_file(NEWZFLASH_CONFIGS);
 	if ($cfg->configCheck === false) {
 		$cfg->error = true;
 	}
@@ -170,7 +170,7 @@ if ($cfg->schemaCheck === false) {
 $enoughRAM = Misc::returnBytes(ini_get('memory_limit')) >= 1073741824 ? true : false;
 $unlimitedRAM = ini_get('memory_limit') == -1 ? true : false;
 $cfg->memlimitCheck = $unlimitedRAM || $enoughRAM;
-$cfg->phpCheck = (version_compare(PHP_VERSION, nZEDb_MINIMUM_PHP_VERSION, '>=')) ? true : false;
+$cfg->phpCheck = (version_compare(PHP_VERSION, NEWZFLASH_MINIMUM_PHP_VERSION, '>=')) ? true : false;
 $cfg->timelimitCheck = (ini_get('max_execution_time') >= 120) ? true : false;
 $cfg->opensslCheck = extension_loaded("openssl");
 $cfg->exifCheck = extension_loaded("exif");
@@ -183,8 +183,8 @@ if (preg_match('/apache/i', $_SERVER['SERVER_SOFTWARE'])) {
 }
 
 // Load previous config.php.
-if (file_exists(nZEDb_CONFIGS . 'config.php') && is_readable(nZEDb_CONFIGS . 'config.php')) {
-	$tmpCfg = file_get_contents(nZEDb_CONFIGS . 'config.php');
+if (file_exists(NEWZFLASH_CONFIGS . 'config.php') && is_readable(NEWZFLASH_CONFIGS . 'config.php')) {
+	$tmpCfg = file_get_contents(NEWZFLASH_CONFIGS . 'config.php');
 	$cfg->setConfig($tmpCfg);
 }
 

@@ -361,7 +361,7 @@ class Logger
 	{
 		$defaultLogName = (defined('nZEDb_LOGGING_LOG_NAME') ? nZEDb_LOGGING_LOG_NAME : 'newzflash');
 		$defaultLogName = (ctype_alnum($defaultLogName) ? $defaultLogName : 'newzflash');
-		$defaultLogFolder = (defined('nZEDb_LOGGING_LOG_FOLDER') && is_dir(nZEDb_LOGGING_LOG_FOLDER) ? nZEDb_LOGGING_LOG_FOLDER : nZEDb_LOGS);
+		$defaultLogFolder = (defined('nZEDb_LOGGING_LOG_FOLDER') && is_dir(nZEDb_LOGGING_LOG_FOLDER) ? nZEDb_LOGGING_LOG_FOLDER : NEWZFLASH_LOGS);
 		$defaultLogFolder = (in_array(substr($defaultLogFolder, -1), ['/', '\\']) ? $defaultLogFolder : $defaultLogFolder . DS);
 		return [
 			'LogFolder' => $defaultLogFolder,

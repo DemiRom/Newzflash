@@ -110,7 +110,7 @@ class Settings extends \app\extensions\data\Model
 
 	public static function hasAllEntries($console = null)
 	{
-		$filepath = Text::pathCombine(['db', 'schema', 'data', '10-settings.tsv'], nZEDb_RES);
+		$filepath = Text::pathCombine(['db', 'schema', 'data', '10-settings.tsv'], NEWZFLASH_RES);
 		if (!file_exists($filepath)) {
 			throw new \InvalidArgumentException("Unable to find {$filepath}");
 		}

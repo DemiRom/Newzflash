@@ -19,7 +19,7 @@
 
 require_once '..' . DIRECTORY_SEPARATOR . 'bootstrap.php';
 
-$updates = nZEDb_CONFIGS . 'updates.json';
+$updates = NEWZFLASH_CONFIGS . 'updates.json';
 if (!file_exists($updates)) {
 	$json = [ 'script' => time()];
 	file_put_contents(json_encode($json, JSON_PRETTY_PRINT));

@@ -5,9 +5,9 @@ use nzedb\Tmux;
 use nzedb\db\DB;
 
 $pdo = new DB();
-$DIR = nZEDb_MISC;
-$ROOTDIR = nZEDb_ROOT;
-$smarty = nZEDb_RES . 'smarty' . DS . 'templates_c/';
+$DIR = NEWZFLASH_MISC;
+$ROOTDIR = NEWZFLASH_ROOT;
+$smarty = NEWZFLASH_RES . 'smarty' . DS . 'templates_c/';
 $dbname = DB_NAME;
 
 function command_exist($cmd)

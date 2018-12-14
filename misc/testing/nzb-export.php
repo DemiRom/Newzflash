@@ -17,8 +17,8 @@ if (count($argv) !== 6) {
 		'arg4 : Group ID for the group or false                           | number/false' . $n .
 		'arg5 : Gzip the NZB files (recommended, faster/takes less space) | true/false' . $n . $n .
 		'Examples: ' . $n .
-		$_SERVER['_'] . ' ' . $argv[0] . ' ' . nZEDb_ROOT . 'exportFolder' . DS . ' 01/01/2012 01/01/2014 false true' . $n .
-		$_SERVER['_'] . ' ' . $argv[0] . ' ' . nZEDb_ROOT . 'exportFolder' . DS . ' false 01/01/2014 12 false' . $n
+		$_SERVER['_'] . ' ' . $argv[0] . ' ' . NEWZFLASH_ROOT . 'exportFolder' . DS . ' 01/01/2012 01/01/2014 false true' . $n .
+		$_SERVER['_'] . ' ' . $argv[0] . ' ' . NEWZFLASH_ROOT . 'exportFolder' . DS . ' false 01/01/2014 12 false' . $n
 	);
 }
 
