@@ -69,6 +69,7 @@ switch ($page->page) {
 	case 'upcoming':
 	case 'xxx':
 	case 'xxxmodal':
+	{
 		// Don't show these pages if it's an API-only site.
 		if (!$page->users->isLoggedIn()) {
 			if (Settings::value('..registerstatus') == Settings::REGISTER_STATUS_API_ONLY) {
@@ -81,6 +82,7 @@ switch ($page->page) {
 				$page->page = 'login';
 			}
 		}
+	}
 	case 'api':
 	case 'failed':
 	case 'getnzb':
