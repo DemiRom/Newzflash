@@ -1007,7 +1007,7 @@ class Misc
 	 */
 	public static function console_log( $data ){
 		try {
-			$myfile = file_put_contents('/var/www/Newzflash/resources/logs/console_log.log', $txt.PHP_EOL , FILE_APPEND | LOCK_EX);
+			file_put_contents('/var/www/Newzflash/resources/logs/console_log.log', $data.PHP_EOL , FILE_APPEND | LOCK_EX);
 		} catch (Exception $e) {
 			//TODO(Demetry): Implement something here...
 		}

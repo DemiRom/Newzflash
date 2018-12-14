@@ -97,8 +97,8 @@ class DbUpdate
 		];
 		$options += $defaults;
 
-		//$show = (Misc::isCLI() || nZEDb_DEBUG);
-		$show = true;
+		$show = (Misc::isCLI() || nZEDb_DEBUG);
+//		$show = true;
 
 		$files = empty($options['files']) ? Misc::getDirFiles($options) : $options['files'];
 		natsort($files);
@@ -136,6 +136,10 @@ class DbUpdate
 						if (Misc::isWin()) {
 							$file = str_replace("\\", '\/', $file);
 						}
+
+						//Print it to the console!!
+						Misc::console_log(sprintf($sql, $file, $table, $fields));
+
 						$this->pdo->exec(sprintf($sql, $file, $table, $fields));
 					} else {
 						Misc::console_log("Failed to open file... \n");
