@@ -110,7 +110,7 @@ try {
 						'dbuser' => $cfg->DB_USER,
 					]
 				);
-				Misc::console_log("$pdo");
+				Misc::console_log("\$pdo");
 				$cfg->dbConnCheck = true;
 			} catch (\PDOException $e) {
 				$cfg->emessage = "Unable to connect to the SQL server.\n" . $e->getMessage();

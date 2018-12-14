@@ -1006,6 +1006,13 @@ class Misc
 	 *
 	 */
 	public static function console_log( $data ){
+		try {
+			$log_file = fopen(NEWZFLASH_LOGS . '/console_log.log');
+			fwrite($log_file, $data);
+			fclose($log_file);
+		} catch (Exception $e) {
+			//TODO(Demetry): Implement something here...
+		}
 		echo '<script>';
 		echo 'console.log('. json_encode( $data ) .')';
 		echo '</script>';
