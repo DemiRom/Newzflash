@@ -9,15 +9,7 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program (see LICENSE.txt in the base directory.  If
- * not, see:
- *
- * @link <http://www.gnu.org/licenses/>.
- * @author niel
- * @copyright 2015 nZEDb
- */
+**/
 
 //$constants_file = realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php');
 
@@ -27,6 +19,8 @@
 
 require_once realpath(dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php');
 require_once NEWZFLASH_ROOT . 'app' . DS . 'config' . DS . 'bootstrap.php';
+
+echo "DIRNAME: " . dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR . 'constants.php';
 
 use newzflash\config\Configure;
 
