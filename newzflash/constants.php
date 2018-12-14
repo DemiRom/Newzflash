@@ -7,7 +7,7 @@ define('NEWZFLASH_MINIMUM_PHP_VERSION', '7.0.20');
 define('DS', DIRECTORY_SEPARATOR);
 
 // These are file path constants
-define('NEWZFLASH_ROOT', realpath(dirname(__DIR__)) . DS);
+define('NEWZFLASH_ROOT', '/var/www/Newzflash' . DS);
 
 // Used to refer to the main lib class files.
 define('NEWZFLASH_LIB', NEWZFLASH_ROOT . 'newzflash' . DS);

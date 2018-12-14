@@ -11,8 +11,8 @@ namespace app\config;
 /**
  * Load Newzflash global constants.
  */
-require_once \dirname(__DIR__, 2) . '/..' . DIRECTORY_SEPARATOR . 'newzflash' . DIRECTORY_SEPARATOR . 'constants.php';
-
+//require_once \dirname(__DIR__, 2) . '/..' . DIRECTORY_SEPARATOR . 'newzflash' . DIRECTORY_SEPARATOR . 'constants.php';
+require_once '/var/www/Newzflash/newzflash/constants.php';
 /**
  * This is the primary bootstrap file of your application, and is loaded immediately after the front
  * controller (`webroot/index.php`) is invoked. It includes references to other feature-specific

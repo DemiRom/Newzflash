@@ -22,13 +22,15 @@
 if (!defined('NEWZFLASH_INSTALLER')) {
 	define('NEWZFLASH_INSTALLER', true);
 }
-require_once dirname(__DIR__, 2) . '/..' .
-	DIRECTORY_SEPARATOR .
-	'app' .
-	DIRECTORY_SEPARATOR .
-	'config' .
-	DIRECTORY_SEPARATOR .
-	'bootstrap.php';
+//require_once dirname(__DIR__, 2) . '/..' .
+//	DIRECTORY_SEPARATOR .
+//	'app' .
+//	DIRECTORY_SEPARATOR .
+//	'config' .
+//	DIRECTORY_SEPARATOR .
+//	'bootstrap.php';
+
+require_once '/var/www/Newzflash/app/config/bootstrap.php';
 
 use newzflash\config\Configure;
 
