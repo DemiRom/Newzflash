@@ -97,7 +97,8 @@ class DbUpdate
 		];
 		$options += $defaults;
 
-		$show = (Misc::isCLI() || nZEDb_DEBUG);
+		//$show = (Misc::isCLI() || nZEDb_DEBUG);
+		$show = true;
 
 		$files = empty($options['files']) ? Misc::getDirFiles($options) : $options['files'];
 		natsort($files);
@@ -110,6 +111,7 @@ class DbUpdate
 		foreach ($files as $file) {
 			if ($show === true) {
 				echo "File: $file\n";
+				Misc::console_log("File: " . $file . "\n");
 			}
 
 			if (is_readable($file)) {
@@ -122,25 +124,31 @@ class DbUpdate
 						fclose($handle);
 						if ($line === false) {
 							echo "FAILED reading first line of '$file'\n";
+							Misc::console_log("FAILED reading first line of '$file'\n");
 							continue;
 						}
 						$fields = trim($line);
 
 						if ($show === true) {
 							echo "Inserting data into table: '$table'\n";
+							Misc::console_log("Inserting data into table: '$table'\n");
 						}
 						if (Misc::isWin()) {
 							$file = str_replace("\\", '\/', $file);
 						}
 						$this->pdo->exec(sprintf($sql, $file, $table, $fields));
 					} else {
+						Misc::console_log("Failed to open file... \n");
 						exit("Failed to open file: '$file'\n");
 					}
 				} else {
+					Misc::console_log("Incorrectly formatted filename '$file' (should match " .
+						 str_replace('#', '', $options['regex']) . "\n");
 					echo "Incorrectly formatted filename '$file' (should match " .
 						 str_replace('#', '', $options['regex']) . "\n";
 				}
 			} else {
+				Misc::console_log(" Unable to read file: '$file'\n");
 				echo $this->log->error("  Unable to read file: '$file'");
 			}
 		}
