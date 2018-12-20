@@ -107,7 +107,7 @@ class DbUpdate
 			$options['enclosedby'] . '"';
 		$sql = 'LOAD DATA ' .
 			$local . 'INFILE "%s" IGNORE INTO TABLE `%s` FIELDS TERMINATED BY "\t" ' . $enclosedby .
-			' LINES TERMINATED BY "\r\n" IGNORE 1 LINES (%s)';
+			' LINES TERMINATED BY "\n" IGNORE 1 LINES (%s)';
 		foreach ($files as $file) {
 			if ($show === true) {
 				echo "File: $file\n";
