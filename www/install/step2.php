@@ -222,7 +222,7 @@ try {
 					}
 
 					// If it all worked, move to the next page.
-					if ($updateSettings) {
+					if ($updateSettings == 0) {
 						header("Location: ?success");
 						if (file_exists($cfg->DB_DIR . '/post_install.php')) {
 							exec("php " . $cfg->DB_DIR . "/post_install.php ${pdo}");
