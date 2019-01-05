@@ -212,9 +212,11 @@ try {
 
 				if ($dbInstallWorked) {
 					if ($patch > 0) {
+						Misc::console_log("PATCH: '$patch'");
 						$updateSettings = $pdo->exec(
 							"UPDATE settings SET value = '$patch' WHERE section = '' AND subsection = '' AND name = 'sqlpatch'"
 						);
+						Misc::console_log($updateSettings);
 					} else {
 						$updateSettings = false;
 					}
