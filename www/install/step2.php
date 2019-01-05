@@ -229,6 +229,7 @@ try {
 					} else {
 						$cfg->error = true;
 						$cfg->emessage = "Could not update sqlpatch to '$patch' for your database.";
+						Misc::console_log("Could not update sqlpatch to '$patch' for your database");
 					}
 				} else {
 					$cfg->dbCreateCheck = false;
