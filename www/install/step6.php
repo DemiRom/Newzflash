@@ -1,5 +1,6 @@
 <?php
-require_once realpath(__DIR__ . DIRECTORY_SEPARATOR . 'install.php');
+require_once '/var/www/Newzflash/www/install/install.php';
+//require_once realpath(__DIR__ . DIRECTORY_SEPARATOR . 'install.php');
 
 use newzflash\Install;
 use newzflash\Users;
