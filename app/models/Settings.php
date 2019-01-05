@@ -247,7 +247,7 @@ class Settings extends \app\extensions\data\Model
 	 * @return string|null		 The setting's value, or null on failure IF 'returnAlways' is true.
 	 * @throws \Exception
 	 */
-	public static function value($setting, $returnAlways = true)
+	public static function value($setting, $returnAlways = false)
 	{
 		Misc::console_log("Setting: '$setting'");
 		$result = Settings::find('setting', ['conditions' => $setting, 'fields' => ['value']]);
