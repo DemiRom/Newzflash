@@ -1014,5 +1014,7 @@ class Misc
 		echo '<script>';
 		echo 'console.log('. json_encode( $data ) .')';
 		echo '</script>';
+
+		error_log($data);
 	}
 }
