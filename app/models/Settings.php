@@ -19,7 +19,7 @@
 namespace app\models;
 
 use newzflash\utility\Text;
-
+use newzflash\utility\Misc;
 
 /**
  * Settings - model for settings table.
@@ -249,6 +249,7 @@ class Settings extends \app\extensions\data\Model
 	 */
 	public static function value($setting, $returnAlways = false)
 	{
+		Misc::console_log("Setting: '$setting'");
 		$result = Settings::find('setting', ['conditions' => $setting, 'fields' => ['value']]);
 
 		if ($result !== false && $result->count() > 0) {
